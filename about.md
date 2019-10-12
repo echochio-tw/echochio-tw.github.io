@@ -1,17 +1,15 @@
 ---
-layout: post
+layout: page
 title: About
-whereami: about
-date: 2016-11-15
+permalink: /about/
 ---
 
-### About the site
+This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
 
-記錄一些資訊 .... 將 http://echochio.pixnet.net/blog 一些來紀錄到此
+You can find the source code for the Jekyll new theme at:
+{% include icon-github.html username="jekyll" %} /
+[minima](https://github.com/jekyll/minima)
 
-### About me
-
-做技術，也做管理 聯繫我：
-
-* <i class="fa fa-envelope"></i> [chio@echochio.nctu.me](mailto:chio@echochio.nctu.me)
-
+You can find the source code for Jekyll at
+{% include icon-github.html username="jekyll" %} /
+[jekyll](https://github.com/jekyll/jekyll)
