@@ -1,0 +1,46 @@
+I"S<p>話說以前做過 用 web 介面 , 給NOC 操作廠商遠端登入帳號建立及啟用, 停用等等 ….</p>
+
+<p>當然有配合遠端登入錄影 ,</p>
+
+<p>那時測過 RecordTS 及 ObserveIT records , 最後選ObserveIT records</p>
+
+<p>好了不廢話 …..</p>
+
+<p>那就 telnet  ( 最後裝 openssh …..)</p>
+
+<p>到 client (Windows XP) ….為啥用 XP …因為 XP 可多人遠端桌面 ….哈哈 ….</p>
+
+<p>下載 Universal Termsrv Patch</p>
+
+<p>執行 xp.reg</p>
+
+<p>UniversalTermsrvPatch-x86.exe (若作業系統為 64 位元版本則執行 x64.exe)</p>
+
+<p>按「破解」，重開機</p>
+
+<p>聽說後來 win7 也可多人了找 … UniversalTermsrvPatch_20090425</p>
+
+<p>好像是 SP1 可以 ….SP2 就不行了 ….XD</p>
+
+<p>win7 SP2 後來的請用</p>
+
+<p>https://www.echochio.nctu.me/2018/06/win7-RDP/</p>
+
+<p>那時用 AT …..現在要用 SCHTASKS</p>
+
+<p>那就紀錄一下方法</p>
+
+<p>建立停用帳號排程</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SCHTASKS /Create /ST 18:30:00 /SC ONCE /SD 2017/06/30 /TN stopactive-once-1830 /TR "net user eltsai /active:no"
+SCHTASKS /Create /ST 18:31:00 /SC ONCE /SD 2017/06/30 /TN stopactive-once-1831 /TR "net user miyachiang /active:no"
+</code></pre></div></div>
+
+<p>看排程</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>schtasks | find /i "stopactive"
+</code></pre></div></div>
+
+<p>刪除排程</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SCHTASKS /Delete /TN "stopactive-once-1830"
+</code></pre></div></div>
+
+:ET

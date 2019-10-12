@@ -1,0 +1,37 @@
+I"}<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iptables -vnL|grep DROP  | awk '{ print $8}' | grep -v "0.0.0.0" |awk '/[0-9]/' | sort | uniq -c|sort -nr |awk '{if($1 &gt;1) print $1" "$2}' |awk '{for(i=1;i&lt;=$1-1;i++) print "iptables -D INPUT -s  " $2 " -j DROP" | "bash" } '
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/perl</span>
+<span class="nv">$sendto</span><span class="o">=</span><span class="p">'</span><span class="s1">-xxxxx</span><span class="p">';</span>
+<span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="p">"</span><span class="s2">netstat -nat |grep SYN_RECV |grep 10X00| awk '{print </span><span class="p">";</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">"</span><span class="err">\</span><span class="s2">$</span><span class="p">"</span><span class="o">.</span><span class="p">"</span><span class="s2">5}'</span><span class="p">"</span><span class="o">.</span><span class="p">"</span><span class="s2">|awk -F: '{print </span><span class="p">"</span><span class="o">.</span><span class="p">"</span><span class="err">\</span><span class="s2">$</span><span class="p">"</span><span class="o">.</span><span class="p">"</span><span class="s2">1}'|sort|uniq -c|sort -rn</span><span class="p">";</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">"</span><span class="s2">|awk '{print </span><span class="p">"</span><span class="o">.</span><span class="p">"</span><span class="err">\</span><span class="s2">$</span><span class="p">"</span><span class="o">.</span><span class="p">"</span><span class="s2">1</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="err">\</span><span class="s2">$2}'</span><span class="p">";</span>
+<span class="nv">@data</span><span class="o">=</span> <span class="p">`</span><span class="si">$do</span><span class="p">`;</span>
+<span class="nv">@v</span> <span class="o">=</span> <span class="nb">split</span><span class="p">('</span><span class="s1">:</span><span class="p">',</span> <span class="nv">$data</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="k">if</span> <span class="p">(</span> <span class="nv">$v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$now</span><span class="o">=</span><span class="p">`</span><span class="sb">date +%s</span><span class="p">`;</span>
+        <span class="nb">chomp</span><span class="p">(</span><span class="nv">$now</span><span class="p">);</span>
+        <span class="nv">$last</span><span class="o">=</span><span class="p">`</span><span class="sb">cat /tmp/sync</span><span class="p">`;</span>
+        <span class="nb">chomp</span><span class="p">(</span><span class="nv">$last</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$now</span> <span class="o">&gt;</span> <span class="p">(</span><span class="nv">$last</span><span class="o">+</span><span class="mi">1200</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nv">$d</span> <span class="o">=</span> <span class="p">'</span><span class="s1">SYN_RECV数量大于150..有攻击</span><span class="p">';</span>
+                <span class="nv">$do</span> <span class="o">=</span> <span class="p">'</span><span class="s1">curl -G  "http://xx.xx.xx.xx:16888/z.php" --data-urlencode "sendto="</span><span class="p">'</span><span class="o">.</span><span class="nv">$sendto</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "subject="</span><span class="p">'</span><span class="o">.</span><span class="nv">$d</span><span class="o">.</span><span class="p">'</span><span class="s1"> --silent</span><span class="p">';</span>
+                <span class="p">`</span><span class="si">$do</span><span class="p">`;</span>
+        <span class="p">}</span>
+        <span class="nb">chomp</span><span class="p">(</span><span class="nv">$v</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+        <span class="nv">$do</span> <span class="o">=</span> <span class="p">"</span><span class="s2">tcpkill host </span><span class="p">"</span><span class="o">.</span><span class="nv">$v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="p">"</span><span class="s2"> -i eth0 </span><span class="err">\</span><span class="s2">&amp;</span><span class="p">";</span>
+        <span class="nb">system</span><span class="p">(</span><span class="nv">$do</span><span class="p">);</span>
+        <span class="nv">$do</span> <span class="o">=</span> <span class="p">"</span><span class="s2">/sbin/iptables -A INPUT -s </span><span class="p">"</span><span class="o">.</span><span class="nv">$v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="p">"</span><span class="s2"> -j DROP </span><span class="err">\</span><span class="s2">&amp;</span><span class="p">";</span>
+        <span class="nb">system</span><span class="p">(</span><span class="nv">$do</span><span class="p">);</span>
+        <span class="nv">$do</span> <span class="o">=</span> <span class="p">"</span><span class="s2">echo '</span><span class="p">"</span><span class="o">.</span><span class="nv">$now</span><span class="o">.</span><span class="p">"</span><span class="s2">' &gt; /tmp/sync</span><span class="p">";</span>
+        <span class="p">`</span><span class="si">$do</span><span class="p">`;</span>
+        <span class="nv">$do</span> <span class="o">=</span> <span class="p">"</span><span class="s2">sh /root/iptable_remove_dupicate.sh</span><span class="p">";</span>
+        <span class="nb">system</span><span class="p">(</span><span class="nv">$do</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nb">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+:ET

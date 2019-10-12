@@ -1,0 +1,26 @@
+I"<<p>網路上翻到的 叫做 “信呼” … 使用 起來還可以 …有手機的 app  …. 把它繁體化 …(還沒改完)</p>
+
+<p>紀錄一下 ….</p>
+
+<p><a href="http://www.rockoa.com/"><img src="http://www.rockoa.com/" alt="http://www.rockoa.com/" /></a></p>
+
+<p><img src="https://echochio-tw.github.io/images/posts/rockoa/0.png" /></p>
+
+<p>我是將資料庫匯出再轉繁體再匯入 ….</p>
+
+<p>全都是在 linux  上 做 ….</p>
+
+<p>linux 只安裝 apache + php + mariadb + php-gd</p>
+
+<p>看到程式簡體就慢慢轉 …   全轉會怪怪的 …因為有 js 用到簡體字 …不能去轉</p>
+
+<p>簡體轉繁體換用 ….</p>
+
+<hr />
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="nb">echo</span> <span class="nv">$1</span>
+<span class="nb">mv</span> <span class="nv">$1</span> <span class="nv">$1</span>.old
+iconv  <span class="nt">-sc</span> <span class="nt">-f</span> utf8 <span class="nt">-t</span> gb2312 <span class="nv">$1</span>.old | iconv  <span class="nt">-sc</span> <span class="nt">-f</span> gb2312 <span class="nt">-t</span> big5 | iconv  <span class="nt">-sc</span> <span class="nt">-f</span> big5 <span class="nt">-t</span> utf8 <span class="o">&gt;</span> <span class="nv">$1</span>
+</code></pre></div></div>
+<hr />
+:ET

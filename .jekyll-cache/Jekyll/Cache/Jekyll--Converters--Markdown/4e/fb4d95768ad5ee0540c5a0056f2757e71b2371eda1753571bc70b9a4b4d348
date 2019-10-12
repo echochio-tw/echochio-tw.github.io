@@ -1,0 +1,91 @@
+I"�<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>show variables like '%ssl%';
+</code></pre></div></div>
+
+<p><img src="/images/posts/mysql/p1.png" /></p>
+
+<p>Create 憑證</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir /etc/newcerts
+cd /etc/newcerts
+# CA key
+openssl genrsa 2048 &gt; ca-key.pem
+openssl req -new -x509 -nodes -days 3600 -key ca-key.pem -out ca-cert.pem
+# server key
+openssl req -newkey rsa:2048 -days 3600 -nodes -keyout server-key.pem -out server-req.pem
+openssl rsa -in server-key.pem -out server-key.pem
+openssl x509 -req -in server-req.pem -days 3600 -CA ca-cert.pem -CAkey ca-key.pem -set_serial 01 -out server-cert.pem
+# client key
+openssl req -newkey rsa:2048 -days 3600 -nodes -keyout client-key.pem -out client-req.pem
+openssl rsa -in client-key.pem -out client-key.pem
+openssl x509 -req -in client-req.pem -days 3600 -CA ca-cert.pem -CAkey ca-key.pem -set_serial 01 -out client-cert.pem
+# check key ok
+openssl verify -CAfile ca-cert.pem server-cert.pem client-cert.pem
+</code></pre></div></div>
+
+<p>KEY info 不可都一樣，不然會在連線時發生</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ERROR 2026 (HY000): SSL connection error
+</code></pre></div></div>
+
+<p>openssl verify -CAfile ca-cert.pem server-cert.pem client-cert.pem</p>
+
+<p>KEY info 一樣 會出現 ….</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error 18 at 0 depth lookup:self signed certificate
+</code></pre></div></div>
+
+<p>openssl verify -CAfile ca-cert.pem server-cert.pem client-cert.pem</p>
+
+<p>正常會出現</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server-cert.pem: OK
+client-cert.pem: OK
+</code></pre></div></div>
+<p>編輯 /etc/my.cnf</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[mysqld]
+ssl-ca=/etc/newcerts/ca-cert.pem
+ssl-cert=/etc/newcerts/server-cert.pem
+ssl-key=/etc/newcerts/server-key.pem
+</code></pre></div></div>
+<p>在看一次 SSL</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u root -p -e "show variables like '%ssl%';"
+
++---------------+-------------------------------+
+| Variable_name | Value |
++---------------+-------------------------------+
+| have_openssl | YES |
+| have_ssl | YES |
+| ssl_ca | /etc/newcerts/ca-cert.pem |
+| ssl_capath | |
+| ssl_cert | /etc/newcerts/server-cert.pem |
+| ssl_cipher | DHE-RSA-AES256-SHA |
+| ssl_key | /etc/newcerts/server-key.pem |
++---------------+-------------------------------+
+</code></pre></div></div>
+
+<p>Server 端設定 Client 授權改為</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grant all on *.* to 'cross'@'192.168.0.17' identified by '123456'  require ssl;
+</code></pre></div></div>
+
+<p>Client 端</p>
+
+<p>從 server 端產生的 ca-cert 及 client-cert 與 client-key 放到 client 端</p>
+
+<p>編輯 /etc/my.cnf</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[client]
+ssl-ca=/etc/newcerts/ca-cert.pem
+ssl-cert=/etc/newcerts/client-cert.pem
+ssl-key=/etc/newcerts/client-key.pem
+</code></pre></div></div>
+
+<p>測試</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u cross -p123456 -h 192.168.0.14 -e 'status'
+</code></pre></div></div>
+
+<p>出現 :</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SSL:                    Cipher in use is DHE-RSA-AES256-SHA
+</code></pre></div></div>
+
+<p>不設定 my.cnf 可直接連用 :</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql --ssl-ca=/etc/newcerts/ca-cert.pem --ssl-cert=/etc/newcerts/client-cert.pem --ssl-key=/etc/newcerts/client-key.pem -u cross -p123456 -h 192.168.0.14 -e 'status'
+</code></pre></div></div>
+
+<p><img src="/images/posts/mysql/p2.png" /></p>
+
+:ET

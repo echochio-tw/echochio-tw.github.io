@@ -1,0 +1,29 @@
+I"�<p>centos 7 移机 用 vm vConverter 将 Esxi 移到 vmdk 拿到 vworkstation 開出現
+dracut-initqueue timeout</p>
+
+<p>centos 7 移机出現 dracut-initqueue timeout 都可用</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>掛載 centos7-minimal-xx 之類的iso
+選 Troubleshooting
+選 Rescuse a CentOS Linux system
+選 Continue (1)
+
+</code></pre></div></div>
+<p>啟動網路及 chroot ….</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dhclient
+chroot /mnt/sysimage
+</code></pre></div></div>
+<p>更新及判斷硬體 (要看 grub 在哪顆硬碟 … 正常是 sda</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum update -y
+grub2-mkconfig -o /boot/grub2/grub.cfg
+grub2-install /dev/sda
+</code></pre></div></div>
+<p>如需要改密碼這時改一下</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>passwd root
+</code></pre></div></div>
+<p>重開 … 移除光碟</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>exit
+reboot
+</code></pre></div></div>
+:ET

@@ -1,0 +1,10 @@
+I"%<p>定時刪除檔案</p>
+
+<hr />
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for /d %%x in (z:\*) do @rd /s /q "%%x"
+del /q z:\*
+</code></pre></div></div>
+<hr />
+
+<p>寫這樣的批次檔放入排程 , 且將要刪除的目錄mount 放到 z:\ …..</p>
+:ET

@@ -1,0 +1,13 @@
+I"�<p>看到 人家做的 meteor-android-build</p>
+
+<p>我將 android 模擬器也包進去 …..編譯出來 ….測了一下可用</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://github.com/echochio-tw/meteor-android-build
+</code></pre></div></div>
+
+<p>要裝 meteor.js 啥叫  meteor.js 請自行 google</p>
+
+<p>meteor –allow-superuser create hello
+……..
+不寫了 ….看我的 github 吧</p>
+:ET

@@ -1,0 +1,25 @@
+I"�<p>紀錄一下 html 的 table 寫法 ….</p>
+
+<hr />
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;table border="1" cellpadding="5" style="border:2px #00DBDB solid;text-align:center;"&gt;
+&lt;tr&gt;
+&lt;td&gt;表格欄位 1 &lt;/td&gt;
+&lt;td&gt;表格欄位 2 &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td colspan=2&gt; 使用 colspan 欄位&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+ &lt;td&gt;表格欄位 3 &lt;/td&gt;
+ &lt;td rowspan="2"&gt;使用 rowspan 的欄位&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;表格欄位 4 &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</code></pre></div></div>
+<hr />
+
+<p><img src="https://echochio-tw.github.io/images/posts/html_table/1.png" /></p>
+:ET

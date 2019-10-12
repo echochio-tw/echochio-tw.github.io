@@ -1,0 +1,118 @@
+I"�'<p>原始碼 : https://github.com/echochio-tw/jenkins-docker-ansible-centos</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Vagrantfile 
+建立兩個 虛擬機  CD &amp; PROD
+CD 開 port 8080(jenkins) , 5000(registry) , 9999 (busybox-go-web-docker)
+host: 2201, guest: 22, id: "ssh" , ip: "192.168.50.91"
+do shell bootstrap.sh 
+do shell ansible-playbook /vagrant/ansible/cd.yml -c local -v
+
+PROD 開 9001 (busybox-go-web-docker)
+host: 2202, guest: 22, id: "ssh" , ip: "192.168.50.92"
+
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># -*- mode: ruby -*-</span>
+<span class="c1"># vi: set ft=ruby :</span>
+
+<span class="no">VAGRANTFILE_API_VERSION</span> <span class="o">=</span> <span class="s2">"2"</span>
+
+<span class="no">Vagrant</span><span class="p">.</span><span class="nf">configure</span><span class="p">(</span><span class="no">VAGRANTFILE_API_VERSION</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">box</span> <span class="o">=</span> <span class="s2">"bento/centos-7.5"</span>
+  <span class="c1"># If you run into issues with Ansible complaining about executable permissions,</span>
+  <span class="c1"># comment the following statement and uncomment the next one.</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">synced_folder</span> <span class="s2">"."</span><span class="p">,</span> <span class="s2">"/vagrant"</span>
+  <span class="c1"># config.vm.synced_folder ".", "/vagrant", mount_options: ["dmode=700,fmode=600"]</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">provider</span> <span class="s2">"virtualbox"</span> <span class="k">do</span> <span class="o">|</span><span class="n">v</span><span class="o">|</span>
+    <span class="n">v</span><span class="p">.</span><span class="nf">memory</span> <span class="o">=</span> <span class="mi">2048</span>
+  <span class="k">end</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">define</span> <span class="ss">:cd</span><span class="p">,</span> <span class="ss">primary: </span><span class="kp">true</span> <span class="k">do</span> <span class="o">|</span><span class="n">cd</span><span class="o">|</span>
+    <span class="n">cd</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">network</span> <span class="ss">:forwarded_port</span><span class="p">,</span> <span class="ss">host: </span><span class="mi">8080</span><span class="p">,</span> <span class="ss">guest: </span><span class="mi">8080</span>
+    <span class="n">cd</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">network</span> <span class="ss">:forwarded_port</span><span class="p">,</span> <span class="ss">host: </span><span class="mi">5000</span><span class="p">,</span> <span class="ss">guest: </span><span class="mi">5000</span>
+    <span class="n">cd</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">network</span> <span class="ss">:forwarded_port</span><span class="p">,</span> <span class="ss">host: </span><span class="mi">9999</span><span class="p">,</span> <span class="ss">guest: </span><span class="mi">9999</span>
+    <span class="n">cd</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">network</span> <span class="ss">:forwarded_port</span><span class="p">,</span> <span class="ss">host: </span><span class="mi">2201</span><span class="p">,</span> <span class="ss">guest: </span><span class="mi">22</span><span class="p">,</span> <span class="ss">id: </span><span class="s2">"ssh"</span><span class="p">,</span> <span class="ss">auto_correct: </span><span class="kp">true</span>
+    <span class="n">cd</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">network</span> <span class="s2">"private_network"</span><span class="p">,</span> <span class="ss">ip: </span><span class="s2">"192.168.50.91"</span>
+    <span class="c1"># added dynamic swap file management to prevent "Free Swap Space: 0 B" warning in Jenkins</span>
+    <span class="n">cd</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">provision</span> <span class="s2">"shell"</span><span class="p">,</span> <span class="ss">path: </span><span class="s2">"bootstrap.sh"</span>
+    <span class="n">cd</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">provision</span> <span class="ss">:shell</span><span class="p">,</span> <span class="ss">inline: </span><span class="s1">'ansible-playbook /vagrant/ansible/cd.yml -c local -v'</span>
+    <span class="n">cd</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">hostname</span> <span class="o">=</span> <span class="s2">"cd"</span>
+  <span class="k">end</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">define</span> <span class="ss">:prod</span> <span class="k">do</span> <span class="o">|</span><span class="n">prod</span><span class="o">|</span>
+    <span class="n">prod</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">network</span> <span class="ss">:forwarded_port</span><span class="p">,</span> <span class="ss">host: </span><span class="mi">2202</span><span class="p">,</span> <span class="ss">guest: </span><span class="mi">22</span><span class="p">,</span> <span class="ss">id: </span><span class="s2">"ssh"</span><span class="p">,</span> <span class="ss">auto_correct: </span><span class="kp">true</span>
+    <span class="n">prod</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">network</span> <span class="ss">:forwarded_port</span><span class="p">,</span> <span class="ss">host: </span><span class="mi">9001</span><span class="p">,</span> <span class="ss">guest: </span><span class="mi">9001</span>
+    <span class="n">prod</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">network</span> <span class="s2">"private_network"</span><span class="p">,</span> <span class="ss">ip: </span><span class="s2">"192.168.50.92"</span>
+    <span class="n">prod</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">hostname</span> <span class="o">=</span> <span class="s2">"prod"</span>
+  <span class="k">end</span>
+  <span class="k">if</span> <span class="no">Vagrant</span><span class="p">.</span><span class="nf">has_plugin?</span><span class="p">(</span><span class="s2">"vagrant-cachier"</span><span class="p">)</span>
+    <span class="n">config</span><span class="p">.</span><span class="nf">cache</span><span class="p">.</span><span class="nf">scope</span> <span class="o">=</span> <span class="ss">:box</span>
+  <span class="k">end</span>
+<span class="c1"># if Vagrant.has_plugin?("vagrant-proxyconf")</span>
+<span class="c1">#   config.proxy.http     = "http://proxy.company.com:8080/"</span>
+<span class="c1">#   config.proxy.https    = "http://proxy.company.com:8080/"</span>
+<span class="c1">#   config.proxy.no_proxy = "localhost,127.0.0.1"</span>
+<span class="c1"># end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bootstrap.sh 
+</code></pre></div></div>
+
+<p>安裝 Ansible</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="nb">echo</span> <span class="s2">"Installing Ansible..."</span>
+yum <span class="nt">-y</span> <span class="nb">install </span>epel-release
+yum <span class="nt">-y</span> update
+yum <span class="nt">-y</span> <span class="nb">install </span>ansible python-netaddr git
+<span class="nb">cp</span> /vagrant/ansible/ansible.cfg /etc/ansible/ansible.cfg
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd.yml
+</code></pre></div></div>
+<p>安裝 java , docker , registry , jenkins</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- hosts: localhost
+  remote_user: vagrant
+  become: yes
+  roles:
+    - java
+    - docker
+    - registry
+    - jenkins
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java
+
+- name: Package are present
+  yum:
+    name: java-1.8.0-openjdk
+    state: present
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>golang-service.yml
+</code></pre></div></div>
+<p>給 PROD 虛擬機用 ….</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- hosts: go-service
+  remote_user: vagrant
+  become: yes
+  roles:
+    - docker
+    - go-service
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ansible/roles/jenkins/tasks/main.yml
+安裝 jenkins (docker)
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ansible/roles/jenkins/defaults/main.yml
+set jenkins configs &amp; plugins
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ansible/roles/jenkins/templates/build.xml.j2
+books-service 
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ansible/roles/jenkins/templates/deployment.xml.j2
+books-service-deployment
+</code></pre></div></div>
+:ET

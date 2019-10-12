@@ -1,0 +1,73 @@
+I"
+
+<p>之前就用過 monitorix 監控 mysql 的 效能</p>
+
+<p>現在再裝 monitorix 發現超簡單 ..如果沒有 web service 也會幫你裝上一個簡單的 web server</p>
+
+<p>就是</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum install monitorix
+
+</code></pre></div></div>
+
+<p>或</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get update
+apt-get install monitorix
+</code></pre></div></div>
+
+<p>看你的 OS 找適合的裝….啟動服務 就用</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service monitorix start
+</code></pre></div></div>
+
+<p>如果你的 OS 沒有web 會是</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root   10718      1  0 09:19 ?  00:00:01 /usr/bin/monitorix -c /etc/monitorix/monitorix.conf -p /run/monitorix.pid
+nobody  10768  10718  0 09:19 ?  00:00:01 monitorix-httpd listening on 8080
+</code></pre></div></div>
+
+<p>有 web 會是 …</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root     22785     1  0 09:16 ?        00:00:00 /usr/bin/monitorix -c /etc/monitorix.conf -p /var/run/monitorix.pid
+</code></pre></div></div>
+
+<p>有 web 要將 allow form 127.0.0.1 改成 all 或是你指定可瀏覽的 IP</p>
+
+<p>不要全開會被打掛的 …</p>
+
+<p>/etc/httpd/conf.d/monitorix.conf</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Alias /monitorix /usr/share/monitorix
+ScriptAlias /monitorix-cgi /usr/share/monitorix/cgi-bin
+&lt;Directory /usr/share/monitorix/cgi-bin/&gt;
+        DirectoryIndex monitorix.cgi
+        Options ExecCGI
+        order deny,allow
+        deny from all
+        allow from all
+&lt;/Directory&gt;
+# Apache rules to restrict access to Monitorix:
+# Don't forget to add &lt;username&gt; in .htpasswd with the 'htpasswd' command.
+#
+#&lt;Directory "/usr/share/monitorix"&gt;
+#    Options Indexes Includes FollowSymLinks
+#    Order Deny,Allow
+#    Deny from All
+#    Allow from 127.0.0.1
+#    AllowOverride None
+#    AuthUserFile  /etc/httpd/conf/.htpasswd
+#    AuthGroupFile /dev/null
+#    AuthName      "Monitorix: Restricted access, sorry."
+#    AuthType      Basic
+#    Require user  &lt;username&gt;
+#    Satisfy Any
+#&lt;/Directory&gt;
+</code></pre></div></div>
+
+<p>開 8080 port 的要設 iptable 擋一下不要被打掛了 ….</p>
+
+<p>開起 8080 port 或 80 port 的 monitorix 就可看到</p>
+
+<p><img src="/images/posts/nginx/p2.png" /></p>
+:ET

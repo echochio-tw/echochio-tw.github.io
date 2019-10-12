@@ -1,0 +1,20 @@
+I"s<p>之前 RD 開發用的 IIS 要上線 , 要設定的東西太多了 …..</p>
+
+<p>要到  XX銀行 總行去安裝設定 , 那步驟太多了少了會被罵死</p>
+
+<p>用匯出匯入那就不會少了吧 …..</p>
+
+<p>匯出</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%windir%\system32\inetsrv\appcmd list apppool /config /xml &gt; c:\apppool.xml
+%windir%\system32\inetsrv\appcmd list site /config /xml &gt; c:\website.xml
+</code></pre></div></div>
+
+<p>匯入</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%windir%\system32\inetsrv\appcmd add apppool /in &lt;c:\apppool.xml
+%windir%\system32\inetsrv\appcmd add site /in &lt; c:\website.xml
+</code></pre></div></div>
+
+<p>PS: 版本要一樣不然會錯誤</p>
+
+<p>版本不同就建立一個Sample站台和apppool後 比對 看看 XML 差異</p>
+:ET

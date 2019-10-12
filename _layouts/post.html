@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include head.html %}
+    </head>
+    <body>
+        {% include header.html %}
+
+        <div class="pagecontent">
+        
+        <div class="ink-grid top-space">
+            <div class="column-group horizontal-gutters">
+                <div class="all-100">
+                    <div style="font-size: 30px;">{{ page.title }}</div>
+                    <p class="fw100 small"><em><i class="fa fa-pencil-square-o"></i> {{ page.date | date:"%Y-%m-%d" }}</em></p>
+                    <hr/>
+
+                    {% if page.toc == true %}
+                    <div id="tocbox" class="push-right noprint tocbox">
+                    <span style="font-size: 20px;">Table of Content:</span>
+                    <ul id="toc"></ul>
+                    </div>
+                    {% endif %}
+
+                    <p>{{ content }}</p>
+                </div>
+            </div>
+            <div class="column-group">
+                <div class="all-100">
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        
+        {% include footer.html %}
+
+        {% if page.toc == true %}
+        <script>
+        $('#toc').toc({
+            'selectors': 'h1,h2,h3',
+            'anchorName': function(i, heading, prefix) {
+                return prefix+i;
+            }
+        });
+        if ($('#toc').children().length <= 0) {
+            console.log("no toc");
+            $('#tocbox').hide();
+        }
+        </script>
+        {% endif %}
+
+<!-- disqus comments -->
+<div class="ink-grid">
+  <div class="column-group">
+    <div class="all-100">
+      <div id="disqus_thread" class="noprint"></div>
+    </div>
+  </div>
+</div>
+<script>
+var disqus_config = function () {
+this.page.url = "https://www.echochio.nctu.me"; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "{{page.id}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = 'https://echochio-tw.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+        </div>
+        
+    </body>
+</html>

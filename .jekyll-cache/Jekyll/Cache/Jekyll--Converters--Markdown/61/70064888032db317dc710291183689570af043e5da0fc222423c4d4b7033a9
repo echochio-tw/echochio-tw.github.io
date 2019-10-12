@@ -1,0 +1,45 @@
+I"�<p>首先要安装 phpservermonotor … 废话</p>
+
+<p>https://github.com/phpservermon/phpservermon</p>
+
+<p>看图说故事 … 装起来</p>
+
+<p>装好后找 api.telegram.org 字眼</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@localhost phpservermon]#grep -r api.telegram.org
+ src/includes/functions.inc.php:                 $this-&gt;_url = 'https://api.telegram.org/bot'.urlencode($this-&gt;_token).
+src/includes/functions.inc.php:                 $this-&gt;_url = 'https://api.telegram.org/bot'.urlencode($this-&gt;_token).'/getMe';
+</code></pre></div></div>
+
+<p>将 phpservermonotor 内的 https://api.telegram.org/ 改成 http://223.27.XXX.XX:8880</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@localhost phpservermon]# grep -r 223.27.XXX.XX
+src/includes/functions.inc.php:                 $this-&gt;_url = 'http://223.27.XXX.XX:8880/bot'.urlencode($this-&gt;_token).
+src/includes/functions.inc.php:                 $this-&gt;_url = 'http://223.27.XXX.XX:8880/bot'.urlencode($this-&gt;_token).'/getMe';
+</code></pre></div></div>
+
+<p>在那台 223.27.XXX.XX 开 nginx 反向代理 …..
+223.27.XXX.XX (这台在台湾 )</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>worker_processes 1;
+error_log /var/log/nginx/error.log;
+events {
+    worker_connections 1024;
+}
+http {
+        access_log  /var/log/nginx/access.log;
+        resolver 8.8.8.8 ipv6=off;
+    server {
+        listen 8880;
+        location ~* ^/bot {
+        proxy_buffering off;
+            proxy_pass https://api.telegram.org$request_uri;
+        }
+    }
+}
+</code></pre></div></div>
+
+<p>开网页测试 代理 ….</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://207.148.73.58:16888/bot61011111:AAGBzrJ5dYipW0DB97mgXkdYFB6Rss11ss/getUpdates
+</code></pre></div></div>
+
+<p>去 phpservermonitor 网页测试 telegram ….</p>
+:ET

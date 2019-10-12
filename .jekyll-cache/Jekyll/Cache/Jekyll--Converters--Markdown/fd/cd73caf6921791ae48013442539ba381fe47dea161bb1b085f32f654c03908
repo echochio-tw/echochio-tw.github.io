@@ -1,0 +1,27 @@
+I"�<p>下載 : OCSNG-Windows-Packager &amp; 最新的 OCSNG-Windows-Agent</p>
+
+<p>到此下載 https://github.com/chio-nzgft/ocs-inventory-windows-agent</p>
+
+<p><img src="/images/posts/Server/p11.png" /></p>
+
+<p>執行 OcsPackager.exe (選 否(N))</p>
+
+<p><img src="/images/posts/Server/p12.png" /></p>
+
+<p>Command line options: 打入 : ( http://111.111.111.111:8888 是你主機的 ip &amp; port )</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/S /ssl=0 /server=http://111.111.111.111:8888/ocsinventory /NOW
+</code></pre></div></div>
+
+<p><img src="/images/posts/Server/p13.png" /></p>
+
+<p>選你要輸出的地方 ….</p>
+
+<p><img src="/images/posts/Server/p14.png" /></p>
+
+<p>用管理者權限去執行 D:\OcsPackage.exe 就安裝完成了</p>
+
+<p>看一下 log 是新版的 &amp; 進來的資訊</p>
+
+<p><img src="/images/posts/Server/p15.png" /></p>
+:ET

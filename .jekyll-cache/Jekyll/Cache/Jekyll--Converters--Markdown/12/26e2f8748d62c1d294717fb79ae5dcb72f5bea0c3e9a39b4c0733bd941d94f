@@ -1,0 +1,16 @@
+I"\<p>最近常用到紀錄一下</p>
+
+<p>下載 源樣黑體字体</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://github.com/ButTaiwan/genyog-font/raw/master/TW/GenYoGothicTW-Light.ttf
+</code></pre></div></div>
+
+<p>將檔案放到 字集區</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mv GenYoGothicTW-Light.ttf /usr/share/fonts/.
+</code></pre></div></div>
+
+<p>掃描字體加入</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fc-cache -f -v
+</code></pre></div></div>
+
+:ET

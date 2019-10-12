@@ -1,0 +1,7 @@
+I"�<p>寫個 visudo ….這樣 sudo su - 就不會問密碼了 ….紀錄一下</p>
+
+<hr />
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echochio        ALL=NOPASSWD: ALL
+</code></pre></div></div>
+<hr />
+:ET

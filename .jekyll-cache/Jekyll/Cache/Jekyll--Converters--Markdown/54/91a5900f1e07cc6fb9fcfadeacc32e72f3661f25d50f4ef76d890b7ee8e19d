@@ -1,0 +1,51 @@
+I"�<p>停用 NetworkManager 改用原本的 network ….不改也行 …習慣舊的</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl disable NetworkManager.service
+systemctl stop NetworkManager.service
+chkconfig network on
+</code></pre></div></div>
+
+<p>改 eth0 先改開機的 grub …./etc/sysconfig/grub</p>
+
+<p>vi /etc/sysconfig/grub</p>
+
+<p>GRUB_CMDLINE_LINUX, 在這行結尾的雙引號前加上這句:</p>
+
+<p>net.ifnames=0 biosdevname=0</p>
+
+<p>變成 :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="crashkernel=auto rhgb quiet net.ifnames=0 biosdevname=0"
+GRUB_DISABLE_RECOVERY="true"
+</code></pre></div></div>
+
+<p>套用 grub</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grub2-mkconfig -o /boot/grub2/grub.cfg
+</code></pre></div></div>
+
+<p>改 /etc/sysconfig/network-scripts/ifcfg-eth0 …</p>
+
+<p>要將舊的拿掉</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TYPE=Ethernet
+BOOTPROTO=none
+DEFROUTE=yes
+PEERDNS=yes
+IPV4_FAILURE_FATAL=no
+PEERROUTES=yes
+NAME=eth0
+DEVICE=eth0
+ONBOOT=yes
+IPADDR=192.168.0.100
+NETMASK=255.255.255.0
+NM_CONTROLLED=no
+HWADDR=00:0C:29:FF:FF:FF
+GATEWAY=192.168.0.5
+</code></pre></div></div>
+:ET

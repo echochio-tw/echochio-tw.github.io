@@ -1,0 +1,27 @@
+I"y<p>很多 方法 記錄一下</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps -ef | grep PROCESS | grep -v grep | awk '{print $2}' | xargs kill -9
+</code></pre></div></div>
+
+<p>或</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pkill -9 -f PROCESS
+</code></pre></div></div>
+
+<p>或</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps -ef | awk '/PROCESS/ &amp;&amp; !/awk/ {print $2}' | xargs -r kill -9
+</code></pre></div></div>
+
+<p>或</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>killall PROCESS
+</code></pre></div></div>
+
+<p>或</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tokill=`ps -ef|grep PROCESS|awk '{ printf $2" "}'`; kill -9 $tokill;
+</code></pre></div></div>
+
+<p>或</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kill `ps -ef | grep PROCESS | grep -v grep | awk ?{print $2}?`
+</code></pre></div></div>
+
+<p>發現沒pkill 與 xgrgs 與 killall 指令只好用 最後兩個指令。</p>
+:ET

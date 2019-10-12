@@ -1,0 +1,170 @@
+I"�'<p>安装阿里云SDK前请先安装以下依赖包：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python-pip
+gcc
+gcc-devel
+autoconf
+automake
+python-devel
+python-pip
+python-crypto
+python-cryptography 
+</code></pre></div></div>
+
+<p>#centos可使用以下命令进行安装：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum install python-pip gcc gcc-devel autoconf automake python-devel python-pip python-crypto python-cryptography -y
+</code></pre></div></div>
+<p>python2 运行此脚本，脚本所需模块如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>json
+os
+re
+sys
+datetime
+requests
+aliyun-python-sdk-core-v3
+aliyun-python-sdk-alidns
+</code></pre></div></div>
+
+<p>准备的账户信息如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Access Key ID
+Access Key Secret
+账号ID
+i_dont_know_record_id设为no并运行脚本。`
+</code></pre></div></div>
+
+<p>程式如下</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python
+# encoding: utf-8
+</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">from</span> <span class="nn">aliyunsdkalidns.request.v20150109</span> <span class="kn">import</span> <span class="n">UpdateDomainRecordRequest</span><span class="p">,</span> <span class="n">DescribeDomainRecordsRequest</span><span class="p">,</span> \
+    <span class="n">DescribeDomainRecordInfoRequest</span>
+<span class="kn">from</span> <span class="nn">aliyunsdkcore</span> <span class="kn">import</span> <span class="n">client</span>
+
+<span class="c1">#请填写你的Access Key ID
+</span><span class="n">access_key_id</span> <span class="o">=</span> <span class="s">"KXXXXXXXXXXXXXXXXK</span><span class="se">\"</span><span class="err">
+
+</span><span class="s">#请填写你的Access Key Secret</span><span class="err">
+</span><span class="s">access_key_secret = "</span><span class="n">KXXXXXXXXXXXXXXXX</span><span class="s">"</span><span class="err">
+
+</span><span class="s">#请填写你的账号ID</span><span class="err">
+</span><span class="s">account_id = "</span><span class="n">maintain</span><span class="s">"</span><span class="err">
+
+</span><span class="s">#请填写解析记录ID</span><span class="err">
+</span><span class="s">#rc_record_id = '410XXXXXXXXX'</span><span class="err">
+
+</span><span class="s">#请填写你的一级域名</span><span class="err">
+</span><span class="s">rc_domain = 'presseco.com'</span><span class="err">
+
+</span><span class="s">#请填写你的解析记录,对应的主机记录</span><span class="err">
+</span><span class="s">#rc_rr = 'me'</span><span class="err">
+
+</span><span class="s">#请填写你的记录类型，DDNS请填写A，表示A记录</span><span class="err">
+</span><span class="s">#rc_type = 'A'</span><span class="err">
+</span><span class="s">#rc_type = ‘CNAME’</span><span class="err">
+
+</span><span class="s">#请填写解析有效生存时间TTL，单位：秒</span><span class="err">
+</span><span class="s">#rc_ttl = '1'</span><span class="err">
+</span><span class="s">rc_ttl = '600'</span><span class="err">
+
+</span><span class="s">#请填写返还内容格式，json，xml</span><span class="err">
+</span><span class="s">rc_format = 'json'</span><span class="err">
+
+</span><span class="s">def my_ip():</span><span class="err">
+</span><span class="s">    get_ip_value =  '192.168.0.1'</span><span class="err">
+</span><span class="s">    return get_ip_value</span><span class="err">
+
+</span><span class="s">def check_records(dns_domain):</span><span class="err">
+</span><span class="s">    clt = client.AcsClient(access_key_id, access_key_secret, 'cn-hangzhou')</span><span class="err">
+</span><span class="s">    request = DescribeDomainRecordsRequest.DescribeDomainRecordsRequest()</span><span class="err">
+</span><span class="s">    request.set_DomainName(dns_domain)</span><span class="err">
+</span><span class="s">    request.set_accept_format(rc_format)</span><span class="err">
+</span><span class="s">    #result = clt.do_action(request)</span><span class="err">
+</span><span class="s">    result = clt.do_action_with_exception(request)</span><span class="err">
+</span><span class="s">    return result</span><span class="err">
+
+</span><span class="s">def old_ip():</span><span class="err">
+</span><span class="s">    clt = client.AcsClient(access_key_id, access_key_secret, 'cn-hangzhou')</span><span class="err">
+</span><span class="s">    request = DescribeDomainRecordInfoRequest.DescribeDomainRecordInfoRequest()</span><span class="err">
+</span><span class="s">    request.set_RecordId(rc_record_id)</span><span class="err">
+</span><span class="s">    request.set_accept_format(rc_format)</span><span class="err">
+</span><span class="s">    result = clt.do_action_with_exception(request).decode()</span><span class="err">
+</span><span class="s">    result = json.JSONDecoder().decode(result)</span><span class="err">
+</span><span class="s">    result = result['Value']</span><span class="err">
+</span><span class="s">    return result</span><span class="err">
+
+</span><span class="s">def update_dns(dns_rr, dns_type, dns_value, dns_record_id, dns_ttl, dns_format):</span><span class="err">
+</span><span class="s">    clt = client.AcsClient(access_key_id, access_key_secret, 'cn-hangzhou')</span><span class="err">
+</span><span class="s">    request = UpdateDomainRecordRequest.UpdateDomainRecordRequest()</span><span class="err">
+</span><span class="s">    request.set_RR(dns_rr)</span><span class="err">
+</span><span class="s">    request.set_Type(dns_type)</span><span class="err">
+</span><span class="s">    request.set_Value(dns_value)</span><span class="err">
+</span><span class="s">    request.set_RecordId(dns_record_id)</span><span class="err">
+</span><span class="s">    request.set_TTL(dns_ttl)</span><span class="err">
+</span><span class="s">    request.set_accept_format(dns_format)</span><span class="err">
+</span><span class="s">    #result = clt.do_action(request)</span><span class="err">
+</span><span class="s">    result = clt.do_action_with_exception(request)</span><span class="err">
+</span><span class="s">    return result</span><span class="err">
+
+</span><span class="s">if len(sys.argv) &lt; 4:</span><span class="err">
+</span><span class="s">    print "</span><span class="n">Usage</span><span class="p">:</span><span class="s">", sys.argv[0], "</span><span class="o">&lt;</span><span class="n">subdomain</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nb">type</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">NEW</span><span class="o">-</span><span class="n">IP</span><span class="o">&gt;</span><span class="s">"</span><span class="err">
+</span><span class="s">    sys.exit(1)</span><span class="err">
+
+</span><span class="s">rc_rr = sys.argv[1]</span><span class="err">
+</span><span class="s">rc_type =sys.argv[2]</span><span class="err">
+</span><span class="s">rc_value = sys.argv[3]</span><span class="err">
+</span><span class="s">data = json.loads(check_records(rc_domain))</span><span class="err">
+</span><span class="s">lst = data['DomainRecords']['Record']</span><span class="err">
+</span><span class="s">for i in lst:</span><span class="err">
+</span><span class="s">    print i['RR'],"</span> <span class="o">==&gt;</span> <span class="s">",i['RecordId']</span><span class="err">
+</span><span class="s">    if rc_rr == i['RR']:</span><span class="err">
+</span><span class="s">        rc_record_id = i['RecordId']</span><span class="err">
+
+</span><span class="s">print "</span><span class="n">get</span> <span class="s">",rc_rr,"</span> <span class="o">==&gt;</span> <span class="s">",rc_record_id</span><span class="err">
+</span><span class="s">rc_value_old = old_ip()</span><span class="err">
+</span><span class="s">print "</span><span class="n">OLD</span> <span class="n">IP</span> <span class="p">:</span> <span class="s">", rc_value_old</span><span class="err">
+</span><span class="s">print "</span><span class="n">NEW</span> <span class="n">IP</span> <span class="p">:</span> <span class="s">", rc_value</span><span class="err">
+</span><span class="s">if rc_value_old == rc_value:</span><span class="err">
+</span><span class="s">    print 'The specified value of parameter Value is the same as old'</span><span class="err">
+</span><span class="s">else:</span><span class="err">
+</span><span class="s">    print update_dns(rc_rr, rc_type, rc_value, rc_record_id, rc_ttl, rc_format)</span><span class="err">
+
+
+</span></code></pre></div></div>
+
+<p>执行结果 :</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@S70 ~]# python aliyun_ddns.py
+Usage: aliyun_ddns.py &lt;subdomain&gt; &lt;type&gt; &lt;NEW-IP&gt;
+
+[root@S70 ~]# python aliyun_ddns.py sh A 106.106.106.106
+sh  ==&gt;  KXXXXXXXXXXXXXXXX
+sms  ==&gt;  KXXXXXXXXXXXXXXXX
+pay  ==&gt;  KXXXXXXXXXXXXXXXX
+get  sh  ==&gt;  KXXXXXXXXXXXXXXXX
+OLD IP :  106.106.106.106
+NEW IP :  106.106.106.106
+The specified value of parameter Value is the same as old
+
+[root@S70 ~]# python aliyun_ddns.py sh A 192.168.111.1
+sh  ==&gt;  KXXXXXXXXXXXXXXXX
+sms  ==&gt;  KXXXXXXXXXXXXXXXX
+pay  ==&gt;  KXXXXXXXXXXXXXXXX
+get  sh  ==&gt;  KXXXXXXXXXXXXXXXX
+OLD IP :  106.106.106.106
+NEW IP :  192.168.111.1
+{"RecordId":"KXXXXXXXXXXXXXXXX","RequestId":"6F521E1E-FD6E-413B-XXXX-XXXXXXXX"}
+
+[root@S70 ~]# python aliyun_ddns.py sh A 106.106.106.106
+sh  ==&gt;  4107268733097984
+sms  ==&gt;  4095910775101440
+pay  ==&gt;  4095910449387520
+get  sh  ==&gt;  4107268733097984
+OLD IP :  192.168.111.1
+NEW IP :  106.106.106.106
+{"RecordId":"4107268733097984","RequestId":"A05D2BB5-9629-4F15-XXXX-XXXXXXXX"}
+</code></pre></div></div>
+:ET

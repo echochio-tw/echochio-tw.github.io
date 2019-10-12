@@ -1,0 +1,82 @@
+I"�<p>Apache Subversion (SVN) on CentOS 7</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum install httpd subversion mod_dav_svn
+</code></pre></div></div>
+
+<p>vi /etc/httpd/conf.modules.d/10-subversion.conf</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Alias /svn /var/www/svn
+&lt;Location /svn&gt;
+DAV svn
+SVNParentPath /var/www/svn/
+AuthType Basic
+AuthName "SVN Repository"
+AuthUserFile /etc/svn-auth-accounts
+Require valid-user
+&lt;/Location&gt;
+</code></pre></div></div>
+
+<p>Create SVN Users using htpasswd</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>htpasswd -cm /etc/svn-auth-accounts tester
+New password:
+Re-type new password:
+Adding password for user tester
+</code></pre></div></div>
+
+<p>add another user jack</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># htpasswd -m /etc/svn-auth-accounts jack
+</code></pre></div></div>
+
+<p>Create &amp; Configure SVN Repository</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir /var/www/svn
+cd /var/www/svn/
+svnadmin create repo
+chown apache.apache repo/
+</code></pre></div></div>
+
+<p>If Selinux is enable do</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chcon -R -t httpd_sys_content_t /var/www/svn/repo/
+chcon -R -t httpd_sys_rw_content_t /var/www/svn/repo/
+</code></pre></div></div>
+
+<p>start up apache</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl restart httpd.service
+systemctl enable httpd.service
+</code></pre></div></div>
+
+<p>Disable anonymous access on SVN Repository</p>
+
+<p>/var/www/svn/repo/conf/svnserve.conf</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Disable Anonymous Access
+anon-access = none
+
+## Enable Access control
+authz-db = authz
+</code></pre></div></div>
+
+<p>Import Project Directory’s Content to SVN repository</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># cd /mnt/
+# mkdir linuxproject
+# cd linuxproject/
+# touch testfile_1 ; touch testfile_2
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># svn import -m "First SVN Repo" /mnt/linuxproject/ file:///var/www/svn/repo/linuxproject
+Adding testfile_1
+Adding testfile_2
+Committed revision 1.
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># cd /home/linux/svn_data/
+# touch testfile_3
+# svn add testfile_3 --username jack
+A testfile_3
+# svn commit -m "New File addedd" --username jack
+Adding testfile_3
+</code></pre></div></div>
+
+<p>if error …</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/svn/repo/
+chown -R apache:apache *
+chmod -R 664 *
+</code></pre></div></div>
+:ET

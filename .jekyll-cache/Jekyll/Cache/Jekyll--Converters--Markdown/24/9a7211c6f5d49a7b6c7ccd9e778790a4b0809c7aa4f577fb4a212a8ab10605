@@ -1,0 +1,82 @@
+I"�#<p>linux 抓 mssql 丟 json
+抓正航的資訊</p>
+
+<p>https://XXX.XXX.XXX.XXX/get_use.php?Info=[正航料號]</p>
+
+<p>回應 :</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{"Quantity":"2837.0000","SuggestPrice":849,"Long":"62.0000","Width":"35.0000","High":"36.0000"}
+</code></pre></div></div>
+
+<p>以下方式自行處理修改</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="c1">// 主機位址</span>
+<span class="nv">$host</span> <span class="o">=</span> <span class="s1">'192.168.0.X'</span><span class="p">;</span>
+<span class="c1">// MSSQL PORT</span>
+<span class="nv">$port</span> <span class="o">=</span> <span class="s1">'1433'</span><span class="p">;</span>
+<span class="c1">// 資料庫名稱</span>
+<span class="nv">$dbname</span> <span class="o">=</span> <span class="s1">'CHIComp01'</span><span class="p">;</span> 
+<span class="c1">// 帳號</span>
+<span class="nv">$user</span> <span class="o">=</span> <span class="s1">'XXX'</span><span class="p">;</span>
+<span class="c1">// 密碼</span>
+<span class="nv">$passwd</span> <span class="o">=</span> <span class="s1">'XXX'</span><span class="p">;</span>
+<span class="c1">// 取哪個倉庫資訊</span>
+<span class="nv">$Warehouse</span> <span class="o">=</span> <span class="s1">'A01'</span><span class="p">;</span> 
+<span class="c1">// 只是取 hostname</span>
+<span class="nv">$serverName</span> <span class="o">=</span> <span class="nv">$host</span><span class="p">;</span>
+
+<span class="c1">// 取 usl 的 Info 資料</span>
+<span class="nv">$str</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="nx">Info</span><span class="p">]</span>
+<span class="c1">// 連資料庫</span>
+<span class="nv">$connectionInfo</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span> <span class="s2">"Database"</span><span class="o">=&gt;</span><span class="nv">$dbname</span><span class="p">,</span> <span class="s2">"UID"</span><span class="o">=&gt;</span><span class="nv">$user</span><span class="p">,</span> <span class="s2">"PWD"</span><span class="o">=&gt;</span><span class="nv">$passwd</span><span class="p">);</span>
+<span class="nv">$conn</span> <span class="o">=</span> <span class="nb">sqlsrv_connect</span><span class="p">(</span> <span class="nv">$serverName</span><span class="p">,</span> <span class="nv">$connectionInfo</span> <span class="p">);</span>
+<span class="k">if</span><span class="p">(</span> <span class="nv">$conn</span> <span class="o">===</span> <span class="kc">false</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">die</span><span class="p">(</span> <span class="nb">print_r</span><span class="p">(</span> <span class="nb">sqlsrv_errors</span><span class="p">(),</span> <span class="kc">true</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="c1">// 將輸入資料處理 , 去 enter 及 空白 </span>
+<span class="nv">$str</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s2">"/r/n"</span><span class="p">,</span> <span class="s2">"/r"</span><span class="p">,</span> <span class="s2">"/n"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">),</span> <span class="s2">""</span><span class="p">,</span> <span class="nv">$str</span><span class="p">);</span>
+<span class="c1">// 將輸入資料處理 , 只取 35 個字元</span>
+<span class="nv">$str</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">);</span>
+<span class="c1">// 放入 SQL 語法</span>
+<span class="nv">$stra</span> <span class="o">=</span> <span class="s2">"SELECT [Quantity] FROM [CHIComp02].[dbo].[comWareAmount] WHERE [WareID] like '"</span><span class="o">.</span><span class="nv">$Warehouse</span><span class="o">.</span><span class="s2">"' and [ProdID] like '"</span><span class="o">.</span><span class="nv">$str</span><span class="o">.</span><span class="s2">"'"</span><span class="p">;</span>
+<span class="c1">// SQL 查詢</span>
+<span class="nv">$stmt</span> <span class="o">=</span> <span class="nb">sqlsrv_query</span><span class="p">(</span> <span class="nv">$conn</span><span class="p">,</span> <span class="nv">$stra</span> <span class="p">);</span>
+<span class="k">if</span><span class="p">(</span> <span class="nv">$stmt</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">die</span><span class="p">(</span> <span class="nb">print_r</span><span class="p">(</span> <span class="nb">sqlsrv_errors</span><span class="p">(),</span> <span class="kc">true</span><span class="p">)</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 將查到的放入 Quan 字串</span>
+<span class="k">while</span><span class="p">(</span> <span class="nv">$row</span> <span class="o">=</span> <span class="nb">sqlsrv_fetch_array</span><span class="p">(</span> <span class="nv">$stmt</span><span class="p">,</span> <span class="nx">SQLSRV_FETCH_ASSOC</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+<span class="nv">$Quan</span> <span class="o">=</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">'Quantity'</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="c1">// 放入 SQL 語法</span>
+<span class="nv">$sql1</span> <span class="o">=</span> <span class="s2">"SELECT [ProdName],[SuggestPrice],[Long],[Width],[High] FROM [CHIComp02].[dbo].[comProduct]"</span><span class="p">;</span>
+<span class="nv">$sql2</span> <span class="o">=</span> <span class="s2">"Where [CHIComp02].[dbo].[comProduct].[ProdID] like "</span><span class="p">;</span>
+<span class="nv">$sql</span> <span class="o">=</span> <span class="nv">$sql1</span><span class="o">.</span><span class="nv">$sql2</span><span class="o">.</span><span class="s2">"'"</span><span class="o">.</span><span class="nv">$str</span><span class="o">.</span><span class="s2">"'"</span><span class="p">;</span>
+<span class="c1">// SQL 查詢</span>
+<span class="nv">$stmt</span> <span class="o">=</span> <span class="nb">sqlsrv_query</span><span class="p">(</span> <span class="nv">$conn</span><span class="p">,</span> <span class="nv">$sql</span> <span class="p">);</span>
+<span class="k">if</span><span class="p">(</span> <span class="nv">$stmt</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">die</span><span class="p">(</span> <span class="nb">print_r</span><span class="p">(</span> <span class="nb">sqlsrv_errors</span><span class="p">(),</span> <span class="kc">true</span><span class="p">)</span> <span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// 將查到的放入 data_array 矩陣 ( 包含  Quan 字串 也放入)</span>
+<span class="k">while</span><span class="p">(</span> <span class="nv">$row</span> <span class="o">=</span> <span class="nb">sqlsrv_fetch_array</span><span class="p">(</span> <span class="nv">$stmt</span><span class="p">,</span> <span class="nx">SQLSRV_FETCH_ASSOC</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+<span class="nv">$data_array</span> <span class="o">=</span> <span class="p">[</span>
+<span class="c1">// "ProdName" =&gt; $row['ProdName'] ,</span>
+<span class="s2">"Quantity"</span> <span class="o">=&gt;</span><span class="nv">$Quan</span><span class="p">,</span>
+<span class="s2">"SuggestPrice"</span> <span class="o">=&gt;</span><span class="nv">$row</span><span class="p">[</span><span class="s1">'SuggestPrice'</span><span class="p">],</span>
+<span class="s2">"Long"</span> <span class="o">=&gt;</span><span class="nv">$row</span><span class="p">[</span><span class="s1">'Long'</span><span class="p">]</span> <span class="p">,</span>
+<span class="s2">"Width"</span> <span class="o">=&gt;</span><span class="nv">$row</span><span class="p">[</span><span class="s1">'Width'</span><span class="p">],</span>
+<span class="s2">"High"</span> <span class="o">=&gt;</span><span class="nv">$row</span><span class="p">[</span><span class="s1">'High'</span><span class="p">],</span>
+<span class="p">];</span>
+<span class="p">}</span>
+
+<span class="nb">sqlsrv_free_stmt</span><span class="p">(</span> <span class="nv">$stmt</span><span class="p">);</span>
+<span class="c1">// data_array 矩陣 轉 json 到 data_json 字串</span>
+<span class="nv">$data_json</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data_array</span><span class="p">);</span>
+<span class="c1">// 列出 data_json</span>
+<span class="k">echo</span> <span class="nv">$data_json</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+:ET

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% include head.html %}
+</head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108823459-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108823459-2');
+</script>
+
+<body>
+    {% include header.html %}
+
+    <div class="pagecontent">
+    
+    <div class="ink-grid top-space">
+            <div class="column-group horizontal-gutters">
+                <div class="all-75">
+                        {{ content }}
+                </div>
+                <div class="all-25 noprint">
+                        {% include category_list.html %}
+                </div>
+            </div>
+            <div class="column-group">
+                <div class="all-100">
+                    <hr/>
+                </div>
+            </div>
+    </div>
+    
+    {% include footer.html %}
+    </div>
+</body>
+</html>
+

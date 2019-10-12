@@ -1,0 +1,23 @@
+I"Z<h2 id="azure-container-exec-jenkins">Azure Container exec jenkins</h2>
+
+<p>https://www.katacoda.com/courses/cloud/deploying-container-instances</p>
+
+<p>Username: user-tplu@azurelabs.katacoda.com</p>
+
+<p>Password: dUOAiAmdOEXg0840</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>az login -u user-tplu@azurelabs.katacoda.com -p dUOAiAmdOEXg0840
+
+az container create -g user-tplu --name jenkins  --image docker.io/jenkins/jenkins --ip-address public  --ports 8080 5000
+
+az container list -o table
+
+az container exec -g user-tplu --name jenkins --exec-command "/bin/sh "
+
+cat /var/jenkins_home/secrets/initialAdminPassword
+</code></pre></div></div>
+
+<p>delete</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>az container delete -g user-tplu --name jenkins
+</code></pre></div></div>
+:ET

@@ -1,0 +1,74 @@
+I"�!<p>每次都登入到printer server 去 清理 印表機 queue 很麻煩</p>
+
+<p>寫個程式 telnet 去 清 queue ……</p>
+
+<p>最後用 golng 寫 , 這樣 windows, MacOS, linux 都可以執行</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="n">import</span> <span class="p">(</span>
+	<span class="s2">"log"</span>
+	<span class="s2">"os"</span>
+	<span class="s2">"time"</span>
+
+	<span class="s2">"github.com/ziutek/telnet"</span>
+<span class="p">)</span>
+
+<span class="n">const</span> <span class="n">timeout</span> <span class="p">=</span> <span class="m">10</span> <span class="p">*</span> <span class="n">time</span><span class="p">.</span><span class="n">Second</span>
+
+<span class="n">func</span> <span class="n">checkErr</span><span class="p">(</span><span class="n">err</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="c1">!= nil {
+</span>		<span class="nb">log</span><span class="p">.</span><span class="n">Fatalln</span><span class="p">(</span><span class="s2">"Error:"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">func</span> <span class="n">expect</span><span class="p">(</span><span class="n">t</span> <span class="p">*</span><span class="n">telnet</span><span class="p">.</span><span class="n">Conn</span><span class="p">,</span> <span class="n">d</span> <span class="p">...</span><span class="k">string</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">checkErr</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">SetReadDeadline</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">Now</span><span class="p">().</span><span class="n">Add</span><span class="p">(</span><span class="n">timeout</span><span class="p">)))</span>
+	<span class="n">checkErr</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">SkipUntil</span><span class="p">(</span><span class="n">d</span><span class="p">...))</span>
+<span class="p">}</span>
+
+<span class="n">func</span> <span class="n">sendln</span><span class="p">(</span><span class="n">t</span> <span class="p">*</span><span class="n">telnet</span><span class="p">.</span><span class="n">Conn</span><span class="p">,</span> <span class="n">s</span> <span class="k">string</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">checkErr</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">SetWriteDeadline</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">Now</span><span class="p">().</span><span class="n">Add</span><span class="p">(</span><span class="n">timeout</span><span class="p">)))</span>
+	<span class="n">buf</span> <span class="p">:=</span> <span class="n">make</span><span class="p">([]</span><span class="n">byte</span><span class="p">,</span> <span class="n">len</span><span class="p">(</span><span class="n">s</span><span class="p">)+</span><span class="m">1</span><span class="p">)</span>
+	<span class="n">copy</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+	<span class="n">buf</span><span class="p">[</span><span class="n">len</span><span class="p">(</span><span class="n">s</span><span class="p">)]</span> <span class="p">=</span> <span class="s1">'\n'</span>
+	<span class="n">_</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">t</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
+	<span class="n">checkErr</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+
+	<span class="n">typ</span> <span class="p">:=</span> <span class="s2">"windows"</span>
+	<span class="n">dst</span> <span class="p">:=</span> <span class="s2">"192.168.0.100:23"</span>
+	<span class="n">user</span> <span class="p">:=</span> <span class="s2">"Administrator"</span>
+	<span class="n">passwd</span> <span class="p">:=</span> <span class="s2">"chi"</span>
+	
+	<span class="n">todo</span> <span class="p">:=</span> <span class="s2">"del /Q /F /S </span><span class="se">\"</span><span class="s2">%windir%</span><span class="se">\\</span><span class="s2">System32</span><span class="se">\\</span><span class="s2">spool</span><span class="se">\\</span><span class="s2">PRINTERS</span><span class="se">\\</span><span class="s2">*.*</span><span class="se">\"</span><span class="s2">"</span>
+
+	<span class="n">t</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">telnet</span><span class="p">.</span><span class="n">Dial</span><span class="p">(</span><span class="s2">"tcp"</span><span class="p">,</span> <span class="n">dst</span><span class="p">)</span>
+	<span class="n">checkErr</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+	<span class="n">t</span><span class="p">.</span><span class="n">SetUnixWriteMode</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+
+	<span class="n">var</span> <span class="n">data</span> <span class="p">[]</span><span class="n">byte</span>
+	<span class="n">switch</span> <span class="n">typ</span> <span class="p">{</span>
+	<span class="k">case</span> <span class="s2">"windows"</span><span class="p">:</span>
+		<span class="n">expect</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">"login: "</span><span class="p">)</span>
+		<span class="n">sendln</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+		<span class="n">expect</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">"password: "</span><span class="p">)</span>
+		<span class="n">sendln</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">passwd</span><span class="p">)</span>
+		<span class="n">expect</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">"Administrator&gt;"</span><span class="p">)</span>
+		<span class="n">sendln</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">"net stop spooler"</span><span class="p">)</span>
+		<span class="n">expect</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">"Administrator&gt;"</span><span class="p">)</span>
+		<span class="n">sendln</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">todo</span><span class="p">)</span>
+		<span class="n">expect</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">"Administrator&gt;"</span><span class="p">)</span>
+		<span class="n">sendln</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">"net start spooler"</span><span class="p">)</span>
+		<span class="n">data</span><span class="p">,</span> <span class="n">err</span> <span class="p">=</span> <span class="n">t</span><span class="p">.</span><span class="n">ReadBytes</span><span class="p">(</span><span class="s1">'&gt;'</span><span class="p">)</span>
+	<span class="n">default</span><span class="p">:</span>
+		<span class="nb">log</span><span class="p">.</span><span class="n">Fatalln</span><span class="p">(</span><span class="s2">"bad host type: "</span> <span class="p">+</span> <span class="n">typ</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="n">checkErr</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+	<span class="n">os</span><span class="p">.</span><span class="n">Stdout</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+	<span class="n">os</span><span class="p">.</span><span class="n">Stdout</span><span class="p">.</span><span class="n">WriteString</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

@@ -1,0 +1,27 @@
+I"c<p>測試了一下 , 發現外掛 Form Confirmation Emails 還 OK 紀錄一下</p>
+
+<p><img src="https://echochio-tw.github.io/images/posts/google-doc/1.png" /></p>
+
+<p><img src="https://echochio-tw.github.io/images/posts/google-doc/2.png" /></p>
+
+<p>主旨 :</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>${"公司名稱"} - ${"聯絡人姓名"} 感謝您的填寫
+</code></pre></div></div>
+
+<p>本文內容 :  (最後插入一張圖)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p&gt;Dear ${"聯絡人姓名"} 
+&lt;p&gt; 感謝您的填寫 , 您填寫的資訊   :
+&lt;p&gt;公司名稱 : ${"公司名稱"}
+&lt;p&gt;聯絡人姓名 : ${"聯絡人姓名"}
+&lt;p&gt;電子郵件信箱 : ${"電子郵件信箱"}
+&lt;p&gt;感興趣產品 : ${"感興趣產品"}
+&lt;p&gt;
+&lt;p&gt;
+&lt;img src="https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"&gt;
+</code></pre></div></div>
+
+<p>管理者及測試者收到的信 :</p>
+
+<p><img src="https://echochio-tw.github.io/images/posts/google-doc/3.png" /></p>
+:ET

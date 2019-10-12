@@ -1,0 +1,60 @@
+I"8<p><strong>get_sid.pl</strong></p>
+
+<p>其中 username=test%40gmail.com&amp;password=echochio</p>
+
+<p>… 請自行更換</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/perl</span>
+<span class="nv">$do</span><span class="o">=</span><span class="p">"</span><span class="s2">curl -X POST https://api.greypanel.com/api/login -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=test%40gmail.com&amp;password=echochio'</span><span class="p">"</span><span class="o">.</span><span class="p">"</span><span class="s2">  2&gt; /dev/null</span><span class="p">";</span>
+<span class="nv">$ret</span><span class="o">=</span><span class="p">`</span><span class="si">$do</span><span class="p">`;</span>
+<span class="nv">$f_ret</span><span class="o">=</span><span class="p">'</span><span class="s1">{"result":"</span><span class="p">';</span>
+<span class="nv">$l_ret</span><span class="o">=</span><span class="p">'</span><span class="s1">","response":"success","message":""}</span><span class="p">';</span>
+<span class="nv">$o_ret</span><span class="o">=</span><span class="p">'';</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$ret</span> <span class="o">=~</span>  <span class="p">"</span><span class="s2">success</span><span class="p">")</span> <span class="p">{</span>
+        <span class="nv">$ret</span> <span class="o">=~</span> <span class="sr">s/$f_ret/$o_ret/</span><span class="p">;</span>
+        <span class="nv">$ret</span> <span class="o">=~</span> <span class="sr">s/$l_ret/$o_ret/</span><span class="p">;</span>
+        <span class="k">print</span> <span class="nv">$ret</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>get_site.pl</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/perl</span>
+<span class="k">use</span> <span class="nv">JSON</span><span class="p">;</span>
+<span class="nv">$ret</span> <span class="o">=</span> <span class="p">`</span><span class="sb">./get_sid.pl</span><span class="p">`;</span>
+<span class="nv">$do</span><span class="o">=</span><span class="p">"</span><span class="s2">curl -X GET 'https://api.greypanel.com/api/site/find-sites?keyWord=&amp;page=1&amp;pageSize=200' -H 'Content-Type:application/x-www-form-urlencoded' -H 'Cookie:sid=</span><span class="p">"</span><span class="o">.</span><span class="nv">$ret</span><span class="o">.</span><span class="p">"</span><span class="s2">'</span><span class="p">"</span><span class="o">.</span><span class="p">"</span><span class="s2">  2&gt; /dev/null</span><span class="p">";</span>
+<span class="nv">$ret_data</span><span class="o">=</span><span class="p">`</span><span class="si">$do</span><span class="p">`;</span>
+<span class="nv">$ret_data</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$ret_data</span><span class="p">,</span> <span class="nb">index</span><span class="p">(</span><span class="nv">$ret_data</span><span class="p">,"</span><span class="s2">[</span><span class="p">"));</span>
+<span class="nv">$ret_data</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$ret_data</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">index</span><span class="p">(</span><span class="nv">$ret_data</span><span class="p">,"</span><span class="s2">]</span><span class="p">")</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="nv">$obj</span> <span class="o">=</span> <span class="nv">from_json</span><span class="p">(</span><span class="nv">$ret_data</span><span class="p">);</span>
+<span class="k">print</span> <span class="nv">$ret</span><span class="p">;</span>
+<span class="k">foreach</span> <span class="nv">$item</span><span class="p">(</span> <span class="nv">@$obj</span> <span class="p">)</span> <span class="p">{</span>
+	<span class="k">print</span> <span class="p">"</span><span class="s2"> </span><span class="p">"</span><span class="o">.</span><span class="nv">$item</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">name</span><span class="p">};</span>
+	<span class="k">print</span> <span class="p">"</span><span class="s2"> </span><span class="p">"</span><span class="o">.</span><span class="nv">$item</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">uid</span><span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>do_refash.pl</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/perl</span>
+<span class="nv">$inp</span><span class="o">=</span><span class="nv">$ARGV</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="nb">chomp</span><span class="p">(</span><span class="nv">$inp</span><span class="p">);</span>
+<span class="nv">@sites</span> <span class="o">=</span> <span class="nb">split</span> <span class="sr">/ /</span><span class="p">,</span> <span class="p">`</span><span class="sb">./get_site.pl</span><span class="p">`;</span>
+<span class="nv">$a</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="k">foreach</span> <span class="nv">$site</span> <span class="p">(</span><span class="nv">@sites</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$a</span><span class="o">=</span><span class="nv">$a</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="nv">$site</span> <span class="o">=~</span>  <span class="nv">$inp</span><span class="p">){</span>
+               <span class="k">last</span><span class="p">;</span>
+       <span class="p">}</span>
+<span class="p">}</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="p">"</span><span class="s2">curl -X GET 'https://api.greypanel.com/api/cache/clear-site-uid?uid=</span><span class="p">"</span><span class="o">.</span><span class="nv">$sites</span><span class="p">[</span><span class="nv">$a</span><span class="p">]</span><span class="o">.</span><span class="p">"</span><span class="s2">' -H 'Content-Type:application/x-www-form-urlencoded' -H 'Cookie:sid=</span><span class="p">"</span><span class="o">.</span><span class="nv">$sites</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="p">"</span><span class="s2">' 2&gt; /dev/null</span><span class="p">";</span>
+<span class="nv">$ret</span> <span class="o">=</span> <span class="p">`</span><span class="si">$do</span><span class="p">`;</span>
+<span class="k">print</span> <span class="nv">$ret</span><span class="p">;</span>
+</code></pre></div></div>
+<p><strong>執行 刷新 hello.com 這網域</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># perl do_refash.pl hello.com
+{"result":"0edfd67a-5c7b-XXXX-XXXX-XXXXXXXXX","response":"success","message":""}
+
+</code></pre></div></div>
+:ET

@@ -1,0 +1,79 @@
+I"�<p>debug php 發現 上傳檔案異常 …..</p>
+
+<p>先建立一個 test.php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"upload.php"</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span><span class="nt">&gt;</span>
+檔案名稱:<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">name=</span><span class="s">"file"</span> <span class="na">id=</span><span class="s">"file"</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"上傳檔案"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span> 
+</code></pre></div></div>
+
+<p>PHP 檔案上傳後會先放到一個暫存資料夾（tmp），一般是放到 /tmp , 當然也可在 php.ini 設定 暫存資料夾</p>
+
+<p>upload.php 內容如下 :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s2">"file"</span><span class="p">][</span><span class="s2">"error"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+<span class="err">　</span><span class="k">echo</span> <span class="s2">"Error: "</span> <span class="o">.</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s2">"file"</span><span class="p">][</span><span class="s2">"error"</span><span class="p">];</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="k">echo</span> <span class="s2">"檔案名稱: "</span> <span class="o">.</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s2">"file"</span><span class="p">][</span><span class="s2">"name"</span><span class="p">]</span><span class="o">.</span><span class="s2">"&lt;br/&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"檔案類型: "</span> <span class="o">.</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s2">"file"</span><span class="p">][</span><span class="s2">"type"</span><span class="p">]</span><span class="o">.</span><span class="s2">"&lt;br/&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"檔案大小: "</span> <span class="o">.</span> <span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s2">"file"</span><span class="p">][</span><span class="s2">"size"</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="s2">" Kb&lt;br /&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"暫存名稱: "</span> <span class="o">.</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s2">"file"</span><span class="p">][</span><span class="s2">"tmp_name"</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>我測試了沒有 Error 發生 ….
+然後程式改用 move_uploaded_file 將檔案移動到 upload 資料夾中
+當然 upload 資料夾要有權限例如 apache 可 write</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;?php
+if ($_FILES["file"]["error"] &gt; 0){
+　echo "Error: " . $_FILES["file"]["error"];
+}else{
+　echo "檔案名稱: " . $_FILES["file"]["name"]."&lt;br/&gt;";
+　echo "檔案類型: " . $_FILES["file"]["type"]."&lt;br/&gt;";
+　echo "檔案大小: " . ($_FILES["file"]["size"] / 1024)." Kb&lt;br /&gt;";
+　echo "暫存名稱: " . $_FILES["file"]["tmp_name"];
+
+　move_uploaded_file($_FILES["file"]["tmp_name"],"upload/".$_FILES["file"]["name"]);
+}
+?&gt; 
+</code></pre></div></div>
+
+<p>我測試了沒有 Error 發生 ….
+但是 apache log 有 move_uploaded_file failed to open stream: Permission denied
+且檔案沒有上傳到 upload 檔案夾內</p>
+
+<p>搞了老半天 ….美編說 …在我做 p2v 之前正常 …
+想了好久 …原來是 …..之前人設單次的 SElinux DISABLE</p>
+
+<p>啥 ……..重開機後就有問題了, 之前裝完後都沒重開過 …….XD</p>
+
+<p>SElinux DISABLE ……. 就這麼簡單 ….搞了半天</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># cat  /etc/sysconfig/selinux
+
+# This file controls the state of SELinux on the system.
+# SELINUX= can take one of these three values:
+#     enforcing - SELinux security policy is enforced.
+#     permissive - SELinux prints warnings instead of enforcing.
+#     disabled - No SELinux policy is loaded.
+SELINUX=disabled
+# SELINUXTYPE= can take one of three two values:
+#     targeted - Targeted processes are protected,
+#     minimum - Modification of targeted policy. Only selected processes are protected.
+#     mls - Multi Level Security protection.
+SELINUXTYPE=targeted
+</code></pre></div></div>
+
+<p>或許你覺得關閉 SElinux 不是一個好方式 將目錄改成 web 可存檔就好了呀 …</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># chcon -t httpd_sys_rw_content_t /var/www/upload -R
+</code></pre></div></div>
+:ET

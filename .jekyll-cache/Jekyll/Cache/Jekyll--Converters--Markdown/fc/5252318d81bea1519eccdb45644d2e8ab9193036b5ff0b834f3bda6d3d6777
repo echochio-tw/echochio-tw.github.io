@@ -1,0 +1,63 @@
+I"�	<p>先看範例 
+看到很簡單 ..用 map 放參數 呼叫 函數</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; double_func = lambda s : s * 2
+&gt;&gt;&gt; map(double_func, [1,2,3,4,5])
+[2, 4, 6, 8, 10]
+</code></pre></div></div>
+
+<p>用 for loop 就比較明白了 …..</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; for x in range(1, 6): double_func(x)
+...
+2
+4
+6
+8
+10
+</code></pre></div></div>
+
+<p>reduce 就是把結果再放進去當參數</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; reduce(plus, [1,2,3,5,5])
+16
+</code></pre></div></div>
+
+<p>就是 “plus”</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; 1+2+3+5+5
+16
+</code></pre></div></div>
+
+<p>reduce + map 就是放參數 ….當然可放兩個</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; plus = lambda x,y : (x or 0) + (y or 0)
+&gt;&gt;&gt; map(plus, [1,2,3,4], [4,5,6])
+[5, 7, 9, 4]
+</code></pre></div></div>
+
+<p>filter 就是把 true 列出來……. 就是 “1”</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; mode2 = lambda x : x % 2
+&gt;&gt;&gt; filter(mode2, [1,2,3,4,5,6,7,8,9,10])
+[1, 3, 5, 7, 9]
+&gt;&gt;&gt; map(mode2, [1,2,3,4,5,6,7,8,9,10])
+[1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
+</code></pre></div></div>
+
+<p>函數變化一下 ……裡面用 and , or 回不同結果</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; pr = lambda s:s
+&gt;&gt;&gt; print_num = lambda x: (x==1 and pr("one")) or (x==2 and pr("two")) or (pr("other"))
+&gt;&gt;&gt; print_num(1)
+'one'
+&gt;&gt;&gt; print_num(2)
+'two'
+&gt;&gt;&gt; print_num(3)
+'other'
+</code></pre></div></div>
+
+<p>說了一大堆好像很簡單 ….混在一起 …..哈看不懂 !!!!
+(網路有名範例 兩數找笛卡兒積 …. 找出大於 25 的)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; bigmuls = lambda xs,ys: filter(lambda (x,y):x*y &gt; 25, combine(xs,ys))
+&gt;&gt;&gt; combine = lambda xs,ys: map(None, xs*len(ys), dupelms(ys,len(xs)))
+&gt;&gt;&gt; dupelms = lambda lst,n: reduce(lambda s,t:s+t, map(lambda l,n=n: [l]*n, lst))
+&gt;&gt;&gt; print bigmuls([1,2,3,4],[10,15,3,22])
+[(3, 10), (4, 10), (2, 15), (3, 15), (4, 15), (2, 22), (3, 22), (4, 22)]
+</code></pre></div></div>
+:ET

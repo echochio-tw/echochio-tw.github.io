@@ -1,0 +1,71 @@
+I"�<p>筆電  USB 安裝 OS</p>
+
+<p>先設 BIOS ….我的是 ASUS 找到</p>
+
+<p>https://www.asus.com/tw/support/FAQ/1013017/</p>
+
+<p>1.進入BIOS後選擇Boot，在Launch CSM選擇Enabled</p>
+
+<p>2.接著在Security底下Secure Boot Control選擇Disabled，之後按下F10儲存離開</p>
+
+<p>3.重新進入BIOS，即可在Save &amp; Exit底下的Boot Override選擇USB/光碟機開機</p>
+
+<p>4.如不行壓住Esc後啟動電源進入Boot選擇開機</p>
+
+<p>在原本的 OS 下載 , 執行</p>
+
+<p>NT6[WIM鏡像]快捷安裝器v1.1</p>
+
+<p>原版的 WIN7 ISO ……. 用 PortableWinCDEmu-4.0 抓到 E:</p>
+
+<p>USB HDD 抓到 F:</p>
+
+<p>執行  NT6[WIM鏡像]快捷安裝器v1.1</p>
+
+<p>https://github.com/echochio-tw/Install_win7_in_USB_HDD/blob/master/NT6%5BWIM%E9%8F%A1%E5%83%8F%5D%E5%BF%AB%E6%8D%B7%E5%AE%89%E8%A3%9D%E5%99%A8v1.1.exe</p>
+
+<p>選打開</p>
+
+<p><img src="/images/posts/usb-os/a1.png" /></p>
+
+<p>選 光碟機 E:\sources\install.wim 開啟</p>
+
+<p>選 OS 版本 ….(我是 win7 pro)</p>
+
+<p>改成這樣</p>
+
+<p><img src="/images/posts/usb-os/a2.png" /></p>
+
+<p>開始安裝 ….會叫你格式化選 yes …..</p>
+
+<p>裝完後會叫你重開 …..選 ……. NO !!!</p>
+
+<p><img src="/images/posts/usb-os/a3.png" /></p>
+
+<p>設定 USB 可開機 …..</p>
+
+<p>在 CMD (用 admin 執行)</p>
+
+<p>打 DISKPART</p>
+
+<p>再打 lisk disk</p>
+
+<p><img src="/images/posts/usb-os/a4.png" /></p>
+
+<p>看 partition ….</p>
+
+<p>list partition</p>
+
+<p>select partition 1</p>
+
+<p>將 partition active ….</p>
+
+<p><img src="/images/posts/usb-os/a5.png" /></p>
+
+<p>重開就可安裝 OS 了 …. 要選 boot usb ……</p>
+
+<p>藍底白字 …. 是缺 driver 嗎 ?</p>
+
+<p>還是 … 有些不NB 不支援 …沒辦法 ….XD</p>
+
+:ET

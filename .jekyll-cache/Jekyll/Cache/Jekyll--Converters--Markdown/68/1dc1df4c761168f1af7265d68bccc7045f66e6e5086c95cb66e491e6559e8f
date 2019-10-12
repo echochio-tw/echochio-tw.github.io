@@ -1,0 +1,50 @@
+I"Y<p>用 google app script (配合 telegram group)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://www.echochio.nctu.me/2019/10/telegram-group-python-webhoos/
+</code></pre></div></div>
+
+<p>發布 -&gt; 部署為網路應用程式</p>
+
+<p>其中</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chat_id = -341335111
+bot = 917681111:AAFpNGEoiebe1yXbkHDVbS38aaAjzDSJLjs
+google 的 script = https://script.google.com/macros/s/AKfycbweh3kkFqNlOkMYpBS_Ltmsj8oKiLNTXQ8fVcBgmLAa0w_ED15V/exec
+</code></pre></div></div>
+<p>自行修改</p>
+
+<p>google app script 如下</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function doPost(e) {
+  // POST來的資料轉json
+  var chat = JSON.parse(e.postData.contents);  
+  // 是文字格式時
+  if(chat.message) {
+    // 房間號的正確時處理
+    if (chat.message.chat.id == "-341335111"){
+      // 切割字串
+      var message = chat.message.text;
+　    var messageArray = new Array();
+      var messageArray = message.split(" ");
+      // 前個為 /refresh 時處理
+      if (messageArray[0] == "/refresh") {
+        sendTelegram(messageArray[1])
+      }
+    }
+  }
+}
+
+function sendTelegram(body) {
+    var botSecret = "917681111:AAFpNGEoiebe1yXbkHDVbS38aaAjzDSJLjs";
+    var chatId ="-341335111";
+    var response = UrlFetchApp.fetch("https://api.telegram.org/bot" + botSecret + "/sendMessage?text=" + encodeURIComponent(body) + "&amp;chat_id=" + chatId + "&amp;parse_mode=HTML");
+}
+</code></pre></div></div>
+
+<p>telegram webhook</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://api.telegram.org/bot917681111:AAFpNGEoiebe1yXbkHDVbS38aaAjzDSJLjs/setWebhook?url=https://script.google.com/macros/s/AKfycbweh3kkFqNlOkMYpBS_Ltmsj8oKiLNTXQ8fVcBgmLAa0w_ED15V/exec"
+
+</code></pre></div></div>
+
+<p>接下來試試 google app script 呼叫這個 ….串起來</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://www.echochio.nctu.me/2019/09/flask+uwsgi/
+</code></pre></div></div>
+:ET

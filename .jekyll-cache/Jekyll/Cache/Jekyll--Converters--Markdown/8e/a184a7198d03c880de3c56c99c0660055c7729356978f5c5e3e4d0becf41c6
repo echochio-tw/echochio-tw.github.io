@@ -1,0 +1,31 @@
+I"�<p>放個固定的 skype 連結在右邊 , 讓人家可直接點選連繫</p>
+
+<p>利用 table 放圖 , 第一張是 skype logo , 第一個聯絡人 , 第二聯絡人 …….., 點選關閉</p>
+
+<hr />
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;style type="text/css"&gt;
+.div_right_bottom {
+  padding:3px;
+  position:fixed;
+  top:70%;
+  right:0px;
+  _position: absolute; /* position fixed for IE6 */
+  _top:expression(documentElement.scrollTop+100);
+  z-index:3;
+}
+&lt;/style&gt;
+
+&lt;table class="div_right_bottom"&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a&gt;&lt;img border="0" src="../skype-01.gif"&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="skype:test@com.tw?chat"&gt;&lt;img border="0" src="../skype-02.gif"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="skype:testcom?chat"&gt;&lt;img border="0" src="../skype-03.gif"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</code></pre></div></div>
+<hr />
+:ET

@@ -1,0 +1,11 @@
+I"<p>DNS 檢查網域設定是否正常</p>
+
+<p>例如檢查 PCHOME</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+https://rs.twnic.net.tw/cgi-bin/dns.cgi?dn=pchome.com.tw
+
+https://intodns.com/pchome.com.tw
+
+</code></pre></div></div>
+:ET

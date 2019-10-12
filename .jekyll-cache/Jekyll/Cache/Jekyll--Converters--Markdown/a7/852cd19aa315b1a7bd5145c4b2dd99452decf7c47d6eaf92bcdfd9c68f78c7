@@ -1,0 +1,18 @@
+I"�<p>nginx 的 301 與 302 redirect</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server
+{
+	listen       80;
+	server_name www.domain-new.com www.domain-old.com; #server_name end
+	if ($host ~* www.domain-old.com){
+		rewrite ^/(.*)$ http://www.domain-new.com/$1 permanent; #permanent 301
+		#rewrite ^/(.*)$ http://www.domain-new.com/$1 redirect; #redirect 302
+	}
+ 
+	index index.php; #index end
+ 
+	#---OTHER OPTIONS---
+}
+</code></pre></div></div>
+
+:ET

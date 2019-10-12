@@ -1,0 +1,118 @@
+I"v:<p>程式在這裡 :</p>
+
+<p>https://raw.githubusercontent.com/chio-nzgft/OCS-db-to-Gsheet/master/OCS-db-print.go</p>
+
+<p>不知有沒有更好了寫法</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="n">import</span> <span class="p">(</span>
+    <span class="s2">"database/sql"</span>
+    <span class="n">_</span> <span class="s2">"github.com/Go-SQL-Driver/MySQL"</span>
+    <span class="s2">"fmt"</span>
+    <span class="s2">"os"</span>
+<span class="p">)</span>
+<span class="p">//</span><span class="k">set</span> <span class="n">db</span> <span class="n">info</span>
+<span class="n">const</span> <span class="p">(</span>
+    <span class="n">DB_HOST</span> <span class="p">=</span> <span class="s2">"tcp(127.0.0.1:3306)"</span>
+    <span class="n">DB_NAME</span> <span class="p">=</span> <span class="s2">"ocsdb"</span>
+    <span class="n">DB_USER</span> <span class="p">=</span> <span class="s2">"ocsuser"</span>
+    <span class="n">DB_PASS</span> <span class="p">=</span> <span class="s2">"ocspass"</span>
+<span class="p">)</span>
+
+<span class="p">//</span> <span class="n">DB</span> <span class="k">to</span> <span class="m">2</span><span class="n">D</span> <span class="k">string</span>
+<span class="n">func</span> <span class="n">DBtoString</span><span class="p">(</span><span class="n">rows</span> <span class="p">*</span><span class="n">sql</span><span class="p">.</span><span class="n">Rows</span><span class="p">,</span><span class="n">len_cols</span> <span class="n">int</span><span class="p">,</span> <span class="n">len_count</span> <span class="n">int</span><span class="p">)([][]</span><span class="k">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">rawResult</span> <span class="p">:=</span> <span class="n">make</span><span class="p">([][]</span><span class="n">byte</span><span class="p">,</span> <span class="n">len_cols</span><span class="p">)</span>
+    <span class="n">result</span> <span class="p">:=</span> <span class="n">make</span><span class="p">([][]</span><span class="k">string</span><span class="p">,</span>  <span class="n">len_cols</span><span class="p">)</span>
+     <span class="n">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="k">range</span> <span class="n">result</span> <span class="p">{</span>
+        <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="n">make</span><span class="p">([]</span><span class="k">string</span><span class="p">,</span> <span class="n">len_count</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">dest</span> <span class="p">:=</span> <span class="n">make</span><span class="p">([]</span><span class="n">interface</span><span class="p">{},</span> <span class="n">len_cols</span><span class="p">)</span>
+    <span class="n">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="p">:=</span> <span class="k">range</span> <span class="n">rawResult</span> <span class="p">{</span>
+        <span class="n">dest</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="p">&amp;</span><span class="n">rawResult</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="n">var</span> <span class="n">k</span> <span class="n">int</span>
+    <span class="n">k</span> <span class="p">=</span> <span class="p">-</span><span class="m">1</span>
+    <span class="n">for</span> <span class="n">rows</span><span class="p">.</span><span class="k">Next</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">k</span> <span class="p">=</span> <span class="n">k</span> <span class="p">+</span><span class="m">1</span>
+        <span class="n">err</span> <span class="p">:=</span> <span class="n">rows</span><span class="p">.</span><span class="n">Scan</span><span class="p">(</span><span class="n">dest</span><span class="p">...)</span>
+        <span class="n">checkErr</span><span class="p">(</span><span class="s2">"Failed to scan row"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+
+        <span class="n">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">raw</span> <span class="p">:=</span> <span class="k">range</span> <span class="n">rawResult</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">raw</span> <span class="p">==</span> <span class="n">nil</span> <span class="p">{</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="p">=</span> <span class="s2">"</span><span class="se">\\</span><span class="s2">N"</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="p">=</span> <span class="k">string</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+ <span class="n">return</span> <span class="n">result</span>
+<span class="p">}</span>
+
+<span class="p">//</span><span class="n">Get</span> <span class="n">select</span> <span class="k">count</span> <span class="n">line</span>
+<span class="n">func</span> <span class="n">checkCount</span><span class="p">(</span><span class="n">rows</span> <span class="p">*</span><span class="n">sql</span><span class="p">.</span><span class="n">Rows</span><span class="p">)</span> <span class="p">(</span><span class="k">count</span> <span class="n">int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">for</span> <span class="n">rows</span><span class="p">.</span><span class="k">Next</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">err</span><span class="p">:=</span> <span class="n">rows</span><span class="p">.</span><span class="n">Scan</span><span class="p">(&amp;</span><span class="k">count</span><span class="p">)</span>
+        <span class="n">checkErr</span><span class="p">(</span><span class="s2">"Fail to get count "</span><span class="p">,</span><span class="n">err</span> <span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">return</span> <span class="k">count</span>
+<span class="p">}</span>
+
+<span class="p">//</span><span class="n">Get</span> <span class="n">select</span> <span class="n">table</span> <span class="n">rows</span>
+<span class="n">func</span> <span class="n">checkRow</span><span class="p">(</span><span class="n">rows</span> <span class="p">*</span><span class="n">sql</span><span class="p">.</span><span class="n">Rows</span><span class="p">)(</span><span class="n">int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cols</span><span class="p">,</span> <span class="n">err</span><span class="p">:=</span>  <span class="n">rows</span><span class="p">.</span><span class="n">Columns</span><span class="p">()</span>
+        <span class="n">checkErr</span><span class="p">(</span><span class="s2">"Failed to get columns"</span><span class="p">,</span><span class="n">err</span> <span class="p">)</span>
+        <span class="n">return</span> <span class="n">len</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="p">//</span><span class="n">Show</span> <span class="n">error</span> <span class="p">&amp;</span> <span class="k">exit</span>
+<span class="n">func</span> <span class="n">checkErr</span><span class="p">(</span><span class="n">w_msg</span> <span class="k">string</span><span class="p">,</span> <span class="n">err</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="c1">!= nil {
+</span>       <span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="n">w_msg</span><span class="p">,</span><span class="n">err</span><span class="p">)</span>
+     <span class="n">os</span><span class="p">.</span><span class="k">Exit</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+     <span class="n">return</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="n">len_count</span><span class="p">,</span><span class="n">len_cols</span> <span class="n">int</span>
+    
+    <span class="p">//</span> <span class="nf">connect</span> <span class="n">db</span>
+    <span class="n">dsn</span> <span class="p">:=</span> <span class="n">DB_USER</span> <span class="p">+</span> <span class="s2">":"</span> <span class="p">+</span> <span class="n">DB_PASS</span> <span class="p">+</span> <span class="s2">"@"</span> <span class="p">+</span> <span class="n">DB_HOST</span> <span class="p">+</span> <span class="s2">"/"</span> <span class="p">+</span> <span class="n">DB_NAME</span> <span class="p">+</span> <span class="s2">"?charset=utf8"</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">sql</span><span class="p">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">"mysql"</span><span class="p">,</span> <span class="n">dsn</span><span class="p">)</span>
+    <span class="n">checkErr</span><span class="p">(</span><span class="s2">"Failed to connect db"</span><span class="p">,</span><span class="n">err</span><span class="p">)</span>
+    <span class="n">defer</span> <span class="n">db</span><span class="p">.</span><span class="n">Close</span><span class="p">()</span>
+
+    <span class="p">//</span><span class="n">query</span> <span class="n">get</span> <span class="k">count</span> 
+    <span class="n">rows_count</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">db</span><span class="p">.</span><span class="n">Query</span><span class="p">(</span><span class="s2">"select COUNT(*) as count from accountinfo"</span><span class="p">)</span>
+    <span class="n">checkErr</span><span class="p">(</span><span class="s2">"Failed to run query for count"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+    <span class="n">len_count</span> <span class="p">=</span> <span class="n">checkCount</span><span class="p">(</span><span class="n">rows_count</span><span class="p">)</span>
+    <span class="n">defer</span> <span class="n">rows_count</span><span class="p">.</span><span class="n">Close</span><span class="p">()</span>
+
+    <span class="p">//</span><span class="n">query</span> <span class="n">get</span> <span class="n">rows</span>
+    <span class="n">rows</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">db</span><span class="p">.</span><span class="n">Query</span><span class="p">(</span><span class="s2">"select * from accountinfo"</span><span class="p">)</span>
+    <span class="n">checkErr</span><span class="p">(</span><span class="s2">"Failed to run query"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+    <span class="n">len_cols</span> <span class="p">=</span> <span class="n">checkRow</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+    <span class="n">defer</span> <span class="n">rows</span><span class="p">.</span><span class="n">Close</span><span class="p">()</span>
+
+    <span class="p">//</span><span class="k">set</span> <span class="n">up</span> <span class="m">2</span><span class="n">D</span> <span class="k">string</span> <span class="n">by</span> <span class="n">len_cols</span> <span class="p">&amp;</span> <span class="n">len_count</span>
+    <span class="n">result</span> <span class="p">:=</span> <span class="n">make</span><span class="p">([][]</span><span class="k">string</span><span class="p">,</span>  <span class="n">len_cols</span><span class="p">)</span>
+     <span class="n">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="k">range</span> <span class="n">result</span> <span class="p">{</span>
+        <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="n">make</span><span class="p">([]</span><span class="k">string</span><span class="p">,</span> <span class="n">len_count</span><span class="p">)</span>
+     <span class="p">}</span>
+
+    <span class="p">//</span><span class="n">Use</span> <span class="n">DB</span> <span class="k">to</span> <span class="n">get</span> <span class="m">2</span><span class="n">D</span> <span class="k">String</span>
+    <span class="n">result</span> <span class="p">=</span>  <span class="n">DBtoString</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">len_cols</span><span class="p">,</span><span class="n">len_count</span><span class="p">)</span>
+
+    <span class="p">//</span><span class="n">juest</span> <span class="n">print</span> <span class="m">2</span><span class="n">D</span> <span class="k">String</span> 
+    <span class="n">for</span> <span class="n">i</span><span class="p">:=</span><span class="m">0</span> <span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">len_count</span> <span class="p">;</span> <span class="n">i</span><span class="p">++{</span>
+      <span class="n">for</span> <span class="n">j</span><span class="p">:=</span><span class="m">0</span> <span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="n">len_cols</span> <span class="p">;</span> <span class="n">j</span><span class="p">++{</span>
+       <span class="n">fmt</span><span class="p">.</span><span class="n">Print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+       <span class="n">fmt</span><span class="p">.</span><span class="n">Print</span><span class="p">(</span><span class="s2">" "</span><span class="p">)</span>
+      <span class="p">}</span>
+      <span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

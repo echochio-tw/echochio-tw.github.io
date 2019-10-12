@@ -1,0 +1,38 @@
+I"�<p>centos7之後，這個命名規則就變了，不再是eth0的了</p>
+
+<p>CentOS 7 網卡名稱修改, 用回 Eth0 的方法。</p>
+
+<p>/etc/sysconfig/grub</p>
+
+<p>裡面其中一行是 GRUB_CMDLINE_LINUX, 在這行結尾的雙引號前加上這句:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>net.ifnames=0 biosdevname=0
+</code></pre></div></div>
+
+<p>變成</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GRUB_CMDLINE_LINUX="crashkernel=auto  vconsole.font=latarcyrheb-sun16 vconsole.keymap=us biosdevname=0 rhgb quiet net.ifnames=0 biosdevname=0"
+</code></pre></div></div>
+
+<p>grub2-mkconfig 指令重新建立 GRUB</p>
+
+<p>要有
+  /etc/sysconfig/network-scripts/ifcfg-eth0</p>
+
+<p>且有</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> NAME=eth0
+</code></pre></div></div>
+
+<p>重啟就好了</p>
+
+<p>那如果出現 eth1 沒有 eth0 該如何 ?</p>
+
+<p>編輯 /etc/udev/rules.d/70-persistent-net.rules</p>
+
+<p>找到與ifconfig -a得出的MAC相同的一行（NAME =’eth1’這一行），把它改為“NAME = eth0”，然後把上面一行（NAME =’eth0’）刪除掉。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:0c:29:bb:41:2b", ATTR{type}=="1", KERNEL=="eth*", NAME="eth0"
+</code></pre></div></div>
+
+:ET

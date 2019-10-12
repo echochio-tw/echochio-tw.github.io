@@ -1,0 +1,23 @@
+I"�<p>首先將 BIOS 設成 EFI 開機 ,
+再用 EasyU_3.3.2018.0130 內的 DiskGenius 分割HDD 設定成 GUID (HDD 要是空的呦)</p>
+
+<p><img src="/images/posts/win7_mbr_gpt/p21.png" /></p>
+
+<p><img src="/images/posts/win7_mbr_gpt/p22.png" /></p>
+
+<p><img src="/images/posts/win7_mbr_gpt/p23.png" /></p>
+
+<p>再用快速分區功能劃出 EFI + MSR</p>
+
+<p><img src="/images/posts/win7_mbr_gpt/p24.png" /></p>
+
+<p>完成後</p>
+
+<p><img src="/images/posts/win7_mbr_gpt/p25.png" /></p>
+
+<p>之後就關機用正常安裝win7 或 win10 但是不要去動 HDD 的格式 !!!!</p>
+
+<p>安裝完後 ….</p>
+
+<p><img src="/images/posts/win7_mbr_gpt/p26.png" /></p>
+:ET

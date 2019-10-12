@@ -1,0 +1,61 @@
+I"H<p>perl 影像辨識 影像比較</p>
+
+<p>安裝</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install libpng-dev
+perl -MCPAN -e 'install Image::Compare' 
+perl -MCPAN -e 'install Imager::File::PNG';
+sudo apt-get -y install libgd2-xpm-dev build-essential
+perl -MCPAN -e 'install GD'
+</code></pre></div></div>
+
+<p>perl 影像辨識 影像比較程式</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>use Image::Compare;
+
+ my($cmp) = Image::Compare-&gt;new();
+ $cmp-&gt;set_image1(
+     img  =&gt; '/home/chio/snap-h264-9.png',
+     type =&gt; 'png',
+ );
+ $cmp-&gt;set_image2(
+     img  =&gt; '/home/chio/snap-h264-6.png',
+     type =&gt; 'png',
+ );
+ $cmp-&gt;set_method(
+     method =&gt; &amp;Image::Compare::THRESHOLD,
+     args   =&gt; 25,
+ );
+ if ($cmp-&gt;compare()) {
+     print "The images are the same, within the threshold \n";
+ }
+ else {
+     print "The images differ beyond the threshold \n"; }
+</code></pre></div></div>
+
+<p>後來改成 灰階後比較 ….</p>
+
+<p>perl g.pl file1.png fil2.png</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#! perl -slw</span>
+<span class="k">use</span> <span class="nv">strict</span><span class="p">;</span>
+<span class="k">use</span> <span class="nv">GD</span><span class="p">;</span>
+
+<span class="nn">GD::</span><span class="nv">Image</span><span class="o">-&gt;</span><span class="nv">trueColor</span><span class="p">(</span> <span class="mi">1</span> <span class="p">);</span>
+
+<span class="k">my</span> <span class="nv">$im1</span> <span class="o">=</span> <span class="nn">GD::</span><span class="nv">Image</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span> <span class="nv">$ARGV</span><span class="p">[</span> <span class="mi">0</span> <span class="p">]</span> <span class="p">);</span>
+<span class="k">my</span> <span class="nv">$im2</span> <span class="o">=</span> <span class="nn">GD::</span><span class="nv">Image</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span> <span class="nv">$ARGV</span><span class="p">[</span> <span class="mi">1</span> <span class="p">]</span> <span class="p">);</span>
+
+<span class="k">my</span> <span class="nv">$raw1</span> <span class="o">=</span> <span class="nv">$im1</span><span class="o">-&gt;</span><span class="nv">gd</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$raw2</span> <span class="o">=</span> <span class="nv">$im2</span><span class="o">-&gt;</span><span class="nv">gd</span><span class="p">;</span>
+
+<span class="k">my</span> <span class="nv">$xored</span> <span class="o">=</span> <span class="nv">$raw1</span> <span class="o">^</span> <span class="nv">$raw2</span><span class="p">;</span>
+<span class="k">my</span><span class="p">(</span> <span class="nv">$all</span><span class="p">,</span> <span class="nv">$diff</span> <span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="nv">x2</span><span class="p">;</span>
+
+<span class="nv">$all</span> <span class="o">+=</span> <span class="mi">255</span><span class="p">,</span> <span class="nv">$diff</span> <span class="o">+=</span> <span class="nb">ord</span> <span class="nb">substr</span> <span class="nv">$xored</span><span class="p">,</span> <span class="nv">$_</span><span class="p">,</span> <span class="mi">1</span> <span class="k">for</span> <span class="mi">0</span> <span class="o">..</span> <span class="nb">length</span><span class="p">(</span> <span class="nv">$xored</span> <span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="k">print</span> <span class="nv">$all</span><span class="p">,</span> <span class="p">'</span><span class="s1"> </span><span class="p">',</span> <span class="nv">$diff</span><span class="p">;</span>
+
+<span class="nb">printf</span> <span class="p">"</span><span class="s2">The simlarity is %.3f%%</span><span class="se">\n</span><span class="p">",</span> <span class="p">(</span> <span class="nv">$all</span> <span class="o">-</span> <span class="nv">$diff</span> <span class="p">)</span> <span class="o">/</span> <span class="nv">$all</span> <span class="o">*</span> <span class="mi">100</span><span class="p">;</span>
+</code></pre></div></div>
+:ET

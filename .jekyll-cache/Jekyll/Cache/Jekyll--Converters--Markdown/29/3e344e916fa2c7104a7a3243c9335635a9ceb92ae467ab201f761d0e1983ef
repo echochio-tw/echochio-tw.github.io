@@ -1,0 +1,989 @@
+I"W�<p>連正航資料庫取資料, 亂寫的 記錄一下</p>
+
+<p>修改 (IP : 192.168.X.X &amp; CHICompXX)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sub auto_open1()
+
+' 刪除已存在的暫存
+ Del_Box ("Page1")
+ Del_Box ("已定未進")
+ Del_Box ("未進數量統計")
+ Del_Box ("良品與不良")
+ Del_Box ("PageTmp")
+ Del_Box ("樞紐分析暫存")
+ Del_Box ("進口已定未進")
+ Del_Box ("進口未進數量統計")
+ Del_Box ("料件資訊")
+ 
+ '
+ Worksheets.Add.Name = "PageTmp"
+    ActiveWorkbook.Queries.Add Name:="查詢1", Formula:= _
+        "let" &amp; Chr(13) &amp; "" &amp; Chr(10) &amp; "    來源 = Sql.Database(""192.168.X.X"", ""CHICompXX"", [Query=""SELECT [CHICompXX].[dbo].[comProduct].[ProdID],[CHICompXX].[dbo].[comProduct].[ProdName],[CHICompXX].[dbo].[comProductClass].[ClassName] FROM [CHICompXX].[dbo].[comProduct] INNER JOIN [CHICompXX].[dbo].[comProductClass] ON [CHICompXX].[dbo].[comProduct].[ClassID] = [CHICompXX].[dbo].[comProductClass].[ClassID];""])" &amp; Chr(13) &amp; "" &amp; Chr(10) &amp; "in" &amp; Chr(13) &amp; "" &amp; Chr(10) &amp; "    來源"
+    With ActiveSheet.ListObjects.Add(SourceType:=0, Source:= _
+        "OLEDB;Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=查詢1;Extended Properties=""""" _
+        , Destination:=Range("$A$1")).QueryTable
+        .CommandType = xlCmdSql
+        .CommandText = Array("SELECT * FROM [查詢1]")
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = True
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .PreserveColumnInfo = True
+        .ListObject.DisplayName = "查詢1"
+        .Refresh BackgroundQuery:=False
+    End With
+   Cells.Select
+    Selection.Copy
+ActiveWorkbook.Queries("查詢1").Delete
+Worksheets.Add.Name = "料件資訊"
+    Sheets("料件資訊").Select
+    Cells.Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.DisplayAlerts = False
+    Sheets("PageTmp").Delete
+    Application.DisplayAlerts = True
+    Sheets("料件資訊").Select
+    ActiveCell.FormulaR1C1 = "產品編號"
+    Range("B1").Select
+    ActiveCell.FormulaR1C1 = "品名規格"
+    Range("C1").Select
+    ActiveCell.FormulaR1C1 = "類別名稱"
+    
+ 
+ 'SQL 進口資訊
+ Worksheets.Add.Name = "PageTmp"
+    ActiveWorkbook.Queries.Add Name:="查詢1", Formula:= _
+        "let" &amp; Chr(13) &amp; "" &amp; Chr(10) &amp; "    來源 = Sql.Database(""192.168.X.X"", ""CHICompXX"", [Query=""SELECT [PurchaseNo],[PurchaseDate],[ProductID],[Specific],[Quantity],[PreBuyDay],[QtyRemain] FROM [CHICompXX].[dbo].[impPurchaseSub] Where [PurchaseNo] like '%NI%' and [QtyRemain] &gt; '0';""])" &amp; Chr(13) &amp; "" &amp; Chr(10) &amp; "in" &amp; Chr(13) &amp; "" &amp; Chr(10) &amp; "    來源"
+    With ActiveSheet.ListObjects.Add(SourceType:=0, Source:= _
+        "OLEDB;Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=查詢1;Extended Properties=""""" _
+        , Destination:=Range("$A$1")).QueryTable
+        .CommandType = xlCmdSql
+        .CommandText = Array("SELECT * FROM [查詢1]")
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = True
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .PreserveColumnInfo = True
+        .ListObject.DisplayName = "查詢1"
+        .Refresh BackgroundQuery:=False
+    End With
+   Cells.Select
+    Selection.Copy
+ActiveWorkbook.Queries("查詢1").Delete
+Del_Box ("Page1")
+Worksheets.Add.Name = "Page1"
+    Sheets("Page1").Select
+    Cells.Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.DisplayAlerts = False
+    Sheets("PageTmp").Delete
+    Application.DisplayAlerts = True
+    Sheets("Page1").Select
+    Range("A1").Select
+    ActiveCell.FormulaR1C1 = "訂單號碼"
+    Range("B1").Select
+    ActiveCell.FormulaR1C1 = "訂單日期"
+    Range("C1").Select
+    ActiveCell.FormulaR1C1 = "產品編號"
+    Range("D1").Select
+    ActiveCell.FormulaR1C1 = "品名規格"
+    Range("E1").Select
+    ActiveCell.FormulaR1C1 = "數量"
+    Range("F1").Select
+    ActiveCell.FormulaR1C1 = "預定倒貨日"
+    Range("G1").Select
+    ActiveCell.FormulaR1C1 = "未進數量"
+    Columns("A:G").EntireColumn.AutoFit
+    Sheets("Page1").Move After:=Sheets(2)
+    Sheets("Page1").Select
+    Sheets("Page1").Name = "進口已定未進"
+    
+    With Sheets("進口已定未進")
+        Set rData = .Range(.Range("A1"), .Range("A2").End(xlToRight))
+        Set rData = .Range(rData, rData.End(xlDown))
+    End With
+    
+    '樞紐分析暫存
+    Sheets.Add After:=Sheets(Sheets.Count)
+    Sheets(Sheets.Count).Name = "樞紐分析暫存"
+    
+    '樞紐分析建立
+    ActiveWorkbook.PivotCaches.Create(SourceType:=xlDatabase, SourceData:= _
+        rData, Version:=xlPivotTableVersion10).CreatePivotTable _
+        TableDestination:="樞紐分析暫存!R3C1", TableName:="PivotTable1", DefaultVersion:= _
+        xlPivotTableVersion10
+    
+    '樞紐分析欄位設定
+    Sheets("樞紐分析暫存").Select
+    Cells(1, 1).Select
+    
+     With ActiveSheet.PivotTables("PivotTable1").PivotFields("產品編號")
+        .Orientation = xlRowField
+        .Position = 1
+    End With
+    ActiveSheet.PivotTables("PivotTable1").AddDataField ActiveSheet.PivotTables("PivotTable1" _
+        ).PivotFields("未進數量"), "加總 - 未進數量", xlSum
+
+    ' 複製到未進數量統計
+    Cells.Select
+    Selection.Copy
+    Sheets.Add After:=Sheets(Sheets.Count)
+    Sheets(Sheets.Count).Name = "進口未進數量統計"
+    Cells.Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Cells.EntireColumn.AutoFit
+    
+    ' 刪除樞紐分析暫存
+    Del_Box ("樞紐分析暫存")
+
+    'SQL 訂單資訊
+Del_Box ("PageTmp")
+Worksheets.Add.Name = "PageTmp"
+    ActiveWorkbook.Queries.Add Name:="查詢1", Formula:= _
+       "let" &amp; Chr(13) &amp; "" &amp; Chr(10) &amp; "    來源 = Sql.Database(""192.168.X.X"", ""CHICompXX"", [Query=""SELECT [CHICompXX].[dbo].[ordBillSub].[BillNO],#(lf)       [CHICompXX].[dbo].[ordBillSub].[BillDate],#(lf)#(tab)   [CHICompXX].[dbo].[ordBillSub].[ProdID],#(lf)#(tab)   [CHICompXX].[dbo].[ordBillSub].[ProdName],#(lf)#(tab)   [CHICompXX].[dbo].[ordBillSub].[Quantity],#(lf)#(tab)   [CHICompXX].[dbo]" &amp; _
+        ".[ordBillSub].[PreInDate],#(lf)#(tab)   [CHICompXX].[dbo].[ordBillSub].[QtyRemain]#(lf)FROM  [CHICompXX].[dbo].[ordBillSub]#(lf)      INNER JOIN [CHICompXX].[dbo].[ordBillMain]#(lf)#(tab)  ON [CHICompXX].[dbo].[ordBillMain].[BillNO] =[CHICompXX].[dbo].[ordBillSub].[BillNO]#(lf)WHERE  [CHICompXX].[dbo].[ordBillMain].[BillNO] LIKE 'ND%' #(lf)   and [CHICompXX].[dbo].[" &amp; _
+        "ordBillMain].[BillStatus]='0' #(lf)   and [CHICompXX].[dbo].[ordBillSub].[QtyRemain] &gt; '0'#(lf)   and [CHICompXX].[dbo].[ordBillSub].[ProdID] NOT LIKE '%*p001';#(lf)""])" &amp; Chr(13) &amp; "" &amp; Chr(10) &amp; "in" &amp; Chr(13) &amp; "" &amp; Chr(10) &amp; "    來源" &amp; _
+        ""
+    With ActiveSheet.ListObjects.Add(SourceType:=0, Source:= _
+        "OLEDB;Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=查詢1;Extended Properties=""""" _
+        , Destination:=Range("$A$1")).QueryTable
+        .CommandType = xlCmdSql
+        .CommandText = Array("SELECT * FROM [查詢1]")
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = True
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .PreserveColumnInfo = True
+        .ListObject.DisplayName = "查詢1"
+        .Refresh BackgroundQuery:=False
+    End With
+   Cells.Select
+    Selection.Copy
+ActiveWorkbook.Queries("查詢1").Delete
+Del_Box ("Page1")
+Worksheets.Add.Name = "Page1"
+    Sheets("Page1").Select
+    Cells.Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.DisplayAlerts = False
+    Sheets("PageTmp").Delete
+    Application.DisplayAlerts = True
+    Sheets("Page1").Select
+    Range("A1").Select
+    ActiveCell.FormulaR1C1 = "訂單號碼"
+    Range("B1").Select
+    ActiveCell.FormulaR1C1 = "訂單日期"
+    Range("C1").Select
+    ActiveCell.FormulaR1C1 = "產品編號"
+    Range("D1").Select
+    ActiveCell.FormulaR1C1 = "品名規格"
+    Range("E1").Select
+    ActiveCell.FormulaR1C1 = "數量"
+    Range("F1").Select
+    ActiveCell.FormulaR1C1 = "預定倒貨日"
+    Range("G1").Select
+    ActiveCell.FormulaR1C1 = "未進數量"
+    Columns("A:G").EntireColumn.AutoFit
+    Sheets("Page1").Move After:=Sheets(2)
+    Sheets("Page1").Select
+    Sheets("Page1").Name = "已定未進"
+    
+    With Sheets("已定未進")
+        Set rData = .Range(.Range("A1"), .Range("A2").End(xlToRight))
+        Set rData = .Range(rData, rData.End(xlDown))
+    End With
+    
+    '樞紐分析暫存
+    Sheets.Add After:=Sheets(Sheets.Count)
+    Sheets(Sheets.Count).Name = "樞紐分析暫存"
+    
+    '樞紐分析建立
+    ActiveWorkbook.PivotCaches.Create(SourceType:=xlDatabase, SourceData:= _
+        rData, Version:=xlPivotTableVersion10).CreatePivotTable _
+        TableDestination:="樞紐分析暫存!R3C1", TableName:="PivotTable1", DefaultVersion:= _
+        xlPivotTableVersion10
+    
+    '樞紐分析欄位設定
+    Sheets("樞紐分析暫存").Select
+    Cells(1, 1).Select
+    
+     With ActiveSheet.PivotTables("PivotTable1").PivotFields("產品編號")
+        .Orientation = xlRowField
+        .Position = 1
+    End With
+    ActiveSheet.PivotTables("PivotTable1").AddDataField ActiveSheet.PivotTables("PivotTable1" _
+        ).PivotFields("未進數量"), "加總 - 未進數量", xlSum
+
+    ' 複製到未進數量統計
+    Cells.Select
+    Selection.Copy
+    Sheets.Add After:=Sheets(Sheets.Count)
+    Sheets(Sheets.Count).Name = "未進數量統計"
+    Cells.Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Cells.EntireColumn.AutoFit
+    
+    ' 刪除樞紐分析暫存
+    Del_Box ("樞紐分析暫存")
+
+    ' 計算 進口未進數量統計+未進數量統計
+    ' 先存放到 進口未進數量統計 內
+    Sheets("進口未進數量統計").Select
+    Rows("1:3").Select
+    Selection.Delete Shift:=xlUp
+    lr = Cells(1, 1).End(xlDown).Row
+    Range(Cells(lr, 1), Cells(lr, 2)).Select
+    Selection.Delete Shift:=xlUp
+    
+    Sheets("未進數量統計").Select
+    Rows("1:3").Select
+    Selection.Delete Shift:=xlUp
+    Range(Cells(Cells(1, 1).End(xlDown).Row, 1), Cells(Cells(1, 1).End(xlDown).Row, 2)).Select
+    Selection.Delete Shift:=xlUp
+
+    Range("A2").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("進口未進數量統計").Select
+    Range(Cells(lr, 1), Cells(lr, 1)).Select
+    ActiveSheet.Paste
+     Application.CutCopyMode = False
+    
+    ' 樞紐分析未進數量統計
+        Sheets("進口未進數量統計").Select
+    
+    With Sheets("進口未進數量統計")
+        Set rData = .Range(.Range("A1"), .Range("A2").End(xlToRight))
+        Set rData = .Range(rData, rData.End(xlDown))
+    End With
+     
+    '樞紐分析暫存
+    Sheets.Add After:=Sheets(Sheets.Count)
+    Sheets(Sheets.Count).Name = "樞紐分析暫存"
+    
+    '樞紐分析建立
+    ActiveWorkbook.PivotCaches.Create(SourceType:=xlDatabase, SourceData:= _
+        rData, Version:=xlPivotTableVersion10).CreatePivotTable _
+        TableDestination:="樞紐分析暫存!R3C1", TableName:="PivotTable1", DefaultVersion:= _
+        xlPivotTableVersion10
+    
+    '樞紐分析欄位設定
+    Sheets("樞紐分析暫存").Select
+    Cells(1, 1).Select
+    
+     With ActiveSheet.PivotTables("PivotTable1").PivotFields("產品編號")
+        .Orientation = xlRowField
+        .Position = 1
+    End With
+    ActiveSheet.PivotTables("PivotTable1").AddDataField ActiveSheet.PivotTables("PivotTable1" _
+        ).PivotFields("合計"), "加總 - 合計", xlSum
+
+    ' 複製到未進數量統計
+    Cells.Select
+    Selection.Copy
+    Sheets("未進數量統計").Select
+    Cells.Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Cells.EntireColumn.AutoFit
+    
+    ' 刪除樞紐分析暫存
+    Del_Box ("樞紐分析暫存")
+    
+    ' 刪除進口未進數量統計
+     Del_Box ("進口未進數量統計")
+    
+    ' SQL 倉庫資訊
+Worksheets.Add.Name = "PageTmp"
+   ActiveWorkbook.Queries.Add Name:="查詢1", Formula:= _
+        "let" &amp; Chr(13) &amp; "" &amp; Chr(10) &amp; "    來源 = Sql.Database(""192.168.X.X"", ""CHICompXX"", [Query=""SELECT [CHICompXX].[dbo].[comProduct].[ProdID],#(lf)       [CHICompXX].[dbo].[comProduct].[ProdName],#(lf)       [CHICompXX].[dbo].[comProductClass].[ClassName],#(lf)#(tab)   #(lf)#(tab)   [CHICompXX].[dbo].[comWareHouse].[WareHouseName],#(lf)       [CHICompXX].[dbo].[comWareAmount].[Quantity]#(lf" &amp; _
+        ")#(tab)      #(lf)FROM (#(lf)#(lf)([CHICompXX].[dbo].[comProduct]#(lf)INNER JOIN [CHICompXX].[dbo].[comProductClass]#(lf)ON [CHICompXX].[dbo].[comProduct].[ClassID]=[CHICompXX].[dbo].[comProductClass].[ClassID])#(lf)  #(lf)INNER JOIN [CHICompXX].[dbo].[comWareAmount]#(lf)ON [CHICompXX].[dbo].[comProduct].[ProdID]=[CHICompXX].[dbo].[comWareAmount].[ProdID])#(lf)#(lf)" &amp; _
+        "INNER JOIN [CHICompXX].[dbo].[comWareHouse] #(lf)ON [CHICompXX].[dbo].[comWareHouse].[WareHouseID]=[CHICompXX].[dbo].[comWareAmount].[WareID]""])" &amp; Chr(13) &amp; "" &amp; Chr(10) &amp; "in" &amp; Chr(13) &amp; "" &amp; Chr(10) &amp; "    來源" &amp; _
+        ""
+    With ActiveSheet.ListObjects.Add(SourceType:=0, Source:= _
+        "OLEDB;Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=查詢1;Extended Properties=""""" _
+        , Destination:=Range("$A$1")).QueryTable
+        .CommandType = xlCmdSql
+        .CommandText = Array("SELECT * FROM [查詢1]")
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = True
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .PreserveColumnInfo = True
+        .ListObject.DisplayName = "查詢1"
+        .Refresh BackgroundQuery:=False
+    End With
+   Cells.Select
+    Selection.Copy
+ActiveWorkbook.Queries("查詢1").Delete
+Worksheets.Add.Name = "Page1"
+    Sheets("Page1").Select
+    Cells.Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.DisplayAlerts = False
+    Sheets("PageTmp").Delete
+    Application.DisplayAlerts = True
+    Sheets("Page1").Select
+    ActiveCell.FormulaR1C1 = "產品編號"
+    Range("B1").Select
+    ActiveCell.FormulaR1C1 = "品名規格"
+    Range("C1").Select
+    ActiveCell.FormulaR1C1 = "類別名稱"
+    Range("D1").Select
+    ActiveCell.FormulaR1C1 = "倉庫名稱"
+    Range("E1").Select
+    ActiveCell.FormulaR1C1 = "實際在庫存量"
+    Rows("1:1").Select
+    Selection.Insert Shift:=xlDown, CopyOrigin:=xlFormatFromLeftOrAbove
+    Selection.Insert Shift:=xlDown, CopyOrigin:=xlFormatFromLeftOrAbove
+    Selection.Insert Shift:=xlDown, CopyOrigin:=xlFormatFromLeftOrAbove
+
+    ' 刪除已存在的總倉
+    Del_Box ("總倉")
+    
+    ' A4:A5 + shift-ctrl + 下 key + 右 key
+    With Sheets("Page1")
+        Set rData = .Range(.Range("A4"), .Range("A5").End(xlToRight))
+        Set rData = .Range(rData, rData.End(xlDown))
+    End With
+    
+    '樞紐分析暫存
+    Sheets.Add After:=Sheets(Sheets.Count)
+    Sheets(Sheets.Count).Name = "樞紐分析暫存"
+    
+    '樞紐分析建立
+    ActiveWorkbook.PivotCaches.Create(SourceType:=xlDatabase, SourceData:= _
+        rData, Version:=xlPivotTableVersion10).CreatePivotTable _
+        TableDestination:="樞紐分析暫存!R3C1", TableName:="PivotTable1", DefaultVersion:= _
+        xlPivotTableVersion10
+        
+    '樞紐分析欄位設定
+    Sheets("樞紐分析暫存").Select
+    Cells(3, 1).Select
+    With ActiveSheet.PivotTables("PivotTable1").PivotFields("產品編號")
+        .Orientation = xlRowField
+        .Position = 1
+    End With
+    With ActiveSheet.PivotTables("PivotTable1").PivotFields("品名規格")
+        .Orientation = xlRowField
+        .Position = 2
+    End With
+    With ActiveSheet.PivotTables("PivotTable1").PivotFields("類別名稱")
+        .Orientation = xlRowField
+        .Position = 3
+    End With
+    With ActiveSheet.PivotTables("PivotTable1").PivotFields("倉庫名稱")
+        .Orientation = xlColumnField
+        .Position = 1
+    End With
+    
+    
+    '樞紐分析欄位設定加總
+    ActiveSheet.PivotTables("PivotTable1").AddDataField ActiveSheet.PivotTables("PivotTable1" _
+        ).PivotFields("實際在庫存量"), "加總 - 實際在庫存量", xlSum
+        
+    '樞紐分析欄位取消為無
+    ActiveSheet.PivotTables("PivotTable1").PivotFields("產品編號").Subtotals = Array(False, _
+        False, False, False, False, False, False, False, False, False, False, False)
+    ActiveSheet.PivotTables("PivotTable1").PivotFields("品名規格").Subtotals = Array(False, _
+        False, False, False, False, False, False, False, False, False, False, False)
+    ActiveSheet.PivotTables("PivotTable1").PivotFields("類別名稱").Subtotals = Array(False, _
+        False, False, False, False, False, False, False, False, False, False, False)
+    Cells.Select
+    
+    '樞紐分析暫存複製到總倉, 複製值
+    Selection.Copy
+    Sheets.Add After:=Sheets(Sheets.Count)
+    Sheets(Sheets.Count).Name = "總倉"
+    Cells.Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Cells.EntireColumn.AutoFit
+    
+    '選範圍
+    Range("C4").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    
+    ' 將選的範圍 "0" 變 空白
+    Selection.Replace What:="0", Replacement:="", LookAt:=xlWhole, _
+         SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+         ReplaceFormat:=False
+    
+    ' 畫框
+    Selection.Borders(xlDiagonalDown).LineStyle = xlNone
+    Selection.Borders(xlDiagonalUp).LineStyle = xlNone
+    With Selection.Borders(xlEdgeLeft)
+        .LineStyle = xlContinuous
+        .ColorIndex = xlAutomatic
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeTop)
+        .LineStyle = xlContinuous
+        .ColorIndex = xlAutomatic
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeBottom)
+        .LineStyle = xlContinuous
+        .ColorIndex = xlAutomatic
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeRight)
+        .LineStyle = xlContinuous
+        .ColorIndex = xlAutomatic
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    Selection.Borders(xlInsideVertical).LineStyle = xlNone
+    Selection.Borders(xlInsideHorizontal).LineStyle = xlNone
+    
+    ' 刪除樞紐分析暫存
+    Del_Box ("樞紐分析暫存")
+    
+    ' 選取 總倉
+    Worksheets("總倉").Activate
+    
+    ' 找出 Row 及 Column 大小
+    lc = Cells(4, 1).End(xlToRight).Column
+    lr = Cells(4, 1).End(xlDown).Row
+    
+    ' 最後一行(Row)的所有 上的資訊為 0時刪除 其Column
+    ' 要重後面開始刪除不然會算錯
+    For xlc = lc To 4 Step -1
+      If Cells(lr, xlc).Value = "0" Then
+       ActiveSheet.Range(Cells(1, xlc), Cells(1, xlc)).EntireColumn.Delete
+      End If
+    Next xlc
+    
+    ' 找XXX倉移動
+    Worksheets("製造機").Activate
+    lr = Cells(10, 1).End(xlDown).Row
+    For xlr = lr To 10 Step -1
+        Worksheets("製造機").Activate
+        Move_warehouse (Cells(xlr, 1).Value)
+    Next xlr
+
+    
+    ' 找總計
+    Worksheets("總倉").Activate
+    lc = Cells(4, 5).End(xlToRight).Column
+    lr = Cells(4, 1).End(xlDown).Row
+    For xlc = 5 To lc
+      If Cells(4, xlc).Value = "總計" Then
+        Range(Cells(5, xlc), Cells(lr, xlc)).Select
+        ' 將選的範圍 空白 變 "0"
+       Selection.Replace What:="", Replacement:="0", LookAt:=xlWhole, _
+         SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+         ReplaceFormat:=False
+        Exit For
+      End If
+    Next xlc
+
+    ' 插入一列
+    Rows("2:3").Select
+    Range("A3").Activate
+    Selection.Delete Shift:=xlUp
+    Columns("A:A").Select
+    Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+    Cells.Select
+
+    ' 設定字型
+        With Selection.Font
+        .Name = "Arial"
+        .Size = 12
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .ColorIndex = 1
+        .TintAndShade = 0
+        .ThemeFont = xlThemeFontNone
+    End With
+    With Selection.Font
+        .Name = "微軟正黑體"
+        .Size = 12
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .ColorIndex = 1
+        .TintAndShade = 0
+        .ThemeFont = xlThemeFontNone
+    End With
+
+    ' 將所有寬度設 13
+
+    Columns("A:A").Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Selection.ColumnWidth = 13
+    With Selection
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlBottom
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+
+    ' 設定 B,C,D 寬度
+    Range("B:B,D:D").Select
+    Range("D1").Activate
+    Selection.ColumnWidth = 21
+    Columns("C:C").Select
+    Selection.ColumnWidth = 50
+    
+    Range("B3").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    With Selection
+        .HorizontalAlignment = xlGeneral
+        .VerticalAlignment = xlBottom
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    Range("C3").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    With Selection
+        .HorizontalAlignment = xlGeneral
+        .VerticalAlignment = xlBottom
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+   
+   '畫框
+   
+    Range("B2").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Selection.Borders(xlDiagonalDown).LineStyle = xlNone
+    Selection.Borders(xlDiagonalUp).LineStyle = xlNone
+    With Selection.Borders(xlEdgeLeft)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeTop)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeBottom)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeRight)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlInsideVertical)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlInsideHorizontal)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    Range("B2").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.Copy
+    Range("A2").Select
+    Selection.PasteSpecial Paste:=xlPasteFormats, Operation:=xlNone, _
+        SkipBlanks:=False, Transpose:=False
+    Application.CutCopyMode = False
+   
+    '篩選
+    Range("A2:B2").Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Selection.AutoFilter
+    
+    '改名字
+    Worksheets("總倉").Activate
+    Cells.Select
+    Selection.Copy
+    Del_Box ("良品與不良")
+    Worksheets.Add.Name = "良品與不良"
+    ActiveSheet.Paste
+    Del_Box ("總倉")
+
+    ' 刪除已存在的Page1 (在第一個呼叫副程式沒法刪除)
+    Application.DisplayAlerts = False
+    Sheets("Page1").Select
+    ActiveWindow.SelectedSheets.Delete
+    Application.DisplayAlerts = True
+    
+    '良品倉刪除不需要的
+    Worksheets("良品與不良").Activate
+    Columns("H:H").Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Selection.Delete Shift:=xlToLeft
+       
+   
+    '寫上今天日期
+    Worksheets("製造機").Activate
+    Range("B1").Select
+    ActiveCell.FormulaR1C1 = "=TODAY()"
+    Selection.NumberFormatLocal = "yyyy/m/d"
+    Range("B1").Select
+    Selection.Copy
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("良品與不良").Select
+    Range("C1").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+    '良品與不良 大寫及日期
+    Worksheets("良品與不良").Activate
+    Range("C1").Select
+    Selection.NumberFormatLocal = "yyyy/m/d"
+    Selection.Font.Bold = True
+    Range("A2:D2").Select
+    Selection.Font.Bold = True
+    Range("B1").Select
+    ActiveCell.FormulaR1C1 = "日期"
+    Selection.Font.Bold = True
+    Range("A2").Select
+    ActiveCell.FormulaR1C1 = "顯示狀態"
+    Selection.Font.Bold = True
+    Range("H2").Select
+    ActiveCell.FormulaR1C1 = "已定未進"
+
+'找 未進數量統計 Cells(5,1)-Cells(X,1) 值
+'在 良品與不良 Cells(4,2)-Cells(X,2) 值
+'相同將 未進數量統計 Cells(X,2) 值 放到
+'良品與不良 Cells(X,8)
+ Worksheets("良品與不良").Activate
+   lr = Cells(4, 2).End(xlDown).Row
+   lr = lr - 1
+ Worksheets("未進數量統計").Activate
+  lrd = Cells(5, 1).End(xlDown).Row
+  lrd = lrd - 1
+
+'雙迴圈找相同 放入未進數量值
+  For xlrd = 5 To lrd
+   Worksheets("未進數量統計").Activate
+    strData = Cells(xlrd, 1).Value
+    strNum = Cells(xlrd, 2).Value
+    
+    Worksheets("良品與不良").Activate
+    HaveData = 0
+    
+    For xlr = 4 To lr
+      If strData = Cells(xlr, 2).Value Then
+        Cells(xlr, 8).Select
+        ActiveCell.FormulaR1C1 = strNum
+        HaveData = 1
+      End If
+    Next xlr
+    
+    If HaveData = 0 Then
+     Worksheets("良品與不良").Activate
+     lr = lr + 1
+     Cells(lr, 8).Select
+     ActiveCell.FormulaR1C1 = strNum
+     Cells(lr, 2).Select
+     ActiveCell.FormulaR1C1 = strData
+     
+     Worksheets("已定未進").Activate
+     lrDATA = Cells(1, 3).End(xlDown).Row
+     For k = 1 To lrDATA
+      If Cells(k, 3).Value = strData Then
+       ReturnData = Cells(k, 4).Value
+        Exit For
+      End If
+     Next
+     
+     Worksheets("進口已定未進").Activate
+     lrDATA = Cells(1, 3).End(xlDown).Row
+     For k = 1 To lrDATA
+      If Cells(k, 3).Value = strData Then
+       ReturnData = Cells(k, 4).Value
+       Exit For
+      End If
+     Next
+     
+     Worksheets("良品與不良").Activate
+     Cells(lr, 3).Select
+     ActiveCell.FormulaR1C1 = ReturnData
+     
+     Worksheets("料件資訊").Activate
+     lrDATA = Cells(1, 1).End(xlDown).Row
+     For k = 1 To lrDATA
+      If Cells(k, 1).Value = strData Then
+       ReturnData = Cells(k, 3).Value
+       Exit For
+      End If
+      Next
+      
+     Worksheets("良品與不良").Activate
+     Cells(lr, 4).Select
+     ActiveCell.FormulaR1C1 = ReturnData
+      
+    End If
+    Next xlrd
+    
+'雙迴圈找字首為 Cells(10,X)
+Worksheets("良品與不良").Activate
+  lr = Cells(4, 2).End(xlDown).Row
+Worksheets("製造機").Activate
+  lrd = Cells(10, 4).End(xlDown).Row
+  
+   For xlrd = 10 To lrd
+   Worksheets("製造機").Activate
+    strData = Cells(xlrd, 4).Value
+    strLen = Len(strData)
+    Worksheets("良品與不良").Activate
+    For xlr = 4 To lr
+      If strData = Left(Cells(xlr, 2).Value, strLen) Then
+        Cells(xlr, 1).Select
+        ActiveCell.FormulaR1C1 = "1"
+      End If
+    Next xlr
+   Next xlrd
+    
+ 
+
+'改工令單內 REF 為 良品與不良
+Application.DisplayAlerts = False
+Worksheets("製造機").Activate
+    lr = Cells(10, 6).End(xlDown).Row
+    For xlr = lr To 10 Step -1
+        Worksheets("製造機").Activate
+        Move_ref (Cells(xlr, 6).Value)
+    Next xlr
+Application.DisplayAlerts = True
+'良品與不良 移到最前面第二個
+Sheets("良品與不良").Select
+Sheets("良品與不良").Move Before:=Sheets(2)
+
+'庫存加已定未進減生產用量
+    Sheets("良品與不良").Select
+    Range("I2").Select
+    ActiveCell.FormulaR1C1 = "庫存加已定未進減生產用量"
+    xxxlr = Cells(2, 2).End(xlDown).Row
+      Cells(3, 9).Select
+ '       Selection.NumberFormatLocal = "0;[紅色]-0"
+        ActiveCell.FormulaR1C1 = "=RC[-4]+RC[-3]+RC[-1]-SUM(RC[1]:RC[200])"
+    Ranglr = "I3:I" &amp; xxxlr
+    Selection.AutoFill Destination:=Range(Ranglr)
+    
+    Ranglr = "A1:A" &amp; xxxlr
+    
+ '各個 生產用量 填入公式
+ '利用相對位置  RC [ 2 - xlr ]
+  Worksheets("製造機").Activate
+    lr = Cells(10, 6).End(xlDown).Row
+    lr = lr - 1
+    For xlr = 10 To lr
+        Worksheets("製造機").Activate
+        Proddata = Cells(xlr, 6).Value
+        Worksheets("良品與不良").Activate
+        Cells(1, xlr).Select
+        ActiveCell.FormulaR1C1 = Proddata
+        Cells(2, xlr).Select
+        ActiveCell.FormulaR1C1 = "生產用量"
+        Cells(3, xlr).Select
+        ddr = 2 - xlr
+        ActiveCell.FormulaR1C1 = _
+                              "=IFNA(INDEX('" &amp; Proddata &amp; "'!R2C1:R5000C702,MATCH(RC[" &amp; ddr &amp; "],'" &amp; Proddata &amp; "'!C3,0)-1,MATCH(R2C10,'" &amp; Proddata &amp; "'!R7,0)),"""")"
+        Selection.AutoFill Destination:=ActiveCell.Range(Ranglr)
+        
+   Next xlr
+   
+   '欄位 B &amp; C 靠左
+    Range("B3:C3").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    With Selection
+        .HorizontalAlignment = xlLeft
+        .VerticalAlignment = xlBottom
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+
+'顯示 1 的篩選
+ Worksheets("良品與不良").Activate
+    Rows("2:2").Select
+    Selection.AutoFilter
+    ActiveSheet.Range("$A$2:$EC$5000").AutoFilter Field:=1, Criteria1:="&lt;&gt;"
+
+'畫框及隱藏第一行
+   Range("B2").Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.Borders(xlDiagonalDown).LineStyle = xlNone
+    Selection.Borders(xlDiagonalUp).LineStyle = xlNone
+    With Selection.Borders(xlEdgeLeft)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeTop)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeBottom)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeRight)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlInsideVertical)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlInsideHorizontal)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+' 設定顯示 70%
+    Columns("A:A").Select
+    Selection.EntireColumn.Hidden = True
+    ActiveWindow.Zoom = 70
+' 設定負數時紅色
+    Columns("I:I").Select
+    Selection.FormatConditions.Delete
+    Cells.FormatConditions.Delete
+    Columns("I:I").Select
+    Selection.FormatConditions.Add Type:=xlCellValue, Operator:=xlLess, _
+        Formula1:="=0"
+    Selection.FormatConditions(Selection.FormatConditions.Count).SetFirstPriority
+    With Selection.FormatConditions(1).Interior
+        .PatternColorIndex = xlAutomatic
+        .Color = 255
+        .TintAndShade = 0
+    End With
+    Selection.FormatConditions(1).StopIfTrue = False
+    
+'良品與不良移到最前面
+    Sheets("良品與不良").Select
+    Sheets("良品與不良").Move Before:=Sheets(1)
+ 
+End Sub
+
+'副程式改工令單內 REF 為 良品與不良
+Sub Move_ref(Move_ref As String)
+    Worksheets(Move_ref).Activate
+    Range("G2").Select
+    ActiveCell.FormulaR1C1 = "=TODAY()"
+    Selection.NumberFormatLocal = "yyyy/m/d"
+    Cells.Replace What:="#REF", Replacement:="良品與不良", LookAt:=xlPart, _
+    SearchOrder:=xlByRows, MatchCase:=True, SearchFormat:=False, _
+    ReplaceFormat:=False
+End Sub
+
+Sub Move_warehouse(Move_warehouse As String)
+'找XXX倉移動
+  Worksheets("總倉").Activate
+    lc = Cells(4, 5).End(xlToRight).Column
+    lr = Cells(4, 1).End(xlDown).Row
+    For xlc = 5 To lc
+      If Cells(4, xlc).Value = Move_warehouse Then
+        Range(Cells(1, xlc), Cells(lr, xlc)).Select
+        Application.CutCopyMode = False
+        Selection.Cut
+        Columns("D:D").Select
+        Selection.Insert Shift:=xlToRight
+        Exit For
+      End If
+    Next xlc
+End Sub
+
+Sub Del_Box(Box_data As String)
+
+' 判斷是否是第一個是移到最後一個下次刪除
+ If Box_data = Sheets(1).Name Then
+  Sheets(Box_data).Move Before:=Sheets(Sheets.Count)
+ End If
+' 刪除已存在的暫存
+   For i = 2 To Sheets.Count
+            If Box_data = Sheets(i).Name Then
+              Application.DisplayAlerts = False
+              Sheets(i).Delete
+              Application.DisplayAlerts = True
+              Exit For
+             End If
+    Next
+End Sub
+
+
+</code></pre></div></div>
+:ET

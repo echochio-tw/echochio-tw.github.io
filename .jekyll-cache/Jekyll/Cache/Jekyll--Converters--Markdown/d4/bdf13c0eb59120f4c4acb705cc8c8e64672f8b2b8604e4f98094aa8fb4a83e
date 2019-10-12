@@ -1,0 +1,40 @@
+I"�<p>抓 安裝 的 image ….自己找一下呦  DS3615xs 6.1  Mod V1.02 alpha …..</p>
+
+<p>設定 :</p>
+
+<p><img src="/images/posts/synology/p1.png" /></p>
+
+<p><img src="/images/posts/synology/p2.png" /></p>
+
+<p><img src="/images/posts/synology/p3.png" /></p>
+
+<p>第二顆 HDD 是安裝OS 的 HDD</p>
+
+<p><img src="/images/posts/synology/p4.png" /></p>
+
+<p>開機選這個 :</p>
+
+<p><img src="/images/posts/synology/p5.png" /></p>
+
+<p>要有 DHCP 環境 ….找到 IP  , 他的 hostname 是 DiskStation</p>
+
+<p>開網頁 http://xx.xx.xx.xx:5000/</p>
+
+<p><img src="/images/posts/synology/p6.png" /></p>
+
+<p>設定安裝 ….XD</p>
+
+<p><img src="/images/posts/synology/p7.png" /></p>
+
+<p>等一下開起來 …</p>
+
+<p><img src="/images/posts/synology/p8.png" /></p>
+
+<p>接下來如何做就不說了 …..就是實驗看看 …沒有要拿來用 …….</p>
+
+<p><img src="/images/posts/synology/p9.png" /></p>
+
+<p><img src="/images/posts/synology/p10.png" /></p>
+
+<p><img src="/images/posts/synology/p11.png" /></p>
+:ET

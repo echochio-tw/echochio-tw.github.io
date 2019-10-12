@@ -1,0 +1,17 @@
+I"û<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps -ef | grep 'perl' | grep -v grep |awk '{print "kill -9 "$2}' &gt; /tmp/a
+sh /tmp/a
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sed -i 's/enp2s0f0/em1/g' *.pl
+</code></pre></div></div>
+
+<p>/root/iptable_remove_dupicate.sh</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iptables -vnL|grep DROP  | awk '{ print $8}' | grep -v "0.0.0.0" |awk '/[0-9]/' | sort | uniq -c|sort -nr |awk '{if($1 &gt;1) print $1" "$2}' |awk '{for(i=1;i&lt;=$1-1;i++) print "iptables -D INPUT -s  " $2 " -j DROP" | "bash" } '
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat crontab.txt |crontab -
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "10 3 * * * rm -rf /root/bw/socat.log" |crontab -
+</code></pre></div></div>
+:ET

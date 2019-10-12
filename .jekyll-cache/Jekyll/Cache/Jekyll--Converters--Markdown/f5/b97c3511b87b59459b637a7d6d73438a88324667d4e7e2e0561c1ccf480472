@@ -1,0 +1,22 @@
+I"V<p>GitHUB 在 
+<a href="https://github.com/echochio-tw/jQuery-On-Hover-Image-Inner-Zoom-Plugin"><img src="https://github.com/echochio-tw/jQuery-On-Hover-Image-Inner-Zoom-Plugin" alt="https://github.com/echochio-tw/jQuery-On-Hover-Image-Inner-Zoom-Plugin" /></a></p>
+
+<hr />
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script src="https://code.jquery.com/jquery-1.11.3.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"&gt;&lt;/script&gt;
+&lt;script src="jQuery-On-Hover-Image-Inner-Zoom-Plugin-jqzoomer/jqzoomer.1.0.js"&gt;&lt;/script&gt;
+
+&lt;div class="demo"&gt;
+  &lt;a href="https://raw.githubusercontent.com/echochio-tw/jQuery-On-Hover-Image-Inner-Zoom-Plugin/master/large.jpg"&gt;
+    &lt;img src="https://raw.githubusercontent.com/echochio-tw/jQuery-On-Hover-Image-Inner-Zoom-Plugin/master/small.jpg"&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;
+jQuery(document).ready(function() {
+                jQuery(".demo").jqzoomer();
+            });
+&lt;/script&gt;
+</code></pre></div></div>
+<hr />
+:ET

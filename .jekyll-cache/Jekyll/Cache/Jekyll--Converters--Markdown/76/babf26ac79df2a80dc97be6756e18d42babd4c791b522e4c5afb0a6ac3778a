@@ -1,0 +1,60 @@
+I"�"<p>百度地圖標示地點 其中 116.400244,39.92556 為座標</p>
+
+<hr />
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-Type"</span> <span class="na">content=</span><span class="s">"text/html; charset=utf-8"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"initial-scale=1.0, user-scalable=no"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+                <span class="nt">body</span><span class="o">,</span> <span class="nt">html</span><span class="o">,</span><span class="nf">#allmap</span> <span class="p">{</span><span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span><span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span><span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span><span class="nl">margin</span><span class="p">:</span><span class="m">0</span><span class="p">;</span><span class="nl">font-family</span><span class="p">:</span><span class="s1">"微软雅黑"</span><span class="p">;}</span>
+        <span class="nt">&lt;/style&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"http://api.map.baidu.com/api?v=2.0&amp;ak=ZUONbpqGBsYGXNIYHicvbAbM"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;title&gt;</span>带文字标签的覆盖物<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"allmap"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+        <span class="c1">// 百度地图API功能</span>
+        <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nb">Map</span><span class="p">(</span><span class="dl">"</span><span class="s2">allmap</span><span class="dl">"</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">point</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mf">116.400244</span><span class="p">,</span><span class="mf">39.92556</span><span class="p">);</span>
+        <span class="nx">map</span><span class="p">.</span><span class="nx">centerAndZoom</span><span class="p">(</span><span class="nx">point</span><span class="p">,</span> <span class="mi">18</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">marker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Marker</span><span class="p">(</span><span class="nx">point</span><span class="p">);</span>  <span class="c1">// 创建标注</span>
+        <span class="nx">map</span><span class="p">.</span><span class="nx">addOverlay</span><span class="p">(</span><span class="nx">marker</span><span class="p">);</span>              <span class="c1">// 将标注添加到地图中</span>
+
+        <span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Label</span><span class="p">(</span><span class="dl">"</span><span class="s2">公司</span><span class="dl">"</span><span class="p">,{</span><span class="na">offset</span><span class="p">:</span><span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">Size</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">)});</span>
+        <span class="nx">marker</span><span class="p">.</span><span class="nx">setLabel</span><span class="p">(</span><span class="nx">label</span><span class="p">);</span>
+  <span class="c1">// 添加带有定位的导航控件</span>
+  <span class="kd">var</span> <span class="nx">navigationControl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">NavigationControl</span><span class="p">({</span>
+    <span class="c1">// 靠左上角位置</span>
+    <span class="na">anchor</span><span class="p">:</span> <span class="nx">BMAP_ANCHOR_TOP_LEFT</span><span class="p">,</span>
+    <span class="c1">// LARGE类型</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nx">BMAP_NAVIGATION_CONTROL_LARGE</span><span class="p">,</span>
+    <span class="c1">// 启用显示定位</span>
+    <span class="na">enableGeolocation</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">});</span>
+  <span class="nx">map</span><span class="p">.</span><span class="nx">addControl</span><span class="p">(</span><span class="nx">navigationControl</span><span class="p">);</span>
+  <span class="c1">// 添加定位控件</span>
+  <span class="kd">var</span> <span class="nx">geolocationControl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BMap</span><span class="p">.</span><span class="nx">GeolocationControl</span><span class="p">();</span>
+  <span class="nx">geolocationControl</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">locationSuccess</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="c1">// 定位成功事件</span>
+    <span class="kd">var</span> <span class="nx">address</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+    <span class="nx">address</span> <span class="o">+=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">addressComponent</span><span class="p">.</span><span class="nx">province</span><span class="p">;</span>
+    <span class="nx">address</span> <span class="o">+=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">addressComponent</span><span class="p">.</span><span class="nx">city</span><span class="p">;</span>
+    <span class="nx">address</span> <span class="o">+=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">addressComponent</span><span class="p">.</span><span class="nx">district</span><span class="p">;</span>
+    <span class="nx">address</span> <span class="o">+=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">addressComponent</span><span class="p">.</span><span class="nx">street</span><span class="p">;</span>
+    <span class="nx">address</span> <span class="o">+=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">addressComponent</span><span class="p">.</span><span class="nx">streetNumber</span><span class="p">;</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">当前定位地址为：</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">address</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="nx">geolocationControl</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">locationError</span><span class="dl">"</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="c1">// 定位失败事件</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="nx">map</span><span class="p">.</span><span class="nx">addControl</span><span class="p">(</span><span class="nx">geolocationControl</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+
+</code></pre></div></div>
+<hr />
+:ET

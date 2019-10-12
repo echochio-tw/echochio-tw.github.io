@@ -1,0 +1,57 @@
+I"�	<p>改程式用到</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find ./ -type f -name \*.php |xargs grep 姓氏
+</code></pre></div></div>
+
+<p>還可用 -r</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grep -r  姓氏 *
+</code></pre></div></div>
+<p>更改的記錄一下 :</p>
+
+<ol>
+  <li>找出有 “貴姓” 的檔案
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grep -r  貴姓 &gt; /tmp/a
+</code></pre></div>    </div>
+  </li>
+  <li>更名為 .old (在此之前要 vi 一下 … 第一行怪怪的 要拿掉 :$_[‘text_firstname’] 這字元
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>catalog/language/zh-tw/mail/register.php:$_['text_firstname']
+catalog/language/zh-tw/mail/affiliate.php
+catalog/language/zh-tw/account/register.php
+catalog/language/zh-tw/account/register.php
+catalog/language/zh-tw/account/address.php
+catalog/language/zh-tw/account/address.php
+catalog/language/zh-tw/account/edit.php
+catalog/language/zh-tw/account/edit.php
+catalog/language/zh-tw/account/return.php
+catalog/language/zh-tw/account/return.php
+catalog/language/zh-tw/affiliate/register.php
+catalog/language/zh-tw/affiliate/register.php
+catalog/language/zh-tw/checkout/checkout.php
+catalog/language/zh-tw/checkout/checkout.php
+catalog/language/zh-tw/api/payment.php
+catalog/language/zh-tw/api/customer.php
+catalog/language/zh-tw/api/shipping.php
+admin/language/zh-tw/sale/order.php
+admin/language/zh-tw/sale/return.php
+admin/language/zh-tw/sale/return.php
+admin/language/zh-tw/user/user.php
+admin/language/zh-tw/user/user.php
+</code></pre></div>    </div>
+  </li>
+  <li>將有抓出來的檔 更名為  .old
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat /tmp/a  | awk '{FS=":";print "mv "$1" "$1".old"}' &gt; /tmp/b
+sh /tmp/b
+</code></pre></div>    </div>
+  </li>
+  <li>將 貴姓 換成 姓名
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat /tmp/a | awk '{print "sed '"'"'s/貴姓/姓名/g'"'"' "$1".old &gt; "$1}' &gt; /tmp/b
+sh /tmp/b
+</code></pre></div>    </div>
+  </li>
+  <li>將 old 檔移除
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat /tmp/a | awk '{print "rm -rf "$1".old"}' &gt; /tmp/b
+sh  /tmp/b
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET

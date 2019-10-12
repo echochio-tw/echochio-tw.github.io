@@ -1,0 +1,10 @@
+I"i<p>設定自動縮排：即每行的縮排值與上一行相等:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:set autoindent
+:set shiftwidth=4
+</code></pre></div></div>
+
+<p>取消設定</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:set noautoindent
+</code></pre></div></div>
+:ET

@@ -1,0 +1,17 @@
+I"*<p>微軟說公司一定要有IT人員 , 因為更新後你的印表機不一定可以印…..</p>
+
+<p>搞了我一個早上 , 全公司有line printer 的地方都去關心了一下 …..XD</p>
+
+<p>在 cmd 執行…… 以下指令就不必到控制台_程式_安裝的 ……. 找 KB4048957</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>----------
+
+win7   : wusa.exe /uninstall /kb:4048957
+
+win10 : wusa.exe /uninstall /kb:4048954
+
+win10 : wusa.exe /uninstall /kb:4048955
+
+----------
+</code></pre></div></div>
+:ET

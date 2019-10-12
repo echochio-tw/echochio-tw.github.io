@@ -1,0 +1,181 @@
+I"�<p>GOOS：目標平臺的作業系統（darwin、freebsd、linux、windows）</p>
+
+<p>GOARCH：目標平臺的體系架構（386、amd64、arm）</p>
+
+<p>交叉編譯不支持 CGO 所以要禁用它</p>
+
+<p>可編譯 64 位元可執行程式</p>
+
+<p>你當然應該也會使用 386 編譯 32 位元可執行程式</p>
+
+<p>Go 新版本已支援所有平臺</p>
+
+<p>golang 在 Windows 下編譯 MacOS 64 位元可執行程式</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SET CGO_ENABLED=0
+SET GOOS=darwin
+SET GOARCH=amd64
+go build main.go
+</code></pre></div></div>
+
+<p>golang 在 Windows 下編譯 Linux 64 位元可執行程式</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SET CGO_ENABLED=0
+SET GOOS=linux
+SET GOARCH=amd64
+go build main.go
+</code></pre></div></div>
+
+<p>Linux 下編譯 Windows 32位元系統下可執行程式</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ CGO_ENABLED=0 GOOS=windows GOARCH=386 go build test.go
+</code></pre></div></div>
+
+<p>Linux 下編譯 Windows 64位元系統下可執行程式</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build test.go
+</code></pre></div></div>
+
+<p>Linux 下編譯基本是 :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>env GOOS=target-OS GOARCH=target-architecture go build package-import-path
+</code></pre></div></div>
+
+<p>Raspberry Pi的ARM CPU</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export GOARCH=arm
+export GOOS=linux
+export GOARM=7
+</code></pre></div></div>
+
+<p>請參考下表 :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>GOOS - 目的作業系統</th>
+      <th>GOARCH - 目的平台</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>android</td>
+      <td>arm</td>
+    </tr>
+    <tr>
+      <td>darwin</td>
+      <td>386</td>
+    </tr>
+    <tr>
+      <td>darwin</td>
+      <td>amd64</td>
+    </tr>
+    <tr>
+      <td>darwin</td>
+      <td>arm</td>
+    </tr>
+    <tr>
+      <td>darwin</td>
+      <td>arm64</td>
+    </tr>
+    <tr>
+      <td>dragonfly</td>
+      <td>amd64</td>
+    </tr>
+    <tr>
+      <td>freebsd</td>
+      <td>386</td>
+    </tr>
+    <tr>
+      <td>freebsd</td>
+      <td>amd64</td>
+    </tr>
+    <tr>
+      <td>freebsd</td>
+      <td>arm</td>
+    </tr>
+    <tr>
+      <td>linux</td>
+      <td>386</td>
+    </tr>
+    <tr>
+      <td>linux</td>
+      <td>amd64</td>
+    </tr>
+    <tr>
+      <td>linux</td>
+      <td>arm</td>
+    </tr>
+    <tr>
+      <td>linux</td>
+      <td>arm64</td>
+    </tr>
+    <tr>
+      <td>linux</td>
+      <td>ppc64</td>
+    </tr>
+    <tr>
+      <td>linux</td>
+      <td>ppc64le</td>
+    </tr>
+    <tr>
+      <td>linux</td>
+      <td>mips</td>
+    </tr>
+    <tr>
+      <td>linux</td>
+      <td>mipsle</td>
+    </tr>
+    <tr>
+      <td>linux</td>
+      <td>mips64</td>
+    </tr>
+    <tr>
+      <td>linux</td>
+      <td>mips64le</td>
+    </tr>
+    <tr>
+      <td>netbsd</td>
+      <td>386</td>
+    </tr>
+    <tr>
+      <td>netbsd</td>
+      <td>amd64</td>
+    </tr>
+    <tr>
+      <td>netbsd</td>
+      <td>arm</td>
+    </tr>
+    <tr>
+      <td>openbsd</td>
+      <td>386</td>
+    </tr>
+    <tr>
+      <td>openbsd</td>
+      <td>amd64</td>
+    </tr>
+    <tr>
+      <td>openbsd</td>
+      <td>arm</td>
+    </tr>
+    <tr>
+      <td>plan9</td>
+      <td>386</td>
+    </tr>
+    <tr>
+      <td>plan9</td>
+      <td>amd64</td>
+    </tr>
+    <tr>
+      <td>solaris</td>
+      <td>amd64</td>
+    </tr>
+    <tr>
+      <td>windows</td>
+      <td>386</td>
+    </tr>
+    <tr>
+      <td>windows</td>
+      <td>amd64</td>
+    </tr>
+  </tbody>
+</table>
+:ET

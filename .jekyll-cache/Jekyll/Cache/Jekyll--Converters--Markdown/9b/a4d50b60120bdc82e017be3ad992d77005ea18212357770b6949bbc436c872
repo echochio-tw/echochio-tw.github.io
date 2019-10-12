@@ -1,0 +1,168 @@
+I"ZR<p>./domain_create.pl test.com</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "status": {
+    "code": 300,
+    "name": "操作成功",
+    "message": "",
+    "request_time": "2018-11-19 04:50:02"
+  },
+  "data": {
+    "domainid": 3563130,
+    "userid": 432756,
+    "domainname": "test.com",
+    "grade": "免费套餐",
+    "domain_status": "正常",
+    "domain_active": "yes",
+    "groupid": 0,
+    "nsstate": "未知",
+    "createtime": "2018-11-19 04:49:58"
+  }
+</code></pre></div></div>
+
+<p>domain_create.pl</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/perl</span>
+
+<span class="nv">$domain</span><span class="o">=</span><span class="nv">$ARGV</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="nv">$cmd</span><span class="o">=</span><span class="p">"</span><span class="s2">create</span><span class="p">";</span>
+<span class="nv">$apiid</span><span class="o">=</span><span class="p">"</span><span class="s2">testit</span><span class="p">";</span>
+<span class="nv">$apipass</span><span class="o">=</span><span class="p">"</span><span class="s2">testAPI</span><span class="p">";</span>
+<span class="nv">$groupid</span><span class="o">=</span><span class="p">"";</span>
+
+<span class="nv">$do</span> <span class="o">=</span> <span class="p">'</span><span class="s1">curl -G  "https://api.dns.la/api/Domain.ashx" </span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "cmd=</span><span class="p">'</span><span class="o">.</span><span class="nv">$cmd</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "apiid=</span><span class="p">'</span><span class="o">.</span><span class="nv">$apiid</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "apipass=</span><span class="p">'</span><span class="o">.</span><span class="nv">$apipass</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "domain=</span><span class="p">'</span><span class="o">.</span><span class="nv">$domain</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "groupid=</span><span class="p">'</span><span class="o">.</span><span class="nv">$groupid</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --silent</span><span class="p">';</span>
+<span class="nv">$ret_data</span><span class="o">=</span><span class="p">`</span><span class="si">$do</span><span class="p">`;</span>
+<span class="k">print</span> <span class="nv">$ret_data</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<p>./set.pl test.com aaa wsdvs.com</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+"status": {
+ "code": 300,
+ "name": "操作成功",
+ "message": "",
+ "request_time": "2018-11-19 03:29:23"
+ },
+ "resultid": 9448875
+</code></pre></div></div>
+
+<p>set.pl</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/perl</span>
+<span class="nv">$domain</span><span class="o">=</span><span class="nv">$ARGV</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="nb">chomp</span><span class="p">(</span><span class="nv">$domain</span><span class="p">);</span>
+<span class="nv">$host</span><span class="o">=</span><span class="nv">$ARGV</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="nb">chomp</span><span class="p">(</span><span class="nv">$host</span><span class="p">);</span>
+<span class="nv">$cdn</span><span class="o">=</span><span class="nv">$ARGV</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="nb">chomp</span><span class="p">(</span><span class="nv">$cdn</span><span class="p">);</span>
+
+<span class="nv">$cmd</span><span class="o">=</span><span class="p">"</span><span class="s2">create</span><span class="p">";</span>
+<span class="nv">$apiid</span><span class="o">=</span><span class="p">"</span><span class="s2">testit</span><span class="p">";</span>
+<span class="nv">$apipass</span><span class="o">=</span><span class="p">"</span><span class="s2">testAPI</span><span class="p">";</span>
+
+<span class="nv">$recorddata</span><span class="o">=</span><span class="nv">$host</span><span class="o">.</span><span class="p">"</span><span class="s2">.</span><span class="p">"</span><span class="o">.</span><span class="nv">$domain</span><span class="o">.</span><span class="p">"</span><span class="s2">.</span><span class="p">"</span><span class="o">.</span><span class="nv">$cdn</span><span class="p">;</span>
+
+<span class="nv">$do</span> <span class="o">=</span> <span class="p">'</span><span class="s1">curl -G "https://api.dns.la/api/record.ashx?rtype=json&amp;domainid=&amp;recordtype=CNAME&amp;recordline=Def&amp;mxpriority=&amp;ttl=600" </span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "cmd=</span><span class="p">'</span><span class="o">.</span><span class="nv">$cmd</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "apiid=</span><span class="p">'</span><span class="o">.</span><span class="nv">$apiid</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "apipass=</span><span class="p">'</span><span class="o">.</span><span class="nv">$apipass</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "domain=</span><span class="p">'</span><span class="o">.</span><span class="nv">$domain</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "host=</span><span class="p">'</span><span class="o">.</span><span class="nv">$host</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "recorddata=</span><span class="p">'</span><span class="o">.</span><span class="nv">$recorddata</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --silent</span><span class="p">';</span>
+
+<span class="nv">$ret_data</span><span class="o">=</span><span class="p">`</span><span class="si">$do</span><span class="p">`;</span>
+<span class="k">print</span> <span class="nv">$ret_data</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>./del.pl def.test.com</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$VAR1 = '{
+  "status": {
+    "code": 300,
+    "name": "操作成功",
+    "message": "",
+    "request_time": "2018-11-19 04:27:53"
+  }
+}';
+</code></pre></div></div>
+
+<p>del.pl</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/perl</span>
+<span class="k">use</span> <span class="nv">JSON</span><span class="p">;</span>
+
+<span class="nv">$cmd</span><span class="o">=</span><span class="p">"</span><span class="s2">list</span><span class="p">";</span>
+<span class="nv">$apiid</span><span class="o">=</span><span class="p">"</span><span class="s2">testit</span><span class="p">";</span>
+<span class="nv">$apipass</span><span class="o">=</span><span class="p">"</span><span class="s2">testAPI</span><span class="p">";</span>
+<span class="nv">$rtype</span><span class="o">=</span><span class="p">"</span><span class="s2">json</span><span class="p">";</span>
+
+<span class="nv">$fqdn</span><span class="o">=</span><span class="nv">$ARGV</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="nb">chomp</span><span class="p">(</span><span class="nv">$fqdn</span><span class="p">);</span>
+<span class="nv">$domain</span><span class="o">=</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$fqdn</span><span class="p">,</span><span class="nb">index</span><span class="p">(</span><span class="nv">$fqdn</span><span class="p">,"</span><span class="s2">.</span><span class="p">")</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="nv">$host</span><span class="o">=</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$fqdn</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">index</span><span class="p">(</span><span class="nv">$fqdn</span><span class="p">,"</span><span class="s2">.</span><span class="p">"));</span>
+
+<span class="nv">$do</span> <span class="o">=</span> <span class="p">'</span><span class="s1">curl -G  "https://api.dns.la/Api/record.ashx" </span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "cmd=</span><span class="p">'</span><span class="o">.</span><span class="nv">$cmd</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "apiid=</span><span class="p">'</span><span class="o">.</span><span class="nv">$apiid</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "apipass=</span><span class="p">'</span><span class="o">.</span><span class="nv">$apipass</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "rtype=</span><span class="p">'</span><span class="o">.</span><span class="nv">$rtype</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "domain=</span><span class="p">'</span><span class="o">.</span><span class="nv">$domain</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --silent</span><span class="p">';</span>
+<span class="nv">$ret_data</span><span class="o">=</span><span class="p">`</span><span class="si">$do</span><span class="p">`;</span>
+
+<span class="nv">$ret_data</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$ret_data</span><span class="p">,</span> <span class="nb">index</span><span class="p">(</span><span class="nv">$ret_data</span><span class="p">,"</span><span class="s2">[</span><span class="p">"));</span>
+<span class="nv">$ret_data</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$ret_data</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">index</span><span class="p">(</span><span class="nv">$ret_data</span><span class="p">,"</span><span class="s2">]</span><span class="p">")</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="nv">$obj</span> <span class="o">=</span> <span class="nv">from_json</span><span class="p">(</span><span class="nv">$ret_data</span><span class="p">);</span>
+
+<span class="k">foreach</span> <span class="nv">$item</span><span class="p">(</span> <span class="nv">@$obj</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span> <span class="nv">$item</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">host</span><span class="p">}</span> <span class="ow">eq</span> <span class="nv">$host</span><span class="p">){</span>
+                <span class="nv">$cmd</span> <span class="o">=</span> <span class="p">"</span><span class="s2">remove</span><span class="p">";</span>
+                <span class="nv">$recordid</span> <span class="o">=</span> <span class="nv">$item</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">recordid</span><span class="p">};</span>
+                <span class="nv">$do</span> <span class="o">=</span> <span class="p">'</span><span class="s1">curl -G  "https://api.dns.la/api/record.ashx" </span><span class="p">';</span>
+                <span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "cmd=</span><span class="p">'</span><span class="o">.</span><span class="nv">$cmd</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+                <span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "apiid=</span><span class="p">'</span><span class="o">.</span><span class="nv">$apiid</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+                <span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "apipass=</span><span class="p">'</span><span class="o">.</span><span class="nv">$apipass</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+                <span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "rtype=</span><span class="p">'</span><span class="o">.</span><span class="nv">$rtype</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+                <span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "domain=</span><span class="p">'</span><span class="o">.</span><span class="nv">$domain</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+                <span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "recordid=</span><span class="p">'</span><span class="o">.</span><span class="nv">$recordid</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+                <span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --silent</span><span class="p">';</span>
+                <span class="nv">$ret_data</span><span class="o">=</span><span class="p">`</span><span class="si">$do</span><span class="p">`;</span>
+                <span class="k">print</span> <span class="nv">$ret_data</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>domain_create.pl</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/perl</span>
+
+<span class="nv">$domain</span><span class="o">=</span><span class="nv">$ARGV</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="nv">$cmd</span><span class="o">=</span><span class="p">"</span><span class="s2">create</span><span class="p">";</span>
+<span class="nv">$apiid</span><span class="o">=</span><span class="p">"</span><span class="s2">testit</span><span class="p">";</span>
+<span class="nv">$apipass</span><span class="o">=</span><span class="p">"</span><span class="s2">testAPI</span><span class="p">";</span>
+<span class="nv">$groupid</span><span class="o">=</span><span class="p">"";</span>
+
+<span class="nv">$do</span> <span class="o">=</span> <span class="p">'</span><span class="s1">curl -G  "https://api.dns.la/api/Domain.ashx" </span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "cmd=</span><span class="p">'</span><span class="o">.</span><span class="nv">$cmd</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "apiid=</span><span class="p">'</span><span class="o">.</span><span class="nv">$apiid</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "apipass=</span><span class="p">'</span><span class="o">.</span><span class="nv">$apipass</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "domain=</span><span class="p">'</span><span class="o">.</span><span class="nv">$domain</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --data-urlencode "groupid=</span><span class="p">'</span><span class="o">.</span><span class="nv">$groupid</span><span class="o">.</span><span class="p">'</span><span class="s1">"</span><span class="p">';</span>
+<span class="nv">$do</span> <span class="o">=</span> <span class="nv">$do</span><span class="o">.</span><span class="p">'</span><span class="s1"> --silent</span><span class="p">';</span>
+<span class="nv">$ret_data</span><span class="o">=</span><span class="p">`</span><span class="si">$do</span><span class="p">`;</span>
+<span class="k">print</span> <span class="nv">$ret_data</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>./domain_del.pl test.com</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "status": {
+    "code": 300,
+    "name": "操作成功",
+    "message": "",
+    "request_time": "2018-11-19 04:56:58"
+  }
+</code></pre></div></div>
+:ET

@@ -1,0 +1,24 @@
+I"�<p>我習慣用 StarWind V2V Image Converter + RaiDrive</p>
+
+<p>首先下載 RaiDrive ….</p>
+
+<p>https://www.raidrive.com/</p>
+
+<p>就裝一裝 … 我用 google drive … 當然你的 google 空間要夠 … google 單一檔案可達 5T</p>
+
+<p>還是你有 FTP Server 也可 … 最下下策有台 linux 做SFTP 也可</p>
+
+<p><img src="/images/posts/RaiDrive/1.png" /></p>
+
+<p>https://www.youtube.com/watch?v=wjqWA0nK6vY</p>
+
+<p>將 RaiDrive 裝起來將 雲端drive 放到 Z:</p>
+
+<p>StarWind V2V Image Converter 開起來備份OS 到 Z:</p>
+
+<p>備份下來的 vmdk 還要處理才能在 Esxi 或 其他 VM 開啟 …..</p>
+
+<p>參考 https://www.echochio.nctu.me/2019/08/alibabacloud-win2012/</p>
+
+<p>後面那個轉換 ….</p>
+:ET

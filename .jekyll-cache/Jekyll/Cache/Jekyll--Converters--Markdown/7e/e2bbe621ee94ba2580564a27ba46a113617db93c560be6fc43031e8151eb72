@@ -1,0 +1,118 @@
+I"z"<p>client site</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "UserParameter=connect.session,netstat -natp | wc -l" &gt;&gt; /etc/zabbix/zabbix_agentd.d/userparameter_mysql.conf
+systemctl restart zabbix-agent
+chmod u+s /usr/bin/netstat
+</code></pre></div></div>
+
+<p>Server  import xml</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;zabbix_export&gt;</span>
+    <span class="nt">&lt;version&gt;</span>3.4<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;date&gt;</span>2018-10-07T02:40:45Z<span class="nt">&lt;/date&gt;</span>
+    <span class="nt">&lt;groups&gt;</span>
+        <span class="nt">&lt;group&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Linux servers<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;/group&gt;</span>
+    <span class="nt">&lt;/groups&gt;</span>
+    <span class="nt">&lt;templates&gt;</span>
+        <span class="nt">&lt;template&gt;</span>
+            <span class="nt">&lt;template&gt;</span>Template OS Linux session<span class="nt">&lt;/template&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Template OS Linux session<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;description/&gt;</span>
+            <span class="nt">&lt;groups&gt;</span>
+                <span class="nt">&lt;group&gt;</span>
+                    <span class="nt">&lt;name&gt;</span>Linux servers<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;/group&gt;</span>
+            <span class="nt">&lt;/groups&gt;</span>
+            <span class="nt">&lt;applications&gt;</span>
+                <span class="nt">&lt;application&gt;</span>
+                    <span class="nt">&lt;name&gt;</span>Session<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;/application&gt;</span>
+            <span class="nt">&lt;/applications&gt;</span>
+            <span class="nt">&lt;items&gt;</span>
+                <span class="nt">&lt;item&gt;</span>
+                    <span class="nt">&lt;name&gt;</span>session<span class="nt">&lt;/name&gt;</span>
+                    <span class="nt">&lt;type&gt;</span>0<span class="nt">&lt;/type&gt;</span>
+                    <span class="nt">&lt;snmp_community/&gt;</span>
+                    <span class="nt">&lt;snmp_oid/&gt;</span>
+                    <span class="nt">&lt;key&gt;</span>connect.session<span class="nt">&lt;/key&gt;</span>
+                    <span class="nt">&lt;delay&gt;</span>30s<span class="nt">&lt;/delay&gt;</span>
+                    <span class="nt">&lt;history&gt;</span>1w<span class="nt">&lt;/history&gt;</span>
+                    <span class="nt">&lt;trends&gt;</span>365d<span class="nt">&lt;/trends&gt;</span>
+                    <span class="nt">&lt;status&gt;</span>0<span class="nt">&lt;/status&gt;</span>
+                    <span class="nt">&lt;value_type&gt;</span>3<span class="nt">&lt;/value_type&gt;</span>
+                    <span class="nt">&lt;allowed_hosts/&gt;</span>
+                    <span class="nt">&lt;units/&gt;</span>
+                    <span class="nt">&lt;snmpv3_contextname/&gt;</span>
+                    <span class="nt">&lt;snmpv3_securityname/&gt;</span>
+                    <span class="nt">&lt;snmpv3_securitylevel&gt;</span>0<span class="nt">&lt;/snmpv3_securitylevel&gt;</span>
+                    <span class="nt">&lt;snmpv3_authprotocol&gt;</span>0<span class="nt">&lt;/snmpv3_authprotocol&gt;</span>
+                    <span class="nt">&lt;snmpv3_authpassphrase/&gt;</span>
+                    <span class="nt">&lt;snmpv3_privprotocol&gt;</span>0<span class="nt">&lt;/snmpv3_privprotocol&gt;</span>
+                    <span class="nt">&lt;snmpv3_privpassphrase/&gt;</span>
+                    <span class="nt">&lt;params/&gt;</span>
+                    <span class="nt">&lt;ipmi_sensor/&gt;</span>
+                    <span class="nt">&lt;authtype&gt;</span>0<span class="nt">&lt;/authtype&gt;</span>
+                    <span class="nt">&lt;username/&gt;</span>
+                    <span class="nt">&lt;password/&gt;</span>
+                    <span class="nt">&lt;publickey/&gt;</span>
+                    <span class="nt">&lt;privatekey/&gt;</span>
+                    <span class="nt">&lt;port/&gt;</span>
+                    <span class="nt">&lt;description/&gt;</span>
+                    <span class="nt">&lt;inventory_link&gt;</span>0<span class="nt">&lt;/inventory_link&gt;</span>
+                    <span class="nt">&lt;applications&gt;</span>
+                        <span class="nt">&lt;application&gt;</span>
+                            <span class="nt">&lt;name&gt;</span>Session<span class="nt">&lt;/name&gt;</span>
+                        <span class="nt">&lt;/application&gt;</span>
+                    <span class="nt">&lt;/applications&gt;</span>
+                    <span class="nt">&lt;valuemap/&gt;</span>
+                    <span class="nt">&lt;logtimefmt/&gt;</span>
+                    <span class="nt">&lt;preprocessing/&gt;</span>
+                    <span class="nt">&lt;jmx_endpoint/&gt;</span>
+                    <span class="nt">&lt;master_item/&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/items&gt;</span>
+            <span class="nt">&lt;discovery_rules/&gt;</span>
+            <span class="nt">&lt;httptests/&gt;</span>
+            <span class="nt">&lt;macros/&gt;</span>
+            <span class="nt">&lt;templates/&gt;</span>
+            <span class="nt">&lt;screens/&gt;</span>
+        <span class="nt">&lt;/template&gt;</span>
+    <span class="nt">&lt;/templates&gt;</span>
+    <span class="nt">&lt;graphs&gt;</span>
+        <span class="nt">&lt;graph&gt;</span>
+            <span class="nt">&lt;name&gt;</span>netstat session<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;width&gt;</span>900<span class="nt">&lt;/width&gt;</span>
+            <span class="nt">&lt;height&gt;</span>200<span class="nt">&lt;/height&gt;</span>
+            <span class="nt">&lt;yaxismin&gt;</span>0.0000<span class="nt">&lt;/yaxismin&gt;</span>
+            <span class="nt">&lt;yaxismax&gt;</span>100.0000<span class="nt">&lt;/yaxismax&gt;</span>
+            <span class="nt">&lt;show_work_period&gt;</span>1<span class="nt">&lt;/show_work_period&gt;</span>
+            <span class="nt">&lt;show_triggers&gt;</span>1<span class="nt">&lt;/show_triggers&gt;</span>
+            <span class="nt">&lt;type&gt;</span>0<span class="nt">&lt;/type&gt;</span>
+            <span class="nt">&lt;show_legend&gt;</span>1<span class="nt">&lt;/show_legend&gt;</span>
+            <span class="nt">&lt;show_3d&gt;</span>0<span class="nt">&lt;/show_3d&gt;</span>
+            <span class="nt">&lt;percent_left&gt;</span>0.0000<span class="nt">&lt;/percent_left&gt;</span>
+            <span class="nt">&lt;percent_right&gt;</span>0.0000<span class="nt">&lt;/percent_right&gt;</span>
+            <span class="nt">&lt;ymin_type_1&gt;</span>0<span class="nt">&lt;/ymin_type_1&gt;</span>
+            <span class="nt">&lt;ymax_type_1&gt;</span>0<span class="nt">&lt;/ymax_type_1&gt;</span>
+            <span class="nt">&lt;ymin_item_1&gt;</span>0<span class="nt">&lt;/ymin_item_1&gt;</span>
+            <span class="nt">&lt;ymax_item_1&gt;</span>0<span class="nt">&lt;/ymax_item_1&gt;</span>
+            <span class="nt">&lt;graph_items&gt;</span>
+                <span class="nt">&lt;graph_item&gt;</span>
+                    <span class="nt">&lt;sortorder&gt;</span>0<span class="nt">&lt;/sortorder&gt;</span>
+                    <span class="nt">&lt;drawtype&gt;</span>0<span class="nt">&lt;/drawtype&gt;</span>
+                    <span class="nt">&lt;color&gt;</span>1A7C11<span class="nt">&lt;/color&gt;</span>
+                    <span class="nt">&lt;yaxisside&gt;</span>0<span class="nt">&lt;/yaxisside&gt;</span>
+                    <span class="nt">&lt;calc_fnc&gt;</span>2<span class="nt">&lt;/calc_fnc&gt;</span>
+                    <span class="nt">&lt;type&gt;</span>0<span class="nt">&lt;/type&gt;</span>
+                    <span class="nt">&lt;item&gt;</span>
+                        <span class="nt">&lt;host&gt;</span>Template OS Linux session<span class="nt">&lt;/host&gt;</span>
+                        <span class="nt">&lt;key&gt;</span>connect.session<span class="nt">&lt;/key&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/graph_item&gt;</span>
+            <span class="nt">&lt;/graph_items&gt;</span>
+        <span class="nt">&lt;/graph&gt;</span>
+    <span class="nt">&lt;/graphs&gt;</span>
+<span class="nt">&lt;/zabbix_export&gt;</span>
+</code></pre></div></div>
+:ET

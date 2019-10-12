@@ -1,0 +1,49 @@
+I"�<p><img src="/images/posts/Execl/p5.jpg" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>=OFFSET(data!$A$2,COUNTA(data!$A:$A)-1-data!$J$1,1,data!$J$1,1)
+</code></pre></div></div>
+
+<p>DATE 是參照前一個$A的欄位去統計的其長度為 $J$1 設定的大小(由資料的最後一筆計算)</p>
+
+<p><img src="/images/posts/Execl/p6.jpg" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>=OFFSET(data!$B$2,COUNTA(data!$B:$B)-1-data!$J$1,1,data!$J$1,1)
+</code></pre></div></div>
+
+<p>Max 是參照前一個$B的欄位去統計的其長度為 $J$1 設定的大小如統計30天 (由資料的最後一筆計算)</p>
+
+<p><img src="/images/posts/Execl/p7.jpg" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>=OFFSET(data!$D$2,COUNTA(data!$D:$D)-data!$J$1,1,data!$J$1,1)
+</code></pre></div></div>
+
+<p>Max2 是參照前一個$D的欄位 去統計的其長度為 $J$1 設定的大小如統計30天 (由資料的最後一筆計算)</p>
+
+<p><img src="/images/posts/Execl/p8.jpg" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>=OFFSET(data!$E$2,COUNTA(data!$E:$E)-data!$J$1,1,data!$J$1,1)
+</code></pre></div></div>
+
+<p>Max3 是參照前一個$E的欄位 去統計的其長度為 $J$1 設定的大小如統計30天 (由資料的最後一筆計算)</p>
+
+<p><img src="/images/posts/Execl/p9.jpg" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$J$1 值 = 30 
+</code></pre></div></div>
+
+<p>設定天數(繪圖用 !!!)</p>
+
+<p><img src="/images/posts/Execl/p10.jpg" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>='月流量統計 2013010.xlsx'!DATE
+</code></pre></div></div>
+
+<p>座標軸標籤範圍為日期</p>
+
+<p><img src="/images/posts/Execl/p11.jpg" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>=SERIES(data!$C$1,'月流量統計 2013010.xlsx'!DATE,'月流量統計 2013010.xlsx'!MAX,1)
+</code></pre></div></div>
+
+<p>(數列名稱 =data!$C$1 ，  數列值 =’月流量統計 2013010.xlsx’!MAX ，  第幾列  1 )</p>
+:ET

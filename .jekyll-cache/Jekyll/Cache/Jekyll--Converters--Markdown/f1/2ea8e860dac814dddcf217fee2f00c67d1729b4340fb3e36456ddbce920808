@@ -1,0 +1,197 @@
+I"�*<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y install python36 python36-pip
+yum -y install python36 python36-devel python36-pip mod_proxy_uwsgi gcc
+python3.6 -m pip install --upgrade pip
+python3.6 -m pip install virtualenv flask uwsgi ... (python pypi you need ...)
+</code></pre></div></div>
+
+<p>Add User &amp; env …</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adduser flask
+passwd flask
+su - flask
+mkdir app
+cd app
+virtualenv -p python3 env
+source env/bin/activate
+python3.6 -m pip install flask uwsgi uwsgi selenium xvfbwrapper Pillow ... (install you need)
+</code></pre></div></div>
+
+<p>vi ~/app/app.py</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python
+</span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">send_file</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span> <span class="nn">xvfbwrapper</span> <span class="kn">import</span> <span class="n">Xvfb</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">root</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="k">return</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span>
+ 
+<span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/get_image'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_image</span><span class="p">():</span>
+    <span class="n">vdisplay</span> <span class="o">=</span> <span class="n">Xvfb</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1280</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">740</span><span class="p">)</span>
+    <span class="n">vdisplay</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://www.google.com/"</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">save_screenshot</span><span class="p">(</span><span class="s">'test.png'</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+    <span class="n">vdisplay</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">send_file</span><span class="p">(</span><span class="s">'test.png'</span><span class="p">,</span> <span class="n">mimetype</span><span class="o">=</span><span class="s">'image/png'</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">threaded</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>vi ~/app/wsgi.py</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from app import app as application
+
+if __name__ == "__main__":
+    application.run()
+</code></pre></div></div>
+
+<p>vi ~/app/wsgi.ini</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[uwsgi]
+module = wsgi
+uid = flask
+master = true
+processes = 5
+enable-threads = true
+single-interpreter = true
+socket = 127.0.0.1:8099
+chmod-socket = 660
+vacuum = true
+logto = /var/log/uwsgi/flask.log
+die-on-term = true
+</code></pre></div></div>
+
+<p>in root</p>
+
+<p>vi /etc/systemd/system/flaskapp.service</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Unit]
+Description=uWSGI server for flask
+After=network.target
+
+[Service]
+User=flask
+Group=apache
+WorkingDirectory=/home/flask/app
+Environment="PATH=/home/flask/app/env/bin"
+ExecStart=/home/flask/app/env/bin/uwsgi --ini wsgi.ini
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div></div>
+<p>set log</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir /var/log/uwsgi
+touch /var/log/uwsgi/flask.log
+chown -R flask:flask /var/log/uwsgi
+</code></pre></div></div>
+
+<p>start service</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl enable flaskapp.service
+systemctl start flaskapp.service
+systemctl status flaskapp.service
+</code></pre></div></div>
+
+<p>vi /etc/httpd/conf/httpd.conf</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Listen 12349
+LoadModule proxy_uwsgi_module modules/mod_proxy_uwsgi.so
+&lt;VirtualHost *:12349&gt;
+    ProxyPass / uwsgi://127.0.0.1:8099/
+&lt;/VirtualHost&gt;
+</code></pre></div></div>
+
+<p>check apache &amp; start</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apachectl configtest
+systemctl enable httpd
+systemctl start httpd
+</code></pre></div></div>
+
+<p>When you reconfig app.py need</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl restart flaskapp.service
+</code></pre></div></div>
+
+<p>debug app.py service …</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tail -f /var/log/uwsgi/flask.log
+</code></pre></div></div>
+
+<p>I use …</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from selenium import webdriver
+#from xvfbwrapper import Xvfb
+from pyvirtualdisplay import Display
+display = Display(visible=0, size=(800,600))
+driver=webdriver.Firefox()
+</code></pre></div></div>
+
+<p>in user flask must copy …</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp /usr/bin/Xvfb /home/flask/app/env/bin/.
+cp /usr/bin/firefox /home/flask/app/env/bin/.
+cp /usr/bin/geckodriver /home/flask/app/env/bin/.
+</code></pre></div></div>
+
+<p>find Xvfb lib</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ldd /usr/bin/Xvfb
+
+        linux-vdso.so.1 =&gt;  (0x00007ffc949f9000)
+        libselinux.so.1 =&gt; /lib64/libselinux.so.1 (0x00007f2c65130000)
+        libcrypto.so.10 =&gt; /lib64/libcrypto.so.10 (0x00007f2c64cce000)
+        libdl.so.2 =&gt; /lib64/libdl.so.2 (0x00007f2c64ac9000)
+        libGL.so.1 =&gt; /lib64/libGL.so.1 (0x00007f2c6483d000)
+        libpixman-1.so.0 =&gt; /lib64/libpixman-1.so.0 (0x00007f2c64594000)
+        libXfont2.so.2 =&gt; /lib64/libXfont2.so.2 (0x00007f2c64363000)
+        libXau.so.6 =&gt; /lib64/libXau.so.6 (0x00007f2c6415f000)
+        libsystemd.so.0 =&gt; /lib64/libsystemd.so.0 (0x00007f2c63f2e000)
+        libxshmfence.so.1 =&gt; /lib64/libxshmfence.so.1 (0x00007f2c63d2a000)
+        libXdmcp.so.6 =&gt; /lib64/libXdmcp.so.6 (0x00007f2c63b24000)
+        libpam_misc.so.0 =&gt; /lib64/libpam_misc.so.0 (0x00007f2c63920000)
+        libpam.so.0 =&gt; /lib64/libpam.so.0 (0x00007f2c63710000)
+        libaudit.so.1 =&gt; /lib64/libaudit.so.1 (0x00007f2c634e8000)
+        libm.so.6 =&gt; /lib64/libm.so.6 (0x00007f2c631e6000)
+        libpthread.so.0 =&gt; /lib64/libpthread.so.0 (0x00007f2c62fc9000)
+        libc.so.6 =&gt; /lib64/libc.so.6 (0x00007f2c62bfc000)
+        libpcre.so.1 =&gt; /lib64/libpcre.so.1 (0x00007f2c6299a000)
+        /lib64/ld-linux-x86-64.so.2 (0x00005565ddc90000)
+        libz.so.1 =&gt; /lib64/libz.so.1 (0x00007f2c62783000)
+        libGLX.so.0 =&gt; /lib64/libGLX.so.0 (0x00007f2c62551000)
+        libX11.so.6 =&gt; /lib64/libX11.so.6 (0x00007f2c62213000)
+        libXext.so.6 =&gt; /lib64/libXext.so.6 (0x00007f2c62000000)
+        libGLdispatch.so.0 =&gt; /lib64/libGLdispatch.so.0 (0x00007f2c61d4a000)
+        libfontenc.so.1 =&gt; /lib64/libfontenc.so.1 (0x00007f2c61b43000)
+        libfreetype.so.6 =&gt; /lib64/libfreetype.so.6 (0x00007f2c61883000)
+        libcap.so.2 =&gt; /lib64/libcap.so.2 (0x00007f2c6167e000)
+        librt.so.1 =&gt; /lib64/librt.so.1 (0x00007f2c61476000)
+        liblzma.so.5 =&gt; /lib64/liblzma.so.5 (0x00007f2c6124f000)
+        liblz4.so.1 =&gt; /lib64/liblz4.so.1 (0x00007f2c6103a000)
+        libgcrypt.so.11 =&gt; /lib64/libgcrypt.so.11 (0x00007f2c60db9000)
+        libgpg-error.so.0 =&gt; /lib64/libgpg-error.so.0 (0x00007f2c60bb3000)
+        libresolv.so.2 =&gt; /lib64/libresolv.so.2 (0x00007f2c6099a000)
+        libdw.so.1 =&gt; /lib64/libdw.so.1 (0x00007f2c6074b000)
+        libgcc_s.so.1 =&gt; /lib64/libgcc_s.so.1 (0x00007f2c60534000)
+        libcap-ng.so.0 =&gt; /lib64/libcap-ng.so.0 (0x00007f2c6032e000)
+        libxcb.so.1 =&gt; /lib64/libxcb.so.1 (0x00007f2c60105000)
+        libbz2.so.1 =&gt; /lib64/libbz2.so.1 (0x00007f2c5fef5000)
+        libpng15.so.15 =&gt; /lib64/libpng15.so.15 (0x00007f2c5fcca000)
+        libattr.so.1 =&gt; /lib64/libattr.so.1 (0x00007f2c5fac4000)
+        libelf.so.1 =&gt; /lib64/libelf.so.1 (0x00007f2c5f8ac000)
+</code></pre></div></div>
+
+<p>copy lib to /home/flask/app/env/lib</p>
+
+<p>in user flask … copy it…</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ldd /usr/bin/Xvfb &gt; /tmp/a
+awk '{print "cp "$3" /home/flask/app/env/lib/."}' /tmp/a &gt; /tmp/b
+sh /tmp/b
+rm -rf /tmp/a /tmp/b
+cp /lib64/ld-linux-x86-64.so.2 /home/flask/app/env/lib/.
+</code></pre></div></div>
+
+<p>when reconfig or edit app.py need restart flaskapp</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl restart flaskapp.service
+</code></pre></div></div>
+
+:ET

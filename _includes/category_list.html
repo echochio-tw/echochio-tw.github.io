@@ -1,0 +1,12 @@
+<h6>分類</h6>
+<hr/>
+<nav class="ink-navigation">
+    <ul class="vertical menu grey">
+        <li><a href="/index.html">
+            All <span class="caution invert"> ({{site.posts | size}})</span>
+        </a></li>
+        {% for tag in site.tags %}
+        <li><a href="/index.html?cate={{ tag | first }}">{{ tag | first }} <span class="caution invert">({{ tag | last | size }})</span></a></li>
+        {% endfor %}
+    </ul>
+</nav>
