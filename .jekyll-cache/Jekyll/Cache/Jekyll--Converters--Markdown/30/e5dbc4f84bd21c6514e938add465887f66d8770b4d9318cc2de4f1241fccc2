@@ -1,0 +1,5461 @@
+I"�#<p>####歡迎訪問</p>
+
+<p>好記性不如爛筆記，曾經使用和學習過很多技術，但在長時間不使用後，很多東西就忘掉了，來記錄一些筆記。</p>
+
+<hr />
+
+<h4 id="文章列表">文章列表:</h4>
+
+<div class="post-list-body">
+    <div post-cate="All">
+        <ul>
+            
+            <li>2019-10-13 <a href="/2019/10/debig-github.io/"> debig github.io jekyll</a></li>
+            
+            <li>2019-10-11 <a href="/2019/10/windows-autologin/"> windows aotologin</a></li>
+            
+            <li>2019-10-06 <a href="/2019/10/vi-autoindent/"> vi 縮排關閉</a></li>
+            
+            <li>2019-10-05 <a href="/2019/10/telegram-group-python-webhoos/"> telegram group python webhoos</a></li>
+            
+            <li>2019-10-05 <a href="/2019/10/google-app-script-webhook/"> telegram group google app script webhoos</a></li>
+            
+            <li>2019-10-04 <a href="/2019/10/windows-autologin/"> windows aotologin</a></li>
+            
+            <li>2019-10-01 <a href="/2019/10/RaiDrive/"> Windows 備份到雲端的方法轉 VM</a></li>
+            
+            <li>2019-10-01 <a href="/2019/10/IIS-XML/"> IIS 設定匯出匯入</a></li>
+            
+            <li>2019-09-28 <a href="/2019/09/linux-TrueType/"> linux TrueType font</a></li>
+            
+            <li>2019-09-25 <a href="/2019/09/mssql-truncate-log/"> mssql truncate log</a></li>
+            
+            <li>2019-09-23 <a href="/2019/09/zabbix-mssql-db-file-size/"> zabbix 監控 MSSQL 數據庫(檔案大小) 與效能</a></li>
+            
+            <li>2019-09-23 <a href="/2019/09/python-pyinstaller/"> python 變執行檔</a></li>
+            
+            <li>2019-09-17 <a href="/2019/09/flask+uwsgi/"> python+flask+selenium(firefox)+Xvfb+uwsgi+apache in CentOS7</a></li>
+            
+            <li>2019-08-28 <a href="/2019/08/RouterOS-Source-NAT/"> RouterOS WAN IP 對應特定內網 IP</a></li>
+            
+            <li>2019-08-23 <a href="/2019/08/Esxi6.7-thin/"> Esxi 6.7 可將 HDD 改為 thin</a></li>
+            
+            <li>2019-08-23 <a href="/2019/08/Centos-esxi-to-vworkstation/"> centos7 esxi 移 vworkstation 出現 dracut-initqueue timeout</a></li>
+            
+            <li>2019-08-22 <a href="/2019/08/RDP/"> 遠端桌面剪貼簿失效</a></li>
+            
+            <li>2019-08-07 <a href="/2019/08/alibabacloud-win2012/"> 阿里云win2012 to vmware</a></li>
+            
+            <li>2019-08-04 <a href="/2019/08/win10-home-Hyper-v/"> win10家用版啟用 Hyper-v</a></li>
+            
+            <li>2019-08-04 <a href="/2019/08/AMPS/"> amps</a></li>
+            
+            <li>2019-07-22 <a href="/2019/07/alibabacloud_to_Esxi/"> 阿里雲轉 ESXi</a></li>
+            
+            <li>2019-07-19 <a href="/2019/07/nginx-HTTPs-redirects/"> Forcing HTTPs redirects on non-standard ports</a></li>
+            
+            <li>2019-06-22 <a href="/2019/06/vimrc/"> vim上色</a></li>
+            
+            <li>2019-05-23 <a href="/2019/05/win10-WSL-ubuntu/"> win10 WSL linux ubuntu 1804</a></li>
+            
+            <li>2019-05-23 <a href="/2019/05/telegram-bot-qr-scan/"> telegram bot qrcode</a></li>
+            
+            <li>2019-05-23 <a href="/2019/05/ansible-shell-script/"> ansible shell and script</a></li>
+            
+            <li>2019-05-17 <a href="/2019/05/zabbix-win-agent/"> Windows install zabbix agent</a></li>
+            
+            <li>2019-03-23 <a href="/2019/03/Huawei-E8372/"> 新玩具 Huawei E8372</a></li>
+            
+            <li>2019-03-19 <a href="/2019/03/%E7%A1%AC%E7%A2%9F%E8%B3%87%E6%96%99%E6%8A%B9%E9%99%A4/"> 硬碟資料抹除</a></li>
+            
+            <li>2019-03-19 <a href="/2019/03/CDN-%E5%9B%9E%E6%BA%90%E6%B5%8B%E8%AF%95/"> CDN 回源测试</a></li>
+            
+            <li>2019-03-03 <a href="/2019/03/web-root-user/"> 網頁用 root 執行程式</a></li>
+            
+            <li>2019-02-14 <a href="/2019/02/phpservermonotor_telegram/"> 大陆地区 php server monotor 用 telegram</a></li>
+            
+            <li>2019-02-12 <a href="/2019/02/linux-cmd/"> 最近常用的 linux 指令</a></li>
+            
+            <li>2019-01-19 <a href="/2019/01/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E4%B8%BAIP%E5%9C%B0%E5%9D%80/"> 十六进制转换为IP地址</a></li>
+            
+            <li>2019-01-19 <a href="/2019/01/iptable_remove_dupicate/"> iptable_remove_dupicate</a></li>
+            
+            <li>2018-12-05 <a href="/2018/12/chrome/"> chrome網路連線現況</a></li>
+            
+            <li>2018-11-19 <a href="/2018/11/dns.la-API/"> dns.la API set cname</a></li>
+            
+            <li>2018-11-10 <a href="/2018/11/perl-hash-foreach-dump/"> perl hash foreach dump</a></li>
+            
+            <li>2018-11-09 <a href="/2018/11/centos7-zabbix-Agent-install-by-ansible/"> centos7 zabbix Agent install by ansible</a></li>
+            
+            <li>2018-11-03 <a href="/2018/11/telegram-api/"> telegram api</a></li>
+            
+            <li>2018-11-03 <a href="/2018/11/Mojolicious-helloword/"> Mojolicious helloword</a></li>
+            
+            <li>2018-10-24 <a href="/2018/10/aliyun_dns/"> 阿里云 DNS 換 IP</a></li>
+            
+            <li>2018-10-07 <a href="/2018/10/Greypanel-CDN-Renew/"> 灰域 CDN 刷新</a></li>
+            
+            <li>2018-10-07 <a href="/2018/10/zabbix_netstat/"> linux zabbix netstat session</a></li>
+            
+            <li>2018-10-03 <a href="/2018/10/centos7_monitorix/"> centos7 monitorix</a></li>
+            
+            <li>2018-10-01 <a href="/2018/10/centos7_Zabbix_Agent_Permission_denied/"> centos7 zabbix Agent Permission denied</a></li>
+            
+            <li>2018-09-28 <a href="/2018/09/centos7-zabbix-server/"> centos7 install zabbix server</a></li>
+            
+            <li>2018-09-27 <a href="/2018/09/nginx-302-302-redirect/"> nginx 302 與 302 redirect</a></li>
+            
+            <li>2018-09-22 <a href="/2018/09/Azure-Container-jenkins/"> Azure Container exec jenkins</a></li>
+            
+            <li>2018-09-21 <a href="/2018/09/Weave-Docker-Containers/"> Weave-Docker-Containers</a></li>
+            
+            <li>2018-09-21 <a href="/2018/09/Installing-Weave-Scope-on-Kubernetes/"> Installing Weave Scope on Kubernetes</a></li>
+            
+            <li>2018-09-21 <a href="/2018/09/Docker-Systemd-Boot/"> Docker-Systemd-Boot</a></li>
+            
+            <li>2018-09-21 <a href="/2018/09/Azure-Container-Instances/"> Azure-Container-Instances</a></li>
+            
+            <li>2018-09-17 <a href="/2018/09/jenkins-docker-ansible-centos/"> jenkins docker ansible centos</a></li>
+            
+            <li>2018-09-04 <a href="/2018/09/Vagrant-Ansible-Kubernetes/"> Ansible Playbooks deploy Kubernetes site</a></li>
+            
+            <li>2018-09-04 <a href="/2018/09/Cluster-Ansible-Playbooks-deploy-Kubernetes/"> Ansible Playbooks deploy Kubernetes cluster</a></li>
+            
+            <li>2018-08-31 <a href="/2018/08/Kubernetes-cluster-v2/"> CentOS 7 Kubernetes cluster</a></li>
+            
+            <li>2018-08-30 <a href="/2018/08/svn-centos/"> CentOS Subversion</a></li>
+            
+            <li>2018-08-30 <a href="/2018/08/Kubernetes-cluster/"> Kubernetes cluster(阿里雲)</a></li>
+            
+            <li>2018-08-30 <a href="/2018/08/4-docker-machine/"> docker machine</a></li>
+            
+            <li>2018-08-30 <a href="/2018/08/3-docker-registry-server/"> docker registry server</a></li>
+            
+            <li>2018-08-30 <a href="/2018/08/2-docker-container/"> docker container</a></li>
+            
+            <li>2018-08-30 <a href="/2018/08/1-docker-image/"> docker image</a></li>
+            
+            <li>2018-08-29 <a href="/2018/08/jenkins-install/"> jenkins 安裝</a></li>
+            
+            <li>2018-08-15 <a href="/2018/08/IT/"> IT</a></li>
+            
+            <li>2018-08-10 <a href="/2018/08/2048-excel/"> 2048-報表(game)</a></li>
+            
+            <li>2018-08-10 <a href="/2018/08/2048-android/"> 2048-apk</a></li>
+            
+            <li>2018-08-07 <a href="/2018/08/centos-eth0/"> CentOS 7 修改網卡名稱 Eno* 成 Eth0</a></li>
+            
+            <li>2018-08-06 <a href="/2018/08/dns/"> DNS 檢查網域設定是否正常</a></li>
+            
+            <li>2018-07-27 <a href="/2018/07/AI2/"> AI2 測試</a></li>
+            
+            <li>2018-07-26 <a href="/2018/07/lazy/"> 懶惰是好事</a></li>
+            
+            <li>2018-07-25 <a href="/2018/07/opecart/"> opencart 架構</a></li>
+            
+            <li>2018-07-16 <a href="/2018/07/esxi-size/"> ghettoVCB 備份的大小</a></li>
+            
+            <li>2018-07-11 <a href="/2018/07/opencart-3-return-mail/"> opencart 3.X 退貨郵件通知</a></li>
+            
+            <li>2018-07-10 <a href="/2018/07/linux-mssql-json/"> linux 抓 mssql 丟 json</a></li>
+            
+            <li>2018-07-07 <a href="/2018/07/python_ssh_mail/"> python ssh 到 Esxi 查看磁碟狀況</a></li>
+            
+            <li>2018-07-05 <a href="/2018/07/gmail_to_outlook_Thunderbird/"> 備份 gmail 到你的 outlook 或 Thunderbird  或 其他 gmail 帳號</a></li>
+            
+            <li>2018-07-03 <a href="/2018/07/win10_remove_app/"> win10 remove app (移除市集程式)</a></li>
+            
+            <li>2018-07-02 <a href="/2018/07/vb.net/"> 寫 vb.net 練習題</a></li>
+            
+            <li>2018-07-02 <a href="/2018/07/vb.net-frmgame/"> vb.net 俄羅斯方塊</a></li>
+            
+            <li>2018-07-02 <a href="/2018/07/bat/"> bat批次執行</a></li>
+            
+            <li>2018-06-29 <a href="/2018/06/Execl-Category/"> Execl 抓分隔分類版</a></li>
+            
+            <li>2018-06-27 <a href="/2018/06/golang_printer/"> golang 遠端清理 印表機 queue</a></li>
+            
+            <li>2018-06-27 <a href="/2018/06/golang_multiple_platforms/"> golang 編譯各平台</a></li>
+            
+            <li>2018-06-25 <a href="/2018/06/php_mssql/"> php mssql connect</a></li>
+            
+            <li>2018-06-25 <a href="/2018/06/nginx_auth_basic/"> nginx 加網頁基本認證</a></li>
+            
+            <li>2018-06-25 <a href="/2018/06/Execl_vba/"> 網路找的 10種最常用的Excel公式</a></li>
+            
+            <li>2018-06-25 <a href="/2018/06/Execl/"> Execl 合併儲存格 問題</a></li>
+            
+            <li>2018-06-25 <a href="/2018/06/Execl-chi/"> Execl 自動抓良品與不良倉,已訂未進</a></li>
+            
+            <li>2018-06-22 <a href="/2018/06/mi_watch/"> 米動錶盤修改圖文教學</a></li>
+            
+            <li>2018-06-20 <a href="/2018/06/gdrive_backup/"> linux shell 下用 gdrive 備份資料</a></li>
+            
+            <li>2018-06-14 <a href="/2018/06/yandex/"> 註冊 免費個人網域 + 個人DNS + 個人郵件 + 個人網頁</a></li>
+            
+            <li>2018-06-14 <a href="/2018/06/Domain/"> 註冊的 Domain 網站 , 用 github</a></li>
+            
+            <li>2018-06-11 <a href="/2018/06/Excel%E5%B7%A8%E9%9B%86%E6%8C%87%E4%BB%A4/"> 網路找的 -- 100個最簡單的 Excel 巨集指令</a></li>
+            
+            <li>2018-06-06 <a href="/2018/06/win7-RDP/"> Windows 7 的 多人遠端桌面 RDP</a></li>
+            
+            <li>2018-06-05 <a href="/2018/06/upgrade/"> 該升級了</a></li>
+            
+            <li>2018-04-26 <a href="/2018/04/win7_mbr_gpt/"> 安裝完 win7 後 MBR 改 GPT</a></li>
+            
+            <li>2018-04-25 <a href="/2018/04/win7_efi_gpt/"> 新安裝 win7 HDD 安裝成 EFI+GPT</a></li>
+            
+            <li>2018-04-20 <a href="/2018/04/CMD/"> CMD 看主機板型號 ,CPU , 記憶體 , 硬碟型號 ....</a></li>
+            
+            <li>2018-04-13 <a href="/2018/04/RT-N13U/"> RT-N13U B1 刷 openwrt</a></li>
+            
+            <li>2018-03-15 <a href="/2018/03/gb-big5/"> linux , windows 下 簡體字轉繁體字 (Unicode)</a></li>
+            
+            <li>2018-03-12 <a href="/2018/03/mail-trans/"> eml 檔轉成 pst 或 outlook 的 pst 要轉到 gmail 上</a></li>
+            
+            <li>2018-03-03 <a href="/2018/03/win10_gpt/"> win10 開機磁碟機 mbr 轉成 GPT</a></li>
+            
+            <li>2018-02-26 <a href="/2018/02/excel_find/"> excel 找相同資料複製哪行</a></li>
+            
+            <li>2018-02-13 <a href="/2018/02/upgrade_win10/"> windows-10-家用版本-升級-windows-10-專業版本-win10</a></li>
+            
+            <li>2018-02-09 <a href="/2018/02/mac/"> 玩一下黑蘋果</a></li>
+            
+            <li>2018-01-18 <a href="/2018/01/linux-CLI-speed-test/"> linux CLI speed test</a></li>
+            
+            <li>2018-01-17 <a href="/2018/01/CentOS-7%E4%B8%8A%E9%83%A8%E7%BD%B2-Google-BBR/"> CentOS 7上部署 Google BBR</a></li>
+            
+            <li>2018-01-17 <a href="/2018/01/CentOS-7-%E4%B8%8A%E5%AE%89%E8%A3%9D-NGINX-%E7%9A%84-MODSECURITY-MODULE/"> CentOS 7 上安裝 NGINX 的 MODSECURITY MODULE</a></li>
+            
+            <li>2018-01-12 <a href="/2018/01/win7-win8-win10-win2008-win2012-/.-%E4%B8%8A%E5%B8%9D%E6%A8%A1%E5%BC%8F/"> win7 win8 win10 win2008 win2012 ... 上帝模式</a></li>
+            
+            <li>2018-01-12 <a href="/2018/01/win7-,-8-%E5%8D%B0%E8%A1%A8%E6%A9%9F%E5%8C%AF%E5%87%BA%E5%8C%AF%E5%85%A5/"> win7 , 8 印表機匯出匯入</a></li>
+            
+            <li>2018-01-02 <a href="/2018/01/MS-SQL-TRUNCATEONLY/"> MS SQL TRUNCATEONLY</a></li>
+            
+            <li>2017-12-19 <a href="/2017/12/%E8%A3%9D-win7-os-%E5%9C%A8-usb-%E4%B8%8A/"> 裝 win7  os 在 usb 上</a></li>
+            
+            <li>2017-12-14 <a href="/2017/12/%E7%AD%86%E9%9B%BB,-%E9%9B%BB%E8%85%A6%E8%A3%9D%E6%B7%B7%E7%A2%9F(HDD+SSD)-%E5%AE%89%E8%A3%9D-expresscache/"> 筆電, 電腦裝混碟(HDD+SSD) 安裝 expresscache</a></li>
+            
+            <li>2017-12-13 <a href="/2017/12/%E7%AD%86%E9%9B%BB%E8%A8%AD%E5%AE%9A-win10-disable-%E8%A7%B8%E6%8E%A7%E6%9D%BF/"> 筆電設定-win10-disable-觸控板</a></li>
+            
+            <li>2017-12-04 <a href="/2017/12/INNER-JOIN%E9%80%A3%E6%8E%A5%E5%85%A9%E5%80%8B%E8%A1%A8-%E4%B8%89%E5%80%8B%E8%A1%A8-%E4%BA%94%E5%80%8B%E8%A1%A8%E7%9A%84SQL%E8%AA%9E%E5%8F%A5/"> INNER JOIN連接兩個表，三個表，五個表的SQL語句</a></li>
+            
+            <li>2017-11-23 <a href="/2017/11/%E6%8E%92%E7%A8%8B%E5%88%AA%E9%99%A4Epson-%E6%8E%83%E6%8F%8F%E5%88%B0-google-driver-%E4%B8%8A%E7%9A%84%E6%AA%94%E6%A1%88/"> 排程刪除Epson 掃描到 google driver 上的檔案</a></li>
+            
+            <li>2017-11-16 <a href="/2017/11/Win7-%E6%9B%B4%E6%96%B0KB4048957-KB4048960%E5%BE%8C%E5%87%BA%E5%8C%85-%E9%BB%9E%E9%99%A3%E5%BC%8F%E5%8D%B0%E8%A1%A8%E6%A9%9F%E7%84%A1%E6%B3%95%E4%BD%BF%E7%94%A8/"> Win7 更新KB4048957、KB4048960後出包，點陣式印表機無法使用！</a></li>
+            
+            <li>2017-11-15 <a href="/2017/11/node-js-%E6%8C%96-XMR-%E5%9C%A8-c9.io/"> node js 挖 XMR 在 c9.io.md</a></li>
+            
+            <li>2017-10-27 <a href="/2017/10/%E5%9C%A8-github-%E5%BB%BA%E7%AB%8B%E9%83%A8%E8%90%BD%E6%A0%BC/"> 在 github 建立部落格</a></li>
+            
+            <li>2017-10-27 <a href="/2017/10/php%E7%B6%B2%E9%A0%81%E5%88%A4%E6%96%B7%E7%80%8F%E8%A6%BD%E5%99%A8%E8%AA%9E%E7%B3%BB/"> php網頁判斷瀏覽器語系</a></li>
+            
+            <li>2017-10-27 <a href="/2017/10/multicast-mreciver-to-msend/"> multicast mreciver to msend</a></li>
+            
+            <li>2017-10-26 <a href="/2017/10/vbscript_check_gateway/"> vbscript check gateway</a></li>
+            
+            <li>2017-10-25 <a href="/2017/10/%E4%BF%A1%E5%91%BC-%E5%85%8D%E8%B2%BB%E9%96%8B%E6%BA%90%E7%9A%84%E8%BE%A6%E5%85%ACOA%E7%B3%BB%E7%B5%B1-_-BIG5-%E4%BF%AE%E6%94%B9/"> 信呼，免費開源的辦公OA系統 _ BIG5 修改</a></li>
+            
+            <li>2017-10-24 <a href="/2017/10/ROS_pptp_%E8%A8%AD%E5%AE%9A/"> ROS_pptp_設定</a></li>
+            
+            <li>2017-10-20 <a href="/2017/10/%E5%85%AC%E5%8F%B8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1_rockoa_%E4%BF%A1%E5%91%BC_%E8%A8%AD%E5%AE%9A_flow/"> 公司管理系統_rockoa_信呼_設定_flow</a></li>
+            
+            <li>2017-10-19 <a href="/2017/10/%E5%85%8D%E8%B2%BB%E7%9A%84%E5%85%AC%E5%8F%B8%E8%BE%A6%E5%85%AC%E5%8F%B8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1-rockoa-%E4%BF%A1%E5%91%BC/"> 免費的公司辦公司管理系統 rockoa 信呼</a></li>
+            
+            <li>2017-10-19 <a href="/2017/10/Teamviewer-%E4%B9%8B%E5%A4%96%E7%9A%84%E9%81%A0%E7%AB%AF%E9%81%99%E6%8E%A7-%E5%90%91%E6%97%A5%E8%91%B5%E9%81%A0%E7%A8%8B%E6%8E%A7%E5%88%B6/"> Teamviewer 之外的遠端遙控 向日葵遠程控制</a></li>
+            
+            <li>2017-10-17 <a href="/2017/10/html-%E7%9A%84-table-%E5%AF%AB%E6%B3%95-colspan-&amp;-rowspan/"> html 的 table 寫法 colspan &amp; rowspan</a></li>
+            
+            <li>2017-10-13 <a href="/2017/10/%E6%B8%85%E7%90%86-%E5%8D%B0%E8%A1%A8%E6%A9%9F-queue-%E7%9A%84%E6%89%B9%E6%AC%A1%E6%AA%94/"> 清理 印表機 queue 的批次檔</a></li>
+            
+            <li>2017-10-13 <a href="/2017/10/windows-%E5%AE%9A%E6%99%82%E5%88%AA%E9%99%A4%E6%AA%94%E6%A1%88/"> windows 定時刪除檔案</a></li>
+            
+            <li>2017-10-05 <a href="/2017/10/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9C%96%E6%A8%99%E7%A4%BA%E5%9C%B0%E9%BB%9E/"> 百度地圖標示地點</a></li>
+            
+            <li>2017-10-05 <a href="/2017/10/image-zoom-+-select-slideshow/"> image zoom + select slideshow</a></li>
+            
+            <li>2017-10-03 <a href="/2017/10/sudo-%E4%B8%8D%E6%9C%83%E5%86%8D%E5%95%8F-user-%E5%AF%86%E7%A2%BC/"> sudo 不會再問 user 密碼</a></li>
+            
+            <li>2017-10-03 <a href="/2017/10/php-%E7%B6%B2%E9%A0%81%E7%AE%97%E5%AD%97%E4%B8%B2%E6%89%80%E4%BD%94%E7%9A%84%E9%95%B7%E5%BA%A6/"> php 網頁算字串所佔的長度</a></li>
+            
+            <li>2017-10-03 <a href="/2017/10/Linux-samba-%E5%88%86%E4%BA%AB-web-%E7%9B%AE%E9%8C%84/"> Linux samba 分享 web 目錄</a></li>
+            
+            <li>2017-09-30 <a href="/2017/09/%E7%B6%B2%E9%A0%81%E7%9A%84%E5%B7%A6%E9%82%8A%E6%94%BE%E5%80%8B%E6%94%B6%E8%B5%B7%E4%BE%86%E7%9A%84-FB-%E7%B6%B2%E5%9D%80,-%E9%BB%9E%E9%81%B8%E9%96%8B%E5%87%BA%E4%BE%86-,-%E9%BB%9E%E9%81%B8%E9%97%9C%E9%96%89%E5%B0%B1%E9%97%9C%E9%96%89/"> 網頁的左邊放個收起來的 FB 網址, 點選開出來 , 點選關閉就關閉</a></li>
+            
+            <li>2017-09-29 <a href="/2017/09/%E7%B6%B2%E9%A0%81%E7%9A%84%E5%B7%A6%E9%82%8A%E6%94%BE%E5%80%8B%E6%94%B6%E8%B5%B7%E4%BE%86%E7%9A%84-FB-%E7%B6%B2%E5%9D%80,-%E6%BB%91%E9%BC%A0%E7%A7%BB%E9%81%8E%E5%8E%BB%E9%96%8B%E5%95%9F-,-%E9%9B%A2%E9%96%8B%E9%97%9C%E9%96%89/"> 網頁的左邊放個收起來的 FB 網址, 滑鼠移過去開啟 , 離開關閉</a></li>
+            
+            <li>2017-09-29 <a href="/2017/09/%E6%94%BE%E5%9B%BA%E5%AE%9A%E7%9A%84-skype-%E9%80%A3%E7%B5%90%E5%9C%A8%E5%B7%A6%E9%82%8A-,-%E9%BB%9E%E9%81%B8%E5%8F%AF%E7%9B%B4%E6%8E%A5%E9%BB%9E%E9%81%B8%E9%80%A3%E7%B9%AB/"> 放固定的 skype 連結在左邊 , 點選可直接點選連繫</a></li>
+            
+            <li>2017-09-27 <a href="/2017/09/jQuery-On-Hover-Image-Inner-Zoom-Plugin/"> jQuery-On-Hover-Image-Inner-Zoom-Plugin</a></li>
+            
+            <li>2017-09-19 <a href="/2017/09/%E7%B6%B2%E9%A0%81%E8%8B%B1%E6%96%87%E8%87%AA%E5%8B%95%E6%8F%9B%E8%A1%8C-,-%E4%B8%8D%E4%BA%82%E5%88%87%E5%AD%97/"> 網頁英文自動換行 , 不亂切字</a></li>
+            
+            <li>2017-09-14 <a href="/2017/09/google%E8%A1%A8%E5%96%AE%E7%9A%84%E5%A4%96%E6%8E%9B-Form-Confirmation-Emails/"> google表單的外掛 Form Confirmation Emails</a></li>
+            
+            <li>2017-09-13 <a href="/2017/09/Execl-%E6%89%BE%E5%87%BA%E5%85%A9%E8%A1%8C%E5%B7%AE%E7%95%B0%E6%96%87%E5%AD%97/"> Execl 找出兩行差異文字</a></li>
+            
+            <li>2017-09-11 <a href="/2017/09/SQL-%E7%9A%84-PIVOT/"> SQL 的 PIVOT</a></li>
+            
+            <li>2017-09-04 <a href="/2017/09/%E6%9B%B4%E6%94%B9-outlook-pst-%E8%B7%AF%E4%BF%93/"> 更改 outlook pst 路俓</a></li>
+            
+            <li>2017-08-31 <a href="/2017/08/CentOS-7-%E8%A8%AD%E5%AE%9A-eth0/"> CentOS 7 設定 eth0</a></li>
+            
+            <li>2017-08-18 <a href="/2017/08/Synology-%E6%8A%93-HDD-%E6%BA%AB%E5%BA%A6%E7%95%AB%E5%80%8B-cacti-%E6%BA%AB%E5%BA%A6%E8%A1%A8/"> Synology 抓 HDD 溫度畫個 cacti 溫度表</a></li>
+            
+            <li>2017-08-17 <a href="/2017/08/grep/"> grep 找字元含子目錄</a></li>
+            
+            <li>2017-08-14 <a href="/2017/08/upload/"> move_uploaded_file failed to open stream Permission denied</a></li>
+            
+            <li>2017-08-12 <a href="/2017/08/Esxi-restore/"> ESXi 單機 ghettoVCB 的還原</a></li>
+            
+            <li>2017-08-11 <a href="/2017/08/%E7%BE%A4%E8%BC%9D_NAS_FOR_ESXi/"> 群輝 NFS for ESXi</a></li>
+            
+            <li>2017-08-11 <a href="/2017/08/ghettoVCB_backup/"> ESXi 單機備份方案 ghettoVCB</a></li>
+            
+            <li>2017-08-08 <a href="/2017/08/CentOS_nginx_proxy/"> CentOS7 nginx proxy 定義 porxy port</a></li>
+            
+            <li>2017-07-11 <a href="/2017/07/mysql_ssl/"> MYSQL SSL</a></li>
+            
+            <li>2017-07-07 <a href="/2017/07/nginx/"> nginx 網頁架構</a></li>
+            
+            <li>2017-07-07 <a href="/2017/07/baidu_backup/"> linux shell 下用 python 連百度云盤當備份</a></li>
+            
+            <li>2017-07-05 <a href="/2017/07/golang_Srting/"> golang 讀出資料庫到 2D Srting</a></li>
+            
+            <li>2017-06-30 <a href="/2017/06/windows_user/"> windows 停用 user 的排程</a></li>
+            
+            <li>2017-06-30 <a href="/2017/06/gmail_checker/"> gmail pop3 checker</a></li>
+            
+            <li>2017-06-29 <a href="/2017/06/docker_ps/"> docker 看 PS 詳細內容</a></li>
+            
+            <li>2017-06-22 <a href="/2017/06/python_lambda/"> python 的 lambda, reduce, filter</a></li>
+            
+            <li>2017-06-16 <a href="/2017/06/Windows_Installer/"> Windows的安全模式時，系統將沒辨法啟動「Windows Installer」服務</a></li>
+            
+            <li>2017-06-15 <a href="/2017/06/letsencrypt_error/"> letsencrypt 更新出現 404 因為我將 http 強制轉到 https</a></li>
+            
+            <li>2017-06-12 <a href="/2017/06/perl_tcp_proxy/"> 用 perl 寫 proxy 替換字串如 http 換成 https</a></li>
+            
+            <li>2017-06-12 <a href="/2017/06/docker_web_go/"> web-go ...用 Multiple build 建造 docker 將 image 變小</a></li>
+            
+            <li>2017-06-06 <a href="/2017/06/powercli-vCenter/"> 用 powercli 建立排程定時做快照</a></li>
+            
+            <li>2017-06-01 <a href="/2017/06/Rewrite/"> 網頁 Rewrite</a></li>
+            
+            <li>2017-05-17 <a href="/2017/05/nginx-resole/"> 用 nginx resolve proxy 將自己的 http/1.1 變成 http/2.0</a></li>
+            
+            <li>2017-05-11 <a href="/2017/05/Mega_backup/"> 用 Mega 備份 資料</a></li>
+            
+            <li>2017-04-26 <a href="/2017/04/android_unsigned_signed/"> unsigned.apk 自簽成 signed.apk</a></li>
+            
+            <li>2017-04-25 <a href="/2017/04/meteor_docker/"> meteor-android-build in docker</a></li>
+            
+            <li>2017-04-25 <a href="/2017/04/docker_Android_emulator/"> Android emulator in docker</a></li>
+            
+            <li>2017-04-19 <a href="/2017/04/Sock5_proxy_docker/"> Sock5 proxy in docker</a></li>
+            
+            <li>2017-04-18 <a href="/2017/04/Squid_reverse_proxy/"> Squid 設 reverse proxy</a></li>
+            
+            <li>2017-04-14 <a href="/2017/04/docker/"> linux docker 應用 alias 執行 golang , git client , java , gcc , make 還是</a></li>
+            
+            <li>2017-04-12 <a href="/2017/04/vSphere_Docker_Volume/"> vSphere Docker Volume Service</a></li>
+            
+            <li>2017-04-11 <a href="/2017/04/vCenter_Appliance/"> vCenter Server Appliance 6.5 安裝</a></li>
+            
+            <li>2017-04-11 <a href="/2017/04/VMware_Containers/"> VMware vSphere® Integrated Containers™ Engine (VIC)</a></li>
+            
+            <li>2017-04-06 <a href="/2017/04/linux_root/"> CentOS 7 OS 忘記 root 密碼</a></li>
+            
+            <li>2017-03-23 <a href="/2017/03/DSM_synology/"> 黑群暉 DSM 6.1</a></li>
+            
+            <li>2017-03-18 <a href="/2017/03/%E4%B8%AD%E6%96%AD/"> CPU中斷處理</a></li>
+            
+            <li>2017-02-23 <a href="/2017/02/MongoDB/"> MongoDB 測試 (https://mlab.com/)</a></li>
+            
+            <li>2017-02-22 <a href="/2017/02/OCS_agent/"> ocs-inventory windows agent 打包</a></li>
+            
+            <li>2017-02-18 <a href="/2017/02/Centos-7-%E6%8F%9B-kernel-4.X/"> Centos 7 換 kernel 4.X</a></li>
+            
+            <li>2017-02-16 <a href="/2017/02/OCS/"> Centos 7 安裝 OCS (OCS-NG Inventory )</a></li>
+            
+            <li>2017-02-15 <a href="/2017/02/MegaRAID/"> Esxi 裝 MegaRAID SAS 9260-8</a></li>
+            
+            <li>2016-12-23 <a href="/2016/12/monitorix/"> linux 單機監控 monitorix</a></li>
+            
+            <li>2016-12-14 <a href="/2016/12/QNAP_temperature/"> Cacti 監控QNAP NAS 溫度</a></li>
+            
+            <li>2016-11-14 <a href="/2016/11/letsencrypt/"> 免費的web , smtp , pop3 多網域認證 key 申請 , 及自動換KEY</a></li>
+            
+            <li>2016-11-03 <a href="/2016/11/nginx_proxy_keepalived/"> nginx proxy + keepalived HA</a></li>
+            
+            <li>2016-11-02 <a href="/2016/11/ngnix_DC_porxy/"> 用 ngnix 當 DC porxy</a></li>
+            
+            <li>2016-10-12 <a href="/2016/10/havp/"> 用 linux havp 當 porxy 防毒牆 (用 Trend Micro 趨勢防毒)</a></li>
+            
+            <li>2016-10-03 <a href="/2016/10/Hyper-V/"> Hyper-V server core 2012 R2 安裝 MSSQL 2012 R2 ..不必買 OS 版權開機</a></li>
+            
+            <li>2016-10-03 <a href="/2016/10/Esxi_Script/"> 話說我備份Esxi guest 都是用 Script .重點是免費</a></li>
+            
+            <li>2016-09-09 <a href="/2016/09/win10_office_starter/"> Win10 裝 microsoft office 2010 starter</a></li>
+            
+            <li>2013-11-26 <a href="/2013/11/ssh_key/"> ssh 交換金鑰</a></li>
+            
+            <li>2013-11-14 <a href="/2013/11/embedded_c/"> embedded 時區問題， linux 無解只好用 C</a></li>
+            
+            <li>2013-10-18 <a href="/2013/10/Excel/"> Excel 表格自動更新 (最後30天圖表)</a></li>
+            
+            <li>2013-10-07 <a href="/2013/10/linux_process/"> linux kill 多個相同 process 方法</a></li>
+            
+            <li>2013-09-28 <a href="/2013/09/Excel/"> Excel 表格自動更新</a></li>
+            
+            <li>2013-08-14 <a href="/2013/08/vlc_rtsp/"> VLC 播放 RTMP串流影音 &amp; RTMP to http</a></li>
+            
+            <li>2013-08-14 <a href="/2013/08/linux_shell/"> shell實現的俄羅斯方塊</a></li>
+            
+            <li>2013-08-13 <a href="/2013/08/picture/"> 數位接圖</a></li>
+            
+            <li>2013-08-13 <a href="/2013/08/linux_mysql/"> kill long run mysql process</a></li>
+            
+            <li>2012-08-21 <a href="/2012/08/mreciver_to_msend/"> mreciver to msend</a></li>
+            
+            <li>2012-04-16 <a href="/2012/04/perl-Compare/"> perl 影像辨識 影像比較</a></li>
+            
+            <li>2007-11-05 <a href="/2007/11/me/"> 手持巨砲</a></li>
+            
+            <li>2007-06-28 <a href="/2007/06/ANGENIEUX/"> 愛斬人</a></li>
+            
+        </ul>
+    </div>
+    
+      <div post-cate="圖">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2013-08-13 <a href="/2013/08/picture/"> 數位接圖</a></li>
+            
+          
+            
+              <li>2007-11-05 <a href="/2007/11/me/"> 手持巨砲</a></li>
+            
+          
+            
+              <li>2007-06-28 <a href="/2007/06/ANGENIEUX/"> 愛斬人</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="perl">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-11-19 <a href="/2018/11/dns.la-API/"> dns.la API set cname</a></li>
+            
+          
+            
+              <li>2018-11-10 <a href="/2018/11/perl-hash-foreach-dump/"> perl hash foreach dump</a></li>
+            
+          
+            
+              <li>2018-11-03 <a href="/2018/11/Mojolicious-helloword/"> Mojolicious helloword</a></li>
+            
+          
+            
+              <li>2017-06-12 <a href="/2017/06/perl_tcp_proxy/"> 用 perl 寫 proxy 替換字串如 http 換成 https</a></li>
+            
+          
+            
+              <li>2012-04-16 <a href="/2012/04/perl-Compare/"> perl 影像辨識 影像比較</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Compare">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2012-04-16 <a href="/2012/04/perl-Compare/"> perl 影像辨識 影像比較</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="mreciver">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2012-08-21 <a href="/2012/08/mreciver_to_msend/"> mreciver to msend</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="msend">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2012-08-21 <a href="/2012/08/mreciver_to_msend/"> mreciver to msend</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="linux">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-09-28 <a href="/2019/09/linux-TrueType/"> linux TrueType font</a></li>
+            
+          
+            
+              <li>2019-09-23 <a href="/2019/09/python-pyinstaller/"> python 變執行檔</a></li>
+            
+          
+            
+              <li>2019-06-22 <a href="/2019/06/vimrc/"> vim上色</a></li>
+            
+          
+            
+              <li>2019-05-23 <a href="/2019/05/win10-WSL-ubuntu/"> win10 WSL linux ubuntu 1804</a></li>
+            
+          
+            
+              <li>2019-03-19 <a href="/2019/03/%E7%A1%AC%E7%A2%9F%E8%B3%87%E6%96%99%E6%8A%B9%E9%99%A4/"> 硬碟資料抹除</a></li>
+            
+          
+            
+              <li>2019-03-03 <a href="/2019/03/web-root-user/"> 網頁用 root 執行程式</a></li>
+            
+          
+            
+              <li>2019-02-14 <a href="/2019/02/phpservermonotor_telegram/"> 大陆地区 php server monotor 用 telegram</a></li>
+            
+          
+            
+              <li>2019-02-12 <a href="/2019/02/linux-cmd/"> 最近常用的 linux 指令</a></li>
+            
+          
+            
+              <li>2018-07-10 <a href="/2018/07/linux-mssql-json/"> linux 抓 mssql 丟 json</a></li>
+            
+          
+            
+              <li>2018-03-15 <a href="/2018/03/gb-big5/"> linux , windows 下 簡體字轉繁體字 (Unicode)</a></li>
+            
+          
+            
+              <li>2017-10-03 <a href="/2017/10/sudo-%E4%B8%8D%E6%9C%83%E5%86%8D%E5%95%8F-user-%E5%AF%86%E7%A2%BC/"> sudo 不會再問 user 密碼</a></li>
+            
+          
+            
+              <li>2016-12-23 <a href="/2016/12/monitorix/"> linux 單機監控 monitorix</a></li>
+            
+          
+            
+              <li>2016-10-12 <a href="/2016/10/havp/"> 用 linux havp 當 porxy 防毒牆 (用 Trend Micro 趨勢防毒)</a></li>
+            
+          
+            
+              <li>2013-11-26 <a href="/2013/11/ssh_key/"> ssh 交換金鑰</a></li>
+            
+          
+            
+              <li>2013-11-14 <a href="/2013/11/embedded_c/"> embedded 時區問題， linux 無解只好用 C</a></li>
+            
+          
+            
+              <li>2013-10-07 <a href="/2013/10/linux_process/"> linux kill 多個相同 process 方法</a></li>
+            
+          
+            
+              <li>2013-08-14 <a href="/2013/08/linux_shell/"> shell實現的俄羅斯方塊</a></li>
+            
+          
+            
+              <li>2013-08-13 <a href="/2013/08/linux_mysql/"> kill long run mysql process</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="shell">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-05-23 <a href="/2019/05/ansible-shell-script/"> ansible shell and script</a></li>
+            
+          
+            
+              <li>2013-08-14 <a href="/2013/08/linux_shell/"> shell實現的俄羅斯方塊</a></li>
+            
+          
+            
+              <li>2013-08-13 <a href="/2013/08/linux_mysql/"> kill long run mysql process</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="sql">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2013-08-13 <a href="/2013/08/linux_mysql/"> kill long run mysql process</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="mysql">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-04 <a href="/2019/08/AMPS/"> amps</a></li>
+            
+          
+            
+              <li>2017-07-11 <a href="/2017/07/mysql_ssl/"> MYSQL SSL</a></li>
+            
+          
+            
+              <li>2013-08-13 <a href="/2013/08/linux_mysql/"> kill long run mysql process</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="VLC">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2013-08-14 <a href="/2013/08/vlc_rtsp/"> VLC 播放 RTMP串流影音 &amp; RTMP to http</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="RTMP">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2013-08-14 <a href="/2013/08/vlc_rtsp/"> VLC 播放 RTMP串流影音 &amp; RTMP to http</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Excel">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-11 <a href="/2018/06/Excel%E5%B7%A8%E9%9B%86%E6%8C%87%E4%BB%A4/"> 網路找的 -- 100個最簡單的 Excel 巨集指令</a></li>
+            
+          
+            
+              <li>2018-02-26 <a href="/2018/02/excel_find/"> excel 找相同資料複製哪行</a></li>
+            
+          
+            
+              <li>2013-10-18 <a href="/2013/10/Excel/"> Excel 表格自動更新 (最後30天圖表)</a></li>
+            
+          
+            
+              <li>2013-09-28 <a href="/2013/09/Excel/"> Excel 表格自動更新</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="process">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2013-10-07 <a href="/2013/10/linux_process/"> linux kill 多個相同 process 方法</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="c">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2013-11-14 <a href="/2013/11/embedded_c/"> embedded 時區問題， linux 無解只好用 C</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="ssh">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2013-11-26 <a href="/2013/11/ssh_key/"> ssh 交換金鑰</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Win10">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-03 <a href="/2018/07/win10_remove_app/"> win10 remove app (移除市集程式)</a></li>
+            
+          
+            
+              <li>2018-03-03 <a href="/2018/03/win10_gpt/"> win10 開機磁碟機 mbr 轉成 GPT</a></li>
+            
+          
+            
+              <li>2018-02-13 <a href="/2018/02/upgrade_win10/"> windows-10-家用版本-升級-windows-10-專業版本-win10</a></li>
+            
+          
+            
+              <li>2018-01-12 <a href="/2018/01/win7-win8-win10-win2008-win2012-/.-%E4%B8%8A%E5%B8%9D%E6%A8%A1%E5%BC%8F/"> win7 win8 win10 win2008 win2012 ... 上帝模式</a></li>
+            
+          
+            
+              <li>2016-09-09 <a href="/2016/09/win10_office_starter/"> Win10 裝 microsoft office 2010 starter</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="office">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2016-09-09 <a href="/2016/09/win10_office_starter/"> Win10 裝 microsoft office 2010 starter</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="starter">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2016-09-09 <a href="/2016/09/win10_office_starter/"> Win10 裝 microsoft office 2010 starter</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="esxi">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-23 <a href="/2019/08/Centos-esxi-to-vworkstation/"> centos7 esxi 移 vworkstation 出現 dracut-initqueue timeout</a></li>
+            
+          
+            
+              <li>2019-07-22 <a href="/2019/07/alibabacloud_to_Esxi/"> 阿里雲轉 ESXi</a></li>
+            
+          
+            
+              <li>2018-07-16 <a href="/2018/07/esxi-size/"> ghettoVCB 備份的大小</a></li>
+            
+          
+            
+              <li>2016-10-03 <a href="/2016/10/Esxi_Script/"> 話說我備份Esxi guest 都是用 Script .重點是免費</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="backup">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-10-01 <a href="/2019/10/RaiDrive/"> Windows 備份到雲端的方法轉 VM</a></li>
+            
+          
+            
+              <li>2018-06-20 <a href="/2018/06/gdrive_backup/"> linux shell 下用 gdrive 備份資料</a></li>
+            
+          
+            
+              <li>2017-08-11 <a href="/2017/08/ghettoVCB_backup/"> ESXi 單機備份方案 ghettoVCB</a></li>
+            
+          
+            
+              <li>2017-07-07 <a href="/2017/07/baidu_backup/"> linux shell 下用 python 連百度云盤當備份</a></li>
+            
+          
+            
+              <li>2017-05-11 <a href="/2017/05/Mega_backup/"> 用 Mega 備份 資料</a></li>
+            
+          
+            
+              <li>2016-10-03 <a href="/2016/10/Esxi_Script/"> 話說我備份Esxi guest 都是用 Script .重點是免費</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Script">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2016-10-03 <a href="/2016/10/Esxi_Script/"> 話說我備份Esxi guest 都是用 Script .重點是免費</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="MSSQL">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-25 <a href="/2018/06/php_mssql/"> php mssql connect</a></li>
+            
+          
+            
+              <li>2016-10-03 <a href="/2016/10/Hyper-V/"> Hyper-V server core 2012 R2 安裝 MSSQL 2012 R2 ..不必買 OS 版權開機</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Hyper-V">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2016-10-03 <a href="/2016/10/Hyper-V/"> Hyper-V server core 2012 R2 安裝 MSSQL 2012 R2 ..不必買 OS 版權開機</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="server">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-02-14 <a href="/2019/02/phpservermonotor_telegram/"> 大陆地区 php server monotor 用 telegram</a></li>
+            
+          
+            
+              <li>2016-10-03 <a href="/2016/10/Hyper-V/"> Hyper-V server core 2012 R2 安裝 MSSQL 2012 R2 ..不必買 OS 版權開機</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="havp">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2016-10-12 <a href="/2016/10/havp/"> 用 linux havp 當 porxy 防毒牆 (用 Trend Micro 趨勢防毒)</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="proxy">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-03-19 <a href="/2019/03/CDN-%E5%9B%9E%E6%BA%90%E6%B5%8B%E8%AF%95/"> CDN 回源测试</a></li>
+            
+          
+            
+              <li>2017-08-08 <a href="/2017/08/CentOS_nginx_proxy/"> CentOS7 nginx proxy 定義 porxy port</a></li>
+            
+          
+            
+              <li>2017-06-15 <a href="/2017/06/letsencrypt_error/"> letsencrypt 更新出現 404 因為我將 http 強制轉到 https</a></li>
+            
+          
+            
+              <li>2017-06-12 <a href="/2017/06/perl_tcp_proxy/"> 用 perl 寫 proxy 替換字串如 http 換成 https</a></li>
+            
+          
+            
+              <li>2017-05-17 <a href="/2017/05/nginx-resole/"> 用 nginx resolve proxy 將自己的 http/1.1 變成 http/2.0</a></li>
+            
+          
+            
+              <li>2017-04-19 <a href="/2017/04/Sock5_proxy_docker/"> Sock5 proxy in docker</a></li>
+            
+          
+            
+              <li>2017-04-18 <a href="/2017/04/Squid_reverse_proxy/"> Squid 設 reverse proxy</a></li>
+            
+          
+            
+              <li>2016-11-03 <a href="/2016/11/nginx_proxy_keepalived/"> nginx proxy + keepalived HA</a></li>
+            
+          
+            
+              <li>2016-11-02 <a href="/2016/11/ngnix_DC_porxy/"> 用 ngnix 當 DC porxy</a></li>
+            
+          
+            
+              <li>2016-10-12 <a href="/2016/10/havp/"> 用 linux havp 當 porxy 防毒牆 (用 Trend Micro 趨勢防毒)</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="防毒">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2016-10-12 <a href="/2016/10/havp/"> 用 linux havp 當 porxy 防毒牆 (用 Trend Micro 趨勢防毒)</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="nginx">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-07-19 <a href="/2019/07/nginx-HTTPs-redirects/"> Forcing HTTPs redirects on non-standard ports</a></li>
+            
+          
+            
+              <li>2019-03-03 <a href="/2019/03/web-root-user/"> 網頁用 root 執行程式</a></li>
+            
+          
+            
+              <li>2018-09-27 <a href="/2018/09/nginx-302-302-redirect/"> nginx 302 與 302 redirect</a></li>
+            
+          
+            
+              <li>2018-06-25 <a href="/2018/06/nginx_auth_basic/"> nginx 加網頁基本認證</a></li>
+            
+          
+            
+              <li>2017-08-08 <a href="/2017/08/CentOS_nginx_proxy/"> CentOS7 nginx proxy 定義 porxy port</a></li>
+            
+          
+            
+              <li>2017-07-07 <a href="/2017/07/nginx/"> nginx 網頁架構</a></li>
+            
+          
+            
+              <li>2017-06-15 <a href="/2017/06/letsencrypt_error/"> letsencrypt 更新出現 404 因為我將 http 強制轉到 https</a></li>
+            
+          
+            
+              <li>2017-06-01 <a href="/2017/06/Rewrite/"> 網頁 Rewrite</a></li>
+            
+          
+            
+              <li>2017-05-17 <a href="/2017/05/nginx-resole/"> 用 nginx resolve proxy 將自己的 http/1.1 變成 http/2.0</a></li>
+            
+          
+            
+              <li>2016-11-03 <a href="/2016/11/nginx_proxy_keepalived/"> nginx proxy + keepalived HA</a></li>
+            
+          
+            
+              <li>2016-11-02 <a href="/2016/11/ngnix_DC_porxy/"> 用 ngnix 當 DC porxy</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="keepalived">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2016-11-03 <a href="/2016/11/nginx_proxy_keepalived/"> nginx proxy + keepalived HA</a></li>
+            
+          
+            
+              <li>2016-11-02 <a href="/2016/11/ngnix_DC_porxy/"> 用 ngnix 當 DC porxy</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="DC">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2016-11-02 <a href="/2016/11/ngnix_DC_porxy/"> 用 ngnix 當 DC porxy</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="letsencrypt">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2016-11-14 <a href="/2016/11/letsencrypt/"> 免費的web , smtp , pop3 多網域認證 key 申請 , 及自動換KEY</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="ssl">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-07-11 <a href="/2017/07/mysql_ssl/"> MYSQL SSL</a></li>
+            
+          
+            
+              <li>2016-11-14 <a href="/2016/11/letsencrypt/"> 免費的web , smtp , pop3 多網域認證 key 申請 , 及自動換KEY</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Cacti">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2016-12-14 <a href="/2016/12/QNAP_temperature/"> Cacti 監控QNAP NAS 溫度</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="QNAP">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2016-12-14 <a href="/2016/12/QNAP_temperature/"> Cacti 監控QNAP NAS 溫度</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="temperature">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2016-12-14 <a href="/2016/12/QNAP_temperature/"> Cacti 監控QNAP NAS 溫度</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="monitorix">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-10-03 <a href="/2018/10/centos7_monitorix/"> centos7 monitorix</a></li>
+            
+          
+            
+              <li>2016-12-23 <a href="/2016/12/monitorix/"> linux 單機監控 monitorix</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Esxi">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-07 <a href="/2018/07/python_ssh_mail/"> python ssh 到 Esxi 查看磁碟狀況</a></li>
+            
+          
+            
+              <li>2017-06-06 <a href="/2017/06/powercli-vCenter/"> 用 powercli 建立排程定時做快照</a></li>
+            
+          
+            
+              <li>2017-04-12 <a href="/2017/04/vSphere_Docker_Volume/"> vSphere Docker Volume Service</a></li>
+            
+          
+            
+              <li>2017-04-11 <a href="/2017/04/vCenter_Appliance/"> vCenter Server Appliance 6.5 安裝</a></li>
+            
+          
+            
+              <li>2017-04-11 <a href="/2017/04/VMware_Containers/"> VMware vSphere® Integrated Containers™ Engine (VIC)</a></li>
+            
+          
+            
+              <li>2017-02-15 <a href="/2017/02/MegaRAID/"> Esxi 裝 MegaRAID SAS 9260-8</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="MegaRAID">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-02-15 <a href="/2017/02/MegaRAID/"> Esxi 裝 MegaRAID SAS 9260-8</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Centos">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-04-06 <a href="/2017/04/linux_root/"> CentOS 7 OS 忘記 root 密碼</a></li>
+            
+          
+            
+              <li>2017-02-16 <a href="/2017/02/OCS/"> Centos 7 安裝 OCS (OCS-NG Inventory )</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="OCS">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-02-22 <a href="/2017/02/OCS_agent/"> ocs-inventory windows agent 打包</a></li>
+            
+          
+            
+              <li>2017-02-16 <a href="/2017/02/OCS/"> Centos 7 安裝 OCS (OCS-NG Inventory )</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="OCS-NG">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-02-16 <a href="/2017/02/OCS/"> Centos 7 安裝 OCS (OCS-NG Inventory )</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="CentOS">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-08-07 <a href="/2018/08/centos-eth0/"> CentOS 7 修改網卡名稱 Eno* 成 Eth0</a></li>
+            
+          
+            
+              <li>2018-01-18 <a href="/2018/01/linux-CLI-speed-test/"> linux CLI speed test</a></li>
+            
+          
+            
+              <li>2018-01-17 <a href="/2018/01/CentOS-7%E4%B8%8A%E9%83%A8%E7%BD%B2-Google-BBR/"> CentOS 7上部署 Google BBR</a></li>
+            
+          
+            
+              <li>2018-01-17 <a href="/2018/01/CentOS-7-%E4%B8%8A%E5%AE%89%E8%A3%9D-NGINX-%E7%9A%84-MODSECURITY-MODULE/"> CentOS 7 上安裝 NGINX 的 MODSECURITY MODULE</a></li>
+            
+          
+            
+              <li>2017-08-31 <a href="/2017/08/CentOS-7-%E8%A8%AD%E5%AE%9A-eth0/"> CentOS 7 設定 eth0</a></li>
+            
+          
+            
+              <li>2017-08-08 <a href="/2017/08/CentOS_nginx_proxy/"> CentOS7 nginx proxy 定義 porxy port</a></li>
+            
+          
+            
+              <li>2017-02-18 <a href="/2017/02/Centos-7-%E6%8F%9B-kernel-4.X/"> Centos 7 換 kernel 4.X</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="kernel">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-02-18 <a href="/2017/02/Centos-7-%E6%8F%9B-kernel-4.X/"> Centos 7 換 kernel 4.X</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="OCSNG">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-02-22 <a href="/2017/02/OCS_agent/"> ocs-inventory windows agent 打包</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="agent">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-02-22 <a href="/2017/02/OCS_agent/"> ocs-inventory windows agent 打包</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="MongoDB">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-02-23 <a href="/2017/02/MongoDB/"> MongoDB 測試 (https://mlab.com/)</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="自頂向下分析計算機系統">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-03-18 <a href="/2017/03/%E4%B8%AD%E6%96%AD/"> CPU中斷處理</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="計算子系統">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-03-18 <a href="/2017/03/%E4%B8%AD%E6%96%AD/"> CPU中斷處理</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="synology">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-03-23 <a href="/2017/03/DSM_synology/"> 黑群暉 DSM 6.1</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="DSM">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-03-23 <a href="/2017/03/DSM_synology/"> 黑群暉 DSM 6.1</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="root">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-04-06 <a href="/2017/04/linux_root/"> CentOS 7 OS 忘記 root 密碼</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="VMware">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-04-11 <a href="/2017/04/VMware_Containers/"> VMware vSphere® Integrated Containers™ Engine (VIC)</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="vSphere">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-04-11 <a href="/2017/04/VMware_Containers/"> VMware vSphere® Integrated Containers™ Engine (VIC)</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Containers">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-04-11 <a href="/2017/04/VMware_Containers/"> VMware vSphere® Integrated Containers™ Engine (VIC)</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="vCenter">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-07-22 <a href="/2019/07/alibabacloud_to_Esxi/"> 阿里雲轉 ESXi</a></li>
+            
+          
+            
+              <li>2017-04-11 <a href="/2017/04/vCenter_Appliance/"> vCenter Server Appliance 6.5 安裝</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="docker">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-09-22 <a href="/2018/09/Azure-Container-jenkins/"> Azure Container exec jenkins</a></li>
+            
+          
+            
+              <li>2018-09-21 <a href="/2018/09/Weave-Docker-Containers/"> Weave-Docker-Containers</a></li>
+            
+          
+            
+              <li>2018-09-21 <a href="/2018/09/Installing-Weave-Scope-on-Kubernetes/"> Installing Weave Scope on Kubernetes</a></li>
+            
+          
+            
+              <li>2018-09-21 <a href="/2018/09/Docker-Systemd-Boot/"> Docker-Systemd-Boot</a></li>
+            
+          
+            
+              <li>2018-09-21 <a href="/2018/09/Azure-Container-Instances/"> Azure-Container-Instances</a></li>
+            
+          
+            
+              <li>2018-09-17 <a href="/2018/09/jenkins-docker-ansible-centos/"> jenkins docker ansible centos</a></li>
+            
+          
+            
+              <li>2018-09-04 <a href="/2018/09/Vagrant-Ansible-Kubernetes/"> Ansible Playbooks deploy Kubernetes site</a></li>
+            
+          
+            
+              <li>2018-09-04 <a href="/2018/09/Cluster-Ansible-Playbooks-deploy-Kubernetes/"> Ansible Playbooks deploy Kubernetes cluster</a></li>
+            
+          
+            
+              <li>2018-08-31 <a href="/2018/08/Kubernetes-cluster-v2/"> CentOS 7 Kubernetes cluster</a></li>
+            
+          
+            
+              <li>2018-08-30 <a href="/2018/08/4-docker-machine/"> docker machine</a></li>
+            
+          
+            
+              <li>2018-08-30 <a href="/2018/08/3-docker-registry-server/"> docker registry server</a></li>
+            
+          
+            
+              <li>2018-08-30 <a href="/2018/08/2-docker-container/"> docker container</a></li>
+            
+          
+            
+              <li>2018-08-30 <a href="/2018/08/1-docker-image/"> docker image</a></li>
+            
+          
+            
+              <li>2017-06-29 <a href="/2017/06/docker_ps/"> docker 看 PS 詳細內容</a></li>
+            
+          
+            
+              <li>2017-06-12 <a href="/2017/06/docker_web_go/"> web-go ...用 Multiple build 建造 docker 將 image 變小</a></li>
+            
+          
+            
+              <li>2017-04-25 <a href="/2017/04/meteor_docker/"> meteor-android-build in docker</a></li>
+            
+          
+            
+              <li>2017-04-25 <a href="/2017/04/docker_Android_emulator/"> Android emulator in docker</a></li>
+            
+          
+            
+              <li>2017-04-19 <a href="/2017/04/Sock5_proxy_docker/"> Sock5 proxy in docker</a></li>
+            
+          
+            
+              <li>2017-04-14 <a href="/2017/04/docker/"> linux docker 應用 alias 執行 golang , git client , java , gcc , make 還是</a></li>
+            
+          
+            
+              <li>2017-04-12 <a href="/2017/04/vSphere_Docker_Volume/"> vSphere Docker Volume Service</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="golang">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-27 <a href="/2018/06/golang_printer/"> golang 遠端清理 印表機 queue</a></li>
+            
+          
+            
+              <li>2018-06-27 <a href="/2018/06/golang_multiple_platforms/"> golang 編譯各平台</a></li>
+            
+          
+            
+              <li>2017-07-05 <a href="/2017/07/golang_Srting/"> golang 讀出資料庫到 2D Srting</a></li>
+            
+          
+            
+              <li>2017-06-12 <a href="/2017/06/docker_web_go/"> web-go ...用 Multiple build 建造 docker 將 image 變小</a></li>
+            
+          
+            
+              <li>2017-04-14 <a href="/2017/04/docker/"> linux docker 應用 alias 執行 golang , git client , java , gcc , make 還是</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="java">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-04-14 <a href="/2017/04/docker/"> linux docker 應用 alias 執行 golang , git client , java , gcc , make 還是</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="gcc">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-04-14 <a href="/2017/04/docker/"> linux docker 應用 alias 執行 golang , git client , java , gcc , make 還是</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="make">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-04-14 <a href="/2017/04/docker/"> linux docker 應用 alias 執行 golang , git client , java , gcc , make 還是</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Squid">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-04-18 <a href="/2017/04/Squid_reverse_proxy/"> Squid 設 reverse proxy</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Sock5">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-04-19 <a href="/2017/04/Sock5_proxy_docker/"> Sock5 proxy in docker</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Android">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-04-25 <a href="/2017/04/docker_Android_emulator/"> Android emulator in docker</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Meteor">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-04-25 <a href="/2017/04/meteor_docker/"> meteor-android-build in docker</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="android">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-08-10 <a href="/2018/08/2048-android/"> 2048-apk</a></li>
+            
+          
+            
+              <li>2017-04-26 <a href="/2017/04/android_unsigned_signed/"> unsigned.apk 自簽成 signed.apk</a></li>
+            
+          
+            
+              <li>2017-04-25 <a href="/2017/04/meteor_docker/"> meteor-android-build in docker</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="unsigned">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-04-26 <a href="/2017/04/android_unsigned_signed/"> unsigned.apk 自簽成 signed.apk</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="signed">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-04-26 <a href="/2017/04/android_unsigned_signed/"> unsigned.apk 自簽成 signed.apk</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Mega">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-05-11 <a href="/2017/05/Mega_backup/"> 用 Mega 備份 資料</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="http/2.0">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-06-15 <a href="/2017/06/letsencrypt_error/"> letsencrypt 更新出現 404 因為我將 http 強制轉到 https</a></li>
+            
+          
+            
+              <li>2017-05-17 <a href="/2017/05/nginx-resole/"> 用 nginx resolve proxy 將自己的 http/1.1 變成 http/2.0</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="apache">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-09-17 <a href="/2019/09/flask+uwsgi/"> python+flask+selenium(firefox)+Xvfb+uwsgi+apache in CentOS7</a></li>
+            
+          
+            
+              <li>2019-08-04 <a href="/2019/08/AMPS/"> amps</a></li>
+            
+          
+            
+              <li>2019-03-03 <a href="/2019/03/web-root-user/"> 網頁用 root 執行程式</a></li>
+            
+          
+            
+              <li>2017-06-01 <a href="/2017/06/Rewrite/"> 網頁 Rewrite</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Rewrite">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-06-01 <a href="/2017/06/Rewrite/"> 網頁 Rewrite</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="powercli">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-06-06 <a href="/2017/06/powercli-vCenter/"> 用 powercli 建立排程定時做快照</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="TCP">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-06-12 <a href="/2017/06/perl_tcp_proxy/"> 用 perl 寫 proxy 替換字串如 http 換成 https</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Windows">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-06-16 <a href="/2017/06/Windows_Installer/"> Windows的安全模式時，系統將沒辨法啟動「Windows Installer」服務</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Installer">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-06-16 <a href="/2017/06/Windows_Installer/"> Windows的安全模式時，系統將沒辨法啟動「Windows Installer」服務</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="python">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-09-23 <a href="/2019/09/python-pyinstaller/"> python 變執行檔</a></li>
+            
+          
+            
+              <li>2019-09-17 <a href="/2019/09/flask+uwsgi/"> python+flask+selenium(firefox)+Xvfb+uwsgi+apache in CentOS7</a></li>
+            
+          
+            
+              <li>2018-07-07 <a href="/2018/07/python_ssh_mail/"> python ssh 到 Esxi 查看磁碟狀況</a></li>
+            
+          
+            
+              <li>2017-06-22 <a href="/2017/06/python_lambda/"> python 的 lambda, reduce, filter</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="lambda">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-06-22 <a href="/2017/06/python_lambda/"> python 的 lambda, reduce, filter</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="reduce">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-06-22 <a href="/2017/06/python_lambda/"> python 的 lambda, reduce, filter</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="filter">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-06-22 <a href="/2017/06/python_lambda/"> python 的 lambda, reduce, filter</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="gmail">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-05 <a href="/2018/07/gmail_to_outlook_Thunderbird/"> 備份 gmail 到你的 outlook 或 Thunderbird  或 其他 gmail 帳號</a></li>
+            
+          
+            
+              <li>2017-06-30 <a href="/2017/06/gmail_checker/"> gmail pop3 checker</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="pop3">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-06-30 <a href="/2017/06/gmail_checker/"> gmail pop3 checker</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="checker">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-06-30 <a href="/2017/06/gmail_checker/"> gmail pop3 checker</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="windows">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-10-11 <a href="/2019/10/windows-autologin/"> windows aotologin</a></li>
+            
+          
+            
+              <li>2019-10-04 <a href="/2019/10/windows-autologin/"> windows aotologin</a></li>
+            
+          
+            
+              <li>2019-09-23 <a href="/2019/09/python-pyinstaller/"> python 變執行檔</a></li>
+            
+          
+            
+              <li>2018-03-15 <a href="/2018/03/gb-big5/"> linux , windows 下 簡體字轉繁體字 (Unicode)</a></li>
+            
+          
+            
+              <li>2017-10-13 <a href="/2017/10/windows-%E5%AE%9A%E6%99%82%E5%88%AA%E9%99%A4%E6%AA%94%E6%A1%88/"> windows 定時刪除檔案</a></li>
+            
+          
+            
+              <li>2017-06-30 <a href="/2017/06/windows_user/"> windows 停用 user 的排程</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Srting">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-07-05 <a href="/2017/07/golang_Srting/"> golang 讀出資料庫到 2D Srting</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="百度云盤">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-07-07 <a href="/2017/07/baidu_backup/"> linux shell 下用 python 連百度云盤當備份</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="ESXi">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-08-12 <a href="/2017/08/Esxi-restore/"> ESXi 單機 ghettoVCB 的還原</a></li>
+            
+          
+            
+              <li>2017-08-11 <a href="/2017/08/%E7%BE%A4%E8%BC%9D_NAS_FOR_ESXi/"> 群輝 NFS for ESXi</a></li>
+            
+          
+            
+              <li>2017-08-11 <a href="/2017/08/ghettoVCB_backup/"> ESXi 單機備份方案 ghettoVCB</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="ghettoVCB">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-16 <a href="/2018/07/esxi-size/"> ghettoVCB 備份的大小</a></li>
+            
+          
+            
+              <li>2017-08-12 <a href="/2017/08/Esxi-restore/"> ESXi 單機 ghettoVCB 的還原</a></li>
+            
+          
+            
+              <li>2017-08-11 <a href="/2017/08/ghettoVCB_backup/"> ESXi 單機備份方案 ghettoVCB</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="自群輝">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-08-11 <a href="/2017/08/%E7%BE%A4%E8%BC%9D_NAS_FOR_ESXi/"> 群輝 NFS for ESXi</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="NFS">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-08-11 <a href="/2017/08/%E7%BE%A4%E8%BC%9D_NAS_FOR_ESXi/"> 群輝 NFS for ESXi</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="restore">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-08-12 <a href="/2017/08/Esxi-restore/"> ESXi 單機 ghettoVCB 的還原</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="uploaded_file">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-08-14 <a href="/2017/08/upload/"> move_uploaded_file failed to open stream Permission denied</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="failed">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-08-14 <a href="/2017/08/upload/"> move_uploaded_file failed to open stream Permission denied</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="grep">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-08-17 <a href="/2017/08/grep/"> grep 找字元含子目錄</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Synology">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-08-18 <a href="/2017/08/Synology-%E6%8A%93-HDD-%E6%BA%AB%E5%BA%A6%E7%95%AB%E5%80%8B-cacti-%E6%BA%AB%E5%BA%A6%E8%A1%A8/"> Synology 抓 HDD 溫度畫個 cacti 溫度表</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="溫度">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-08-18 <a href="/2017/08/Synology-%E6%8A%93-HDD-%E6%BA%AB%E5%BA%A6%E7%95%AB%E5%80%8B-cacti-%E6%BA%AB%E5%BA%A6%E8%A1%A8/"> Synology 抓 HDD 溫度畫個 cacti 溫度表</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="cacti">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-08-18 <a href="/2017/08/Synology-%E6%8A%93-HDD-%E6%BA%AB%E5%BA%A6%E7%95%AB%E5%80%8B-cacti-%E6%BA%AB%E5%BA%A6%E8%A1%A8/"> Synology 抓 HDD 溫度畫個 cacti 溫度表</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="eth0">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-08-31 <a href="/2017/08/CentOS-7-%E8%A8%AD%E5%AE%9A-eth0/"> CentOS 7 設定 eth0</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="outlook">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-05 <a href="/2018/07/gmail_to_outlook_Thunderbird/"> 備份 gmail 到你的 outlook 或 Thunderbird  或 其他 gmail 帳號</a></li>
+            
+          
+            
+              <li>2018-03-12 <a href="/2018/03/mail-trans/"> eml 檔轉成 pst 或 outlook 的 pst 要轉到 gmail 上</a></li>
+            
+          
+            
+              <li>2017-09-04 <a href="/2017/09/%E6%9B%B4%E6%94%B9-outlook-pst-%E8%B7%AF%E4%BF%93/"> 更改 outlook pst 路俓</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="pst">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-03-12 <a href="/2018/03/mail-trans/"> eml 檔轉成 pst 或 outlook 的 pst 要轉到 gmail 上</a></li>
+            
+          
+            
+              <li>2017-09-04 <a href="/2017/09/%E6%9B%B4%E6%94%B9-outlook-pst-%E8%B7%AF%E4%BF%93/"> 更改 outlook pst 路俓</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Execl">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-29 <a href="/2018/06/Execl-Category/"> Execl 抓分隔分類版</a></li>
+            
+          
+            
+              <li>2018-06-25 <a href="/2018/06/Execl_vba/"> 網路找的 10種最常用的Excel公式</a></li>
+            
+          
+            
+              <li>2018-06-25 <a href="/2018/06/Execl/"> Execl 合併儲存格 問題</a></li>
+            
+          
+            
+              <li>2018-06-25 <a href="/2018/06/Execl-chi/"> Execl 自動抓良品與不良倉,已訂未進</a></li>
+            
+          
+            
+              <li>2017-09-13 <a href="/2017/09/Execl-%E6%89%BE%E5%87%BA%E5%85%A9%E8%A1%8C%E5%B7%AE%E7%95%B0%E6%96%87%E5%AD%97/"> Execl 找出兩行差異文字</a></li>
+            
+          
+            
+              <li>2017-09-11 <a href="/2017/09/SQL-%E7%9A%84-PIVOT/"> SQL 的 PIVOT</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="SQL">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-01-02 <a href="/2018/01/MS-SQL-TRUNCATEONLY/"> MS SQL TRUNCATEONLY</a></li>
+            
+          
+            
+              <li>2018-01-02 <a href="/2018/01/MS-SQL-TRUNCATEONLY/"> MS SQL TRUNCATEONLY</a></li>
+            
+          
+            
+              <li>2017-09-11 <a href="/2017/09/SQL-%E7%9A%84-PIVOT/"> SQL 的 PIVOT</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="PIVOT">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-09-11 <a href="/2017/09/SQL-%E7%9A%84-PIVOT/"> SQL 的 PIVOT</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="google">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-20 <a href="/2018/06/gdrive_backup/"> linux shell 下用 gdrive 備份資料</a></li>
+            
+          
+            
+              <li>2017-09-14 <a href="/2017/09/google%E8%A1%A8%E5%96%AE%E7%9A%84%E5%A4%96%E6%8E%9B-Form-Confirmation-Emails/"> google表單的外掛 Form Confirmation Emails</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="doc">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-09-14 <a href="/2017/09/google%E8%A1%A8%E5%96%AE%E7%9A%84%E5%A4%96%E6%8E%9B-Form-Confirmation-Emails/"> google表單的外掛 Form Confirmation Emails</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="email">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-09-14 <a href="/2017/09/google%E8%A1%A8%E5%96%AE%E7%9A%84%E5%A4%96%E6%8E%9B-Form-Confirmation-Emails/"> google表單的外掛 Form Confirmation Emails</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="html">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-17 <a href="/2017/10/html-%E7%9A%84-table-%E5%AF%AB%E6%B3%95-colspan-&amp;-rowspan/"> html 的 table 寫法 colspan &amp; rowspan</a></li>
+            
+          
+            
+              <li>2017-09-30 <a href="/2017/09/%E7%B6%B2%E9%A0%81%E7%9A%84%E5%B7%A6%E9%82%8A%E6%94%BE%E5%80%8B%E6%94%B6%E8%B5%B7%E4%BE%86%E7%9A%84-FB-%E7%B6%B2%E5%9D%80,-%E9%BB%9E%E9%81%B8%E9%96%8B%E5%87%BA%E4%BE%86-,-%E9%BB%9E%E9%81%B8%E9%97%9C%E9%96%89%E5%B0%B1%E9%97%9C%E9%96%89/"> 網頁的左邊放個收起來的 FB 網址, 點選開出來 , 點選關閉就關閉</a></li>
+            
+          
+            
+              <li>2017-09-29 <a href="/2017/09/%E7%B6%B2%E9%A0%81%E7%9A%84%E5%B7%A6%E9%82%8A%E6%94%BE%E5%80%8B%E6%94%B6%E8%B5%B7%E4%BE%86%E7%9A%84-FB-%E7%B6%B2%E5%9D%80,-%E6%BB%91%E9%BC%A0%E7%A7%BB%E9%81%8E%E5%8E%BB%E9%96%8B%E5%95%9F-,-%E9%9B%A2%E9%96%8B%E9%97%9C%E9%96%89/"> 網頁的左邊放個收起來的 FB 網址, 滑鼠移過去開啟 , 離開關閉</a></li>
+            
+          
+            
+              <li>2017-09-29 <a href="/2017/09/%E6%94%BE%E5%9B%BA%E5%AE%9A%E7%9A%84-skype-%E9%80%A3%E7%B5%90%E5%9C%A8%E5%B7%A6%E9%82%8A-,-%E9%BB%9E%E9%81%B8%E5%8F%AF%E7%9B%B4%E6%8E%A5%E9%BB%9E%E9%81%B8%E9%80%A3%E7%B9%AB/"> 放固定的 skype 連結在左邊 , 點選可直接點選連繫</a></li>
+            
+          
+            
+              <li>2017-09-27 <a href="/2017/09/jQuery-On-Hover-Image-Inner-Zoom-Plugin/"> jQuery-On-Hover-Image-Inner-Zoom-Plugin</a></li>
+            
+          
+            
+              <li>2017-09-19 <a href="/2017/09/%E7%B6%B2%E9%A0%81%E8%8B%B1%E6%96%87%E8%87%AA%E5%8B%95%E6%8F%9B%E8%A1%8C-,-%E4%B8%8D%E4%BA%82%E5%88%87%E5%AD%97/"> 網頁英文自動換行 , 不亂切字</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="php">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-04 <a href="/2019/08/AMPS/"> amps</a></li>
+            
+          
+            
+              <li>2019-02-14 <a href="/2019/02/phpservermonotor_telegram/"> 大陆地区 php server monotor 用 telegram</a></li>
+            
+          
+            
+              <li>2018-06-25 <a href="/2018/06/php_mssql/"> php mssql connect</a></li>
+            
+          
+            
+              <li>2017-10-03 <a href="/2017/10/php-%E7%B6%B2%E9%A0%81%E7%AE%97%E5%AD%97%E4%B8%B2%E6%89%80%E4%BD%94%E7%9A%84%E9%95%B7%E5%BA%A6/"> php 網頁算字串所佔的長度</a></li>
+            
+          
+            
+              <li>2017-09-19 <a href="/2017/09/%E7%B6%B2%E9%A0%81%E8%8B%B1%E6%96%87%E8%87%AA%E5%8B%95%E6%8F%9B%E8%A1%8C-,-%E4%B8%8D%E4%BA%82%E5%88%87%E5%AD%97/"> 網頁英文自動換行 , 不亂切字</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="jQuery">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-09-27 <a href="/2017/09/jQuery-On-Hover-Image-Inner-Zoom-Plugin/"> jQuery-On-Hover-Image-Inner-Zoom-Plugin</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Hover">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-09-27 <a href="/2017/09/jQuery-On-Hover-Image-Inner-Zoom-Plugin/"> jQuery-On-Hover-Image-Inner-Zoom-Plugin</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Image">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-09-27 <a href="/2017/09/jQuery-On-Hover-Image-Inner-Zoom-Plugin/"> jQuery-On-Hover-Image-Inner-Zoom-Plugin</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Inner">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-09-27 <a href="/2017/09/jQuery-On-Hover-Image-Inner-Zoom-Plugin/"> jQuery-On-Hover-Image-Inner-Zoom-Plugin</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Zoom">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-09-27 <a href="/2017/09/jQuery-On-Hover-Image-Inner-Zoom-Plugin/"> jQuery-On-Hover-Image-Inner-Zoom-Plugin</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Plugin">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-09-27 <a href="/2017/09/jQuery-On-Hover-Image-Inner-Zoom-Plugin/"> jQuery-On-Hover-Image-Inner-Zoom-Plugin</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Linux">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-03 <a href="/2017/10/Linux-samba-%E5%88%86%E4%BA%AB-web-%E7%9B%AE%E9%8C%84/"> Linux samba 分享 web 目錄</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="samba">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-03 <a href="/2017/10/Linux-samba-%E5%88%86%E4%BA%AB-web-%E7%9B%AE%E9%8C%84/"> Linux samba 分享 web 目錄</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="分享">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-03 <a href="/2017/10/Linux-samba-%E5%88%86%E4%BA%AB-web-%E7%9B%AE%E9%8C%84/"> Linux samba 分享 web 目錄</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="網頁">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-03 <a href="/2017/10/php-%E7%B6%B2%E9%A0%81%E7%AE%97%E5%AD%97%E4%B8%B2%E6%89%80%E4%BD%94%E7%9A%84%E9%95%B7%E5%BA%A6/"> php 網頁算字串所佔的長度</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="字串">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-03 <a href="/2017/10/php-%E7%B6%B2%E9%A0%81%E7%AE%97%E5%AD%97%E4%B8%B2%E6%89%80%E4%BD%94%E7%9A%84%E9%95%B7%E5%BA%A6/"> php 網頁算字串所佔的長度</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="長度">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-03 <a href="/2017/10/php-%E7%B6%B2%E9%A0%81%E7%AE%97%E5%AD%97%E4%B8%B2%E6%89%80%E4%BD%94%E7%9A%84%E9%95%B7%E5%BA%A6/"> php 網頁算字串所佔的長度</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="sudo">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-03 <a href="/2017/10/sudo-%E4%B8%8D%E6%9C%83%E5%86%8D%E5%95%8F-user-%E5%AF%86%E7%A2%BC/"> sudo 不會再問 user 密碼</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="image">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-05 <a href="/2017/10/image-zoom-+-select-slideshow/"> image zoom + select slideshow</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="zoom">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-05 <a href="/2017/10/image-zoom-+-select-slideshow/"> image zoom + select slideshow</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="select">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-05 <a href="/2017/10/image-zoom-+-select-slideshow/"> image zoom + select slideshow</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="slideshow">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-05 <a href="/2017/10/image-zoom-+-select-slideshow/"> image zoom + select slideshow</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="百度地圖">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-05 <a href="/2017/10/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9C%96%E6%A8%99%E7%A4%BA%E5%9C%B0%E9%BB%9E/"> 百度地圖標示地點</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="標示地點">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-05 <a href="/2017/10/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9C%96%E6%A8%99%E7%A4%BA%E5%9C%B0%E9%BB%9E/"> 百度地圖標示地點</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="定時">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-13 <a href="/2017/10/windows-%E5%AE%9A%E6%99%82%E5%88%AA%E9%99%A4%E6%AA%94%E6%A1%88/"> windows 定時刪除檔案</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="刪除檔案">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-13 <a href="/2017/10/windows-%E5%AE%9A%E6%99%82%E5%88%AA%E9%99%A4%E6%AA%94%E6%A1%88/"> windows 定時刪除檔案</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="印表機">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-13 <a href="/2017/10/%E6%B8%85%E7%90%86-%E5%8D%B0%E8%A1%A8%E6%A9%9F-queue-%E7%9A%84%E6%89%B9%E6%AC%A1%E6%AA%94/"> 清理 印表機 queue 的批次檔</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="queue">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-13 <a href="/2017/10/%E6%B8%85%E7%90%86-%E5%8D%B0%E8%A1%A8%E6%A9%9F-queue-%E7%9A%84%E6%89%B9%E6%AC%A1%E6%AA%94/"> 清理 印表機 queue 的批次檔</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="printer">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-27 <a href="/2018/06/golang_printer/"> golang 遠端清理 印表機 queue</a></li>
+            
+          
+            
+              <li>2018-01-12 <a href="/2018/01/win7-,-8-%E5%8D%B0%E8%A1%A8%E6%A9%9F%E5%8C%AF%E5%87%BA%E5%8C%AF%E5%85%A5/"> win7 , 8 印表機匯出匯入</a></li>
+            
+          
+            
+              <li>2017-10-13 <a href="/2017/10/%E6%B8%85%E7%90%86-%E5%8D%B0%E8%A1%A8%E6%A9%9F-queue-%E7%9A%84%E6%89%B9%E6%AC%A1%E6%AA%94/"> 清理 印表機 queue 的批次檔</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="table">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-17 <a href="/2017/10/html-%E7%9A%84-table-%E5%AF%AB%E6%B3%95-colspan-&amp;-rowspan/"> html 的 table 寫法 colspan &amp; rowspan</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="colspan">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-17 <a href="/2017/10/html-%E7%9A%84-table-%E5%AF%AB%E6%B3%95-colspan-&amp;-rowspan/"> html 的 table 寫法 colspan &amp; rowspan</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="rowspan">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-17 <a href="/2017/10/html-%E7%9A%84-table-%E5%AF%AB%E6%B3%95-colspan-&amp;-rowspan/"> html 的 table 寫法 colspan &amp; rowspan</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Teamviewer">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-19 <a href="/2017/10/Teamviewer-%E4%B9%8B%E5%A4%96%E7%9A%84%E9%81%A0%E7%AB%AF%E9%81%99%E6%8E%A7-%E5%90%91%E6%97%A5%E8%91%B5%E9%81%A0%E7%A8%8B%E6%8E%A7%E5%88%B6/"> Teamviewer 之外的遠端遙控 向日葵遠程控制</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="遠端遙控">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-19 <a href="/2017/10/Teamviewer-%E4%B9%8B%E5%A4%96%E7%9A%84%E9%81%A0%E7%AB%AF%E9%81%99%E6%8E%A7-%E5%90%91%E6%97%A5%E8%91%B5%E9%81%A0%E7%A8%8B%E6%8E%A7%E5%88%B6/"> Teamviewer 之外的遠端遙控 向日葵遠程控制</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="向日葵遠程控制">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-19 <a href="/2017/10/Teamviewer-%E4%B9%8B%E5%A4%96%E7%9A%84%E9%81%A0%E7%AB%AF%E9%81%99%E6%8E%A7-%E5%90%91%E6%97%A5%E8%91%B5%E9%81%A0%E7%A8%8B%E6%8E%A7%E5%88%B6/"> Teamviewer 之外的遠端遙控 向日葵遠程控制</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="免費">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-19 <a href="/2017/10/%E5%85%8D%E8%B2%BB%E7%9A%84%E5%85%AC%E5%8F%B8%E8%BE%A6%E5%85%AC%E5%8F%B8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1-rockoa-%E4%BF%A1%E5%91%BC/"> 免費的公司辦公司管理系統 rockoa 信呼</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="公司辦公司管理系統">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-19 <a href="/2017/10/%E5%85%8D%E8%B2%BB%E7%9A%84%E5%85%AC%E5%8F%B8%E8%BE%A6%E5%85%AC%E5%8F%B8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1-rockoa-%E4%BF%A1%E5%91%BC/"> 免費的公司辦公司管理系統 rockoa 信呼</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="rockoa">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-20 <a href="/2017/10/%E5%85%AC%E5%8F%B8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1_rockoa_%E4%BF%A1%E5%91%BC_%E8%A8%AD%E5%AE%9A_flow/"> 公司管理系統_rockoa_信呼_設定_flow</a></li>
+            
+          
+            
+              <li>2017-10-19 <a href="/2017/10/%E5%85%8D%E8%B2%BB%E7%9A%84%E5%85%AC%E5%8F%B8%E8%BE%A6%E5%85%AC%E5%8F%B8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1-rockoa-%E4%BF%A1%E5%91%BC/"> 免費的公司辦公司管理系統 rockoa 信呼</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="信呼">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-25 <a href="/2017/10/%E4%BF%A1%E5%91%BC-%E5%85%8D%E8%B2%BB%E9%96%8B%E6%BA%90%E7%9A%84%E8%BE%A6%E5%85%ACOA%E7%B3%BB%E7%B5%B1-_-BIG5-%E4%BF%AE%E6%94%B9/"> 信呼，免費開源的辦公OA系統 _ BIG5 修改</a></li>
+            
+          
+            
+              <li>2017-10-20 <a href="/2017/10/%E5%85%AC%E5%8F%B8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1_rockoa_%E4%BF%A1%E5%91%BC_%E8%A8%AD%E5%AE%9A_flow/"> 公司管理系統_rockoa_信呼_設定_flow</a></li>
+            
+          
+            
+              <li>2017-10-19 <a href="/2017/10/%E5%85%8D%E8%B2%BB%E7%9A%84%E5%85%AC%E5%8F%B8%E8%BE%A6%E5%85%AC%E5%8F%B8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1-rockoa-%E4%BF%A1%E5%91%BC/"> 免費的公司辦公司管理系統 rockoa 信呼</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="公司管理系統">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-20 <a href="/2017/10/%E5%85%AC%E5%8F%B8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1_rockoa_%E4%BF%A1%E5%91%BC_%E8%A8%AD%E5%AE%9A_flow/"> 公司管理系統_rockoa_信呼_設定_flow</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="flow">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-20 <a href="/2017/10/%E5%85%AC%E5%8F%B8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1_rockoa_%E4%BF%A1%E5%91%BC_%E8%A8%AD%E5%AE%9A_flow/"> 公司管理系統_rockoa_信呼_設定_flow</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="ROS pptp">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-24 <a href="/2017/10/ROS_pptp_%E8%A8%AD%E5%AE%9A/"> ROS_pptp_設定</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="免費開源">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-25 <a href="/2017/10/%E4%BF%A1%E5%91%BC-%E5%85%8D%E8%B2%BB%E9%96%8B%E6%BA%90%E7%9A%84%E8%BE%A6%E5%85%ACOA%E7%B3%BB%E7%B5%B1-_-BIG5-%E4%BF%AE%E6%94%B9/"> 信呼，免費開源的辦公OA系統 _ BIG5 修改</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="辦公OA系統">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-25 <a href="/2017/10/%E4%BF%A1%E5%91%BC-%E5%85%8D%E8%B2%BB%E9%96%8B%E6%BA%90%E7%9A%84%E8%BE%A6%E5%85%ACOA%E7%B3%BB%E7%B5%B1-_-BIG5-%E4%BF%AE%E6%94%B9/"> 信呼，免費開源的辦公OA系統 _ BIG5 修改</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="BIG5">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-25 <a href="/2017/10/%E4%BF%A1%E5%91%BC-%E5%85%8D%E8%B2%BB%E9%96%8B%E6%BA%90%E7%9A%84%E8%BE%A6%E5%85%ACOA%E7%B3%BB%E7%B5%B1-_-BIG5-%E4%BF%AE%E6%94%B9/"> 信呼，免費開源的辦公OA系統 _ BIG5 修改</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="vbscript">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-26 <a href="/2017/10/vbscript_check_gateway/"> vbscript check gateway</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="check">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-26 <a href="/2017/10/vbscript_check_gateway/"> vbscript check gateway</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="gateway">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-26 <a href="/2017/10/vbscript_check_gateway/"> vbscript check gateway</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="multicast mreciver msend">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-27 <a href="/2017/10/multicast-mreciver-to-msend/"> multicast mreciver to msend</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="ROS 網頁 瀏覽器 語系">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-27 <a href="/2017/10/php%E7%B6%B2%E9%A0%81%E5%88%A4%E6%96%B7%E7%80%8F%E8%A6%BD%E5%99%A8%E8%AA%9E%E7%B3%BB/"> php網頁判斷瀏覽器語系</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="部落格">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-10-27 <a href="/2017/10/%E5%9C%A8-github-%E5%BB%BA%E7%AB%8B%E9%83%A8%E8%90%BD%E6%A0%BC/"> 在 github 建立部落格</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="node.js XMR c9.io">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-11-15 <a href="/2017/11/node-js-%E6%8C%96-XMR-%E5%9C%A8-c9.io/"> node js 挖 XMR 在 c9.io.md</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Win7 KB4048957 KB4048960 printer">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-11-16 <a href="/2017/11/Win7-%E6%9B%B4%E6%96%B0KB4048957-KB4048960%E5%BE%8C%E5%87%BA%E5%8C%85-%E9%BB%9E%E9%99%A3%E5%BC%8F%E5%8D%B0%E8%A1%A8%E6%A9%9F%E7%84%A1%E6%B3%95%E4%BD%BF%E7%94%A8/"> Win7 更新KB4048957、KB4048960後出包，點陣式印表機無法使用！</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Epson google driver 掃描">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-11-23 <a href="/2017/11/%E6%8E%92%E7%A8%8B%E5%88%AA%E9%99%A4Epson-%E6%8E%83%E6%8F%8F%E5%88%B0-google-driver-%E4%B8%8A%E7%9A%84%E6%AA%94%E6%A1%88/"> 排程刪除Epson 掃描到 google driver 上的檔案</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="INNER JOIN">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-12-04 <a href="/2017/12/INNER-JOIN%E9%80%A3%E6%8E%A5%E5%85%A9%E5%80%8B%E8%A1%A8-%E4%B8%89%E5%80%8B%E8%A1%A8-%E4%BA%94%E5%80%8B%E8%A1%A8%E7%9A%84SQL%E8%AA%9E%E5%8F%A5/"> INNER JOIN連接兩個表，三個表，五個表的SQL語句</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="筆電 Win10">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-12-13 <a href="/2017/12/%E7%AD%86%E9%9B%BB%E8%A8%AD%E5%AE%9A-win10-disable-%E8%A7%B8%E6%8E%A7%E6%9D%BF/"> 筆電設定-win10-disable-觸控板</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="筆電 電腦 混碟(HDD+SSD)">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-12-14 <a href="/2017/12/%E7%AD%86%E9%9B%BB,-%E9%9B%BB%E8%85%A6%E8%A3%9D%E6%B7%B7%E7%A2%9F(HDD+SSD)-%E5%AE%89%E8%A3%9D-expresscache/"> 筆電, 電腦裝混碟(HDD+SSD) 安裝 expresscache</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="win7 usb OS">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2017-12-19 <a href="/2017/12/%E8%A3%9D-win7-os-%E5%9C%A8-usb-%E4%B8%8A/"> 裝 win7  os 在 usb 上</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="MS">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-01-02 <a href="/2018/01/MS-SQL-TRUNCATEONLY/"> MS SQL TRUNCATEONLY</a></li>
+            
+          
+            
+              <li>2018-01-02 <a href="/2018/01/MS-SQL-TRUNCATEONLY/"> MS SQL TRUNCATEONLY</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="TRUNCATEONLY">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-01-02 <a href="/2018/01/MS-SQL-TRUNCATEONLY/"> MS SQL TRUNCATEONLY</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="TRUNCAT">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-01-02 <a href="/2018/01/MS-SQL-TRUNCATEONLY/"> MS SQL TRUNCATEONLY</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="win7">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-06 <a href="/2018/06/win7-RDP/"> Windows 7 的 多人遠端桌面 RDP</a></li>
+            
+          
+            
+              <li>2018-04-26 <a href="/2018/04/win7_mbr_gpt/"> 安裝完 win7 後 MBR 改 GPT</a></li>
+            
+          
+            
+              <li>2018-04-25 <a href="/2018/04/win7_efi_gpt/"> 新安裝 win7 HDD 安裝成 EFI+GPT</a></li>
+            
+          
+            
+              <li>2018-01-12 <a href="/2018/01/win7-win8-win10-win2008-win2012-/.-%E4%B8%8A%E5%B8%9D%E6%A8%A1%E5%BC%8F/"> win7 win8 win10 win2008 win2012 ... 上帝模式</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="win8">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-01-12 <a href="/2018/01/win7-win8-win10-win2008-win2012-/.-%E4%B8%8A%E5%B8%9D%E6%A8%A1%E5%BC%8F/"> win7 win8 win10 win2008 win2012 ... 上帝模式</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="上帝模式">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-01-12 <a href="/2018/01/win7-win8-win10-win2008-win2012-/.-%E4%B8%8A%E5%B8%9D%E6%A8%A1%E5%BC%8F/"> win7 win8 win10 win2008 win2012 ... 上帝模式</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="speedtest">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-01-18 <a href="/2018/01/linux-CLI-speed-test/"> linux CLI speed test</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="MAC">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-02-09 <a href="/2018/02/mac/"> 玩一下黑蘋果</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="upgrade">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-05 <a href="/2018/06/upgrade/"> 該升級了</a></li>
+            
+          
+            
+              <li>2018-02-13 <a href="/2018/02/upgrade_win10/"> windows-10-家用版本-升級-windows-10-專業版本-win10</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="mbr">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-04-26 <a href="/2018/04/win7_mbr_gpt/"> 安裝完 win7 後 MBR 改 GPT</a></li>
+            
+          
+            
+              <li>2018-03-03 <a href="/2018/03/win10_gpt/"> win10 開機磁碟機 mbr 轉成 GPT</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="gpt">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-04-26 <a href="/2018/04/win7_mbr_gpt/"> 安裝完 win7 後 MBR 改 GPT</a></li>
+            
+          
+            
+              <li>2018-04-25 <a href="/2018/04/win7_efi_gpt/"> 新安裝 win7 HDD 安裝成 EFI+GPT</a></li>
+            
+          
+            
+              <li>2018-03-03 <a href="/2018/03/win10_gpt/"> win10 開機磁碟機 mbr 轉成 GPT</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="eml">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-03-12 <a href="/2018/03/mail-trans/"> eml 檔轉成 pst 或 outlook 的 pst 要轉到 gmail 上</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Unicode">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-03-15 <a href="/2018/03/gb-big5/"> linux , windows 下 簡體字轉繁體字 (Unicode)</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="RT-N13U">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-04-13 <a href="/2018/04/RT-N13U/"> RT-N13U B1 刷 openwrt</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="openwrt">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-04-13 <a href="/2018/04/RT-N13U/"> RT-N13U B1 刷 openwrt</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="CMD">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-04-20 <a href="/2018/04/CMD/"> CMD 看主機板型號 ,CPU , 記憶體 , 硬碟型號 ....</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="主機板型號">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-04-20 <a href="/2018/04/CMD/"> CMD 看主機板型號 ,CPU , 記憶體 , 硬碟型號 ....</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="CPU">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-04-20 <a href="/2018/04/CMD/"> CMD 看主機板型號 ,CPU , 記憶體 , 硬碟型號 ....</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="記憶體">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-04-20 <a href="/2018/04/CMD/"> CMD 看主機板型號 ,CPU , 記憶體 , 硬碟型號 ....</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="硬碟型號">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-04-20 <a href="/2018/04/CMD/"> CMD 看主機板型號 ,CPU , 記憶體 , 硬碟型號 ....</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="efi">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-04-25 <a href="/2018/04/win7_efi_gpt/"> 新安裝 win7 HDD 安裝成 EFI+GPT</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="多人遠端桌面">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-06 <a href="/2018/06/win7-RDP/"> Windows 7 的 多人遠端桌面 RDP</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="RDP">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-06 <a href="/2018/06/win7-RDP/"> Windows 7 的 多人遠端桌面 RDP</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="巨集">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-11 <a href="/2018/06/Excel%E5%B7%A8%E9%9B%86%E6%8C%87%E4%BB%A4/"> 網路找的 -- 100個最簡單的 Excel 巨集指令</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Domain">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-14 <a href="/2018/06/Domain/"> 註冊的 Domain 網站 , 用 github</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="github">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-10-13 <a href="/2019/10/debig-github.io/"> debig github.io jekyll</a></li>
+            
+          
+            
+              <li>2018-06-14 <a href="/2018/06/Domain/"> 註冊的 Domain 網站 , 用 github</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="個人網域">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-14 <a href="/2018/06/yandex/"> 註冊 免費個人網域 + 個人DNS + 個人郵件 + 個人網頁</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="個人DNS">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-14 <a href="/2018/06/yandex/"> 註冊 免費個人網域 + 個人DNS + 個人郵件 + 個人網頁</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="個人郵件">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-14 <a href="/2018/06/yandex/"> 註冊 免費個人網域 + 個人DNS + 個人郵件 + 個人網頁</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="個人網頁">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-14 <a href="/2018/06/yandex/"> 註冊 免費個人網域 + 個人DNS + 個人郵件 + 個人網頁</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="gdrive">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-20 <a href="/2018/06/gdrive_backup/"> linux shell 下用 gdrive 備份資料</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="米動">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-22 <a href="/2018/06/mi_watch/"> 米動錶盤修改圖文教學</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="小米手錶">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-06-22 <a href="/2018/06/mi_watch/"> 米動錶盤修改圖文教學</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="cmd">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-02 <a href="/2018/07/bat/"> bat批次執行</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="bat">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-02 <a href="/2018/07/bat/"> bat批次執行</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="vb.net">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-02 <a href="/2018/07/vb.net/"> 寫 vb.net 練習題</a></li>
+            
+          
+            
+              <li>2018-07-02 <a href="/2018/07/vb.net-frmgame/"> vb.net 俄羅斯方塊</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="powershell">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-03 <a href="/2018/07/win10_remove_app/"> win10 remove app (移除市集程式)</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Thunderbird">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-05 <a href="/2018/07/gmail_to_outlook_Thunderbird/"> 備份 gmail 到你的 outlook 或 Thunderbird  或 其他 gmail 帳號</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="storcli">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-07 <a href="/2018/07/python_ssh_mail/"> python ssh 到 Esxi 查看磁碟狀況</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="lsi">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-07 <a href="/2018/07/python_ssh_mail/"> python ssh 到 Esxi 查看磁碟狀況</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="mssql">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-09-25 <a href="/2019/09/mssql-truncate-log/"> mssql truncate log</a></li>
+            
+          
+            
+              <li>2018-07-10 <a href="/2018/07/linux-mssql-json/"> linux 抓 mssql 丟 json</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="json">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-11-19 <a href="/2018/11/dns.la-API/"> dns.la API set cname</a></li>
+            
+          
+            
+              <li>2018-11-10 <a href="/2018/11/perl-hash-foreach-dump/"> perl hash foreach dump</a></li>
+            
+          
+            
+              <li>2018-07-10 <a href="/2018/07/linux-mssql-json/"> linux 抓 mssql 丟 json</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="opencart">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-25 <a href="/2018/07/opecart/"> opencart 架構</a></li>
+            
+          
+            
+              <li>2018-07-11 <a href="/2018/07/opencart-3-return-mail/"> opencart 3.X 退貨郵件通知</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="3.X">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-11 <a href="/2018/07/opencart-3-return-mail/"> opencart 3.X 退貨郵件通知</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="EmailOneReturn">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-11 <a href="/2018/07/opencart-3-return-mail/"> opencart 3.X 退貨郵件通知</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="懶惰">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-26 <a href="/2018/07/lazy/"> 懶惰是好事</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="AI2">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-07-27 <a href="/2018/07/AI2/"> AI2 測試</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="DNS">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-10-24 <a href="/2018/10/aliyun_dns/"> 阿里云 DNS 換 IP</a></li>
+            
+          
+            
+              <li>2018-08-06 <a href="/2018/08/dns/"> DNS 檢查網域設定是否正常</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="excel">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-08-10 <a href="/2018/08/2048-excel/"> 2048-報表(game)</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="IT">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-08-15 <a href="/2018/08/IT/"> IT</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="jenkins">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-08-29 <a href="/2018/08/jenkins-install/"> jenkins 安裝</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Kubernetes">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-08-30 <a href="/2018/08/Kubernetes-cluster/"> Kubernetes cluster(阿里雲)</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="svn">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-08-30 <a href="/2018/08/svn-centos/"> CentOS Subversion</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="SVN">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-08-30 <a href="/2018/08/svn-centos/"> CentOS Subversion</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="azure">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-09-22 <a href="/2018/09/Azure-Container-jenkins/"> Azure Container exec jenkins</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="redirect">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-09-27 <a href="/2018/09/nginx-302-302-redirect/"> nginx 302 與 302 redirect</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="zabbix">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-09-23 <a href="/2019/09/zabbix-mssql-db-file-size/"> zabbix 監控 MSSQL 數據庫(檔案大小) 與效能</a></li>
+            
+          
+            
+              <li>2019-05-17 <a href="/2019/05/zabbix-win-agent/"> Windows install zabbix agent</a></li>
+            
+          
+            
+              <li>2018-11-09 <a href="/2018/11/centos7-zabbix-Agent-install-by-ansible/"> centos7 zabbix Agent install by ansible</a></li>
+            
+          
+            
+              <li>2018-10-07 <a href="/2018/10/zabbix_netstat/"> linux zabbix netstat session</a></li>
+            
+          
+            
+              <li>2018-10-01 <a href="/2018/10/centos7_Zabbix_Agent_Permission_denied/"> centos7 zabbix Agent Permission denied</a></li>
+            
+          
+            
+              <li>2018-09-28 <a href="/2018/09/centos7-zabbix-server/"> centos7 install zabbix server</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="灰域">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-10-07 <a href="/2018/10/Greypanel-CDN-Renew/"> 灰域 CDN 刷新</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="CDN">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-03-19 <a href="/2019/03/CDN-%E5%9B%9E%E6%BA%90%E6%B5%8B%E8%AF%95/"> CDN 回源测试</a></li>
+            
+          
+            
+              <li>2018-10-07 <a href="/2018/10/Greypanel-CDN-Renew/"> 灰域 CDN 刷新</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Mojolicious">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-11-03 <a href="/2018/11/Mojolicious-helloword/"> Mojolicious helloword</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="telegram">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-10-05 <a href="/2019/10/telegram-group-python-webhoos/"> telegram group python webhoos</a></li>
+            
+          
+            
+              <li>2019-10-05 <a href="/2019/10/google-app-script-webhook/"> telegram group google app script webhoos</a></li>
+            
+          
+            
+              <li>2019-05-23 <a href="/2019/05/telegram-bot-qr-scan/"> telegram bot qrcode</a></li>
+            
+          
+            
+              <li>2018-11-03 <a href="/2018/11/telegram-api/"> telegram api</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="api">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-11-03 <a href="/2018/11/telegram-api/"> telegram api</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="xml">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-11-19 <a href="/2018/11/dns.la-API/"> dns.la API set cname</a></li>
+            
+          
+            
+              <li>2018-11-10 <a href="/2018/11/perl-hash-foreach-dump/"> perl hash foreach dump</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="chrome">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2018-12-05 <a href="/2018/12/chrome/"> chrome網路連線現況</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="iptables">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-01-19 <a href="/2019/01/iptable_remove_dupicate/"> iptable_remove_dupicate</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="other">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-01-19 <a href="/2019/01/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E4%B8%BAIP%E5%9C%B0%E5%9D%80/"> 十六进制转换为IP地址</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="monotor">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-02-14 <a href="/2019/02/phpservermonotor_telegram/"> 大陆地区 php server monotor 用 telegram</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="curl">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-03-19 <a href="/2019/03/CDN-%E5%9B%9E%E6%BA%90%E6%B5%8B%E8%AF%95/"> CDN 回源测试</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="hdparm">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-03-19 <a href="/2019/03/%E7%A1%AC%E7%A2%9F%E8%B3%87%E6%96%99%E6%8A%B9%E9%99%A4/"> 硬碟資料抹除</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="shred">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-03-19 <a href="/2019/03/%E7%A1%AC%E7%A2%9F%E8%B3%87%E6%96%99%E6%8A%B9%E9%99%A4/"> 硬碟資料抹除</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="4G">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-03-23 <a href="/2019/03/Huawei-E8372/"> 新玩具 Huawei E8372</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="ansible">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-05-23 <a href="/2019/05/ansible-shell-script/"> ansible shell and script</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="script">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-05-23 <a href="/2019/05/ansible-shell-script/"> ansible shell and script</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="qrcode">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-05-23 <a href="/2019/05/telegram-bot-qr-scan/"> telegram bot qrcode</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="win10">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-04 <a href="/2019/08/win10-home-Hyper-v/"> win10家用版啟用 Hyper-v</a></li>
+            
+          
+            
+              <li>2019-05-23 <a href="/2019/05/win10-WSL-ubuntu/"> win10 WSL linux ubuntu 1804</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="WSL">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-05-23 <a href="/2019/05/win10-WSL-ubuntu/"> win10 WSL linux ubuntu 1804</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="ubuntu">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-05-23 <a href="/2019/05/win10-WSL-ubuntu/"> win10 WSL linux ubuntu 1804</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="vi">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-10-06 <a href="/2019/10/vi-autoindent/"> vi 縮排關閉</a></li>
+            
+          
+            
+              <li>2019-06-22 <a href="/2019/06/vimrc/"> vim上色</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="阿里雲">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-07-22 <a href="/2019/07/alibabacloud_to_Esxi/"> 阿里雲轉 ESXi</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="alibabacloud">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-07 <a href="/2019/08/alibabacloud-win2012/"> 阿里云win2012 to vmware</a></li>
+            
+          
+            
+              <li>2019-07-22 <a href="/2019/07/alibabacloud_to_Esxi/"> 阿里雲轉 ESXi</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="home">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-04 <a href="/2019/08/win10-home-Hyper-v/"> win10家用版啟用 Hyper-v</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Hyper-v">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-04 <a href="/2019/08/win10-home-Hyper-v/"> win10家用版啟用 Hyper-v</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="阿里云">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-07 <a href="/2019/08/alibabacloud-win2012/"> 阿里云win2012 to vmware</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="win2012">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-07 <a href="/2019/08/alibabacloud-win2012/"> 阿里云win2012 to vmware</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="vmware">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-07 <a href="/2019/08/alibabacloud-win2012/"> 阿里云win2012 to vmware</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="rdp">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-22 <a href="/2019/08/RDP/"> 遠端桌面剪貼簿失效</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="遠端桌面">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-22 <a href="/2019/08/RDP/"> 遠端桌面剪貼簿失效</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="centos">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-23 <a href="/2019/08/Centos-esxi-to-vworkstation/"> centos7 esxi 移 vworkstation 出現 dracut-initqueue timeout</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="vm">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-23 <a href="/2019/08/Centos-esxi-to-vworkstation/"> centos7 esxi 移 vworkstation 出現 dracut-initqueue timeout</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="esxi6.7">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-23 <a href="/2019/08/Esxi6.7-thin/"> Esxi 6.7 可將 HDD 改為 thin</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="thin">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-23 <a href="/2019/08/Esxi6.7-thin/"> Esxi 6.7 可將 HDD 改為 thin</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="RouterOS">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-28 <a href="/2019/08/RouterOS-Source-NAT/"> RouterOS WAN IP 對應特定內網 IP</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="nat">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-08-28 <a href="/2019/08/RouterOS-Source-NAT/"> RouterOS WAN IP 對應特定內網 IP</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="centos7">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-09-17 <a href="/2019/09/flask+uwsgi/"> python+flask+selenium(firefox)+Xvfb+uwsgi+apache in CentOS7</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="flask">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-09-17 <a href="/2019/09/flask+uwsgi/"> python+flask+selenium(firefox)+Xvfb+uwsgi+apache in CentOS7</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="selenium">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-09-17 <a href="/2019/09/flask+uwsgi/"> python+flask+selenium(firefox)+Xvfb+uwsgi+apache in CentOS7</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="uwsgi">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-09-17 <a href="/2019/09/flask+uwsgi/"> python+flask+selenium(firefox)+Xvfb+uwsgi+apache in CentOS7</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="CentOS7">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-09-17 <a href="/2019/09/flask+uwsgi/"> python+flask+selenium(firefox)+Xvfb+uwsgi+apache in CentOS7</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="msssql">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-09-23 <a href="/2019/09/zabbix-mssql-db-file-size/"> zabbix 監控 MSSQL 數據庫(檔案大小) 與效能</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="font">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-09-28 <a href="/2019/09/linux-TrueType/"> linux TrueType font</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="Window">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-10-01 <a href="/2019/10/RaiDrive/"> Windows 備份到雲端的方法轉 VM</a></li>
+            
+          
+            
+              <li>2019-10-01 <a href="/2019/10/IIS-XML/"> IIS 設定匯出匯入</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="IIS">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-10-01 <a href="/2019/10/IIS-XML/"> IIS 設定匯出匯入</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="teamviewer">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-10-11 <a href="/2019/10/windows-autologin/"> windows aotologin</a></li>
+            
+          
+            
+              <li>2019-10-04 <a href="/2019/10/windows-autologin/"> windows aotologin</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="aotologin">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-10-11 <a href="/2019/10/windows-autologin/"> windows aotologin</a></li>
+            
+          
+            
+              <li>2019-10-04 <a href="/2019/10/windows-autologin/"> windows aotologin</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="group">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-10-05 <a href="/2019/10/telegram-group-python-webhoos/"> telegram group python webhoos</a></li>
+            
+          
+            
+              <li>2019-10-05 <a href="/2019/10/google-app-script-webhook/"> telegram group google app script webhoos</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="bot">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-10-05 <a href="/2019/10/telegram-group-python-webhoos/"> telegram group python webhoos</a></li>
+            
+          
+            
+              <li>2019-10-05 <a href="/2019/10/google-app-script-webhook/"> telegram group google app script webhoos</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="webhoos">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-10-05 <a href="/2019/10/telegram-group-python-webhoos/"> telegram group python webhoos</a></li>
+            
+          
+            
+              <li>2019-10-05 <a href="/2019/10/google-app-script-webhook/"> telegram group google app script webhoos</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="jekyll">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-10-13 <a href="/2019/10/debig-github.io/"> debig github.io jekyll</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+      <div post-cate="ruby">
+        <ul>
+        
+          
+            
+          
+        
+          
+            
+              <li>2019-10-13 <a href="/2019/10/debig-github.io/"> debig github.io jekyll</a></li>
+            
+          
+        
+        </ul>
+      </div>
+    
+</div>
+:ET
