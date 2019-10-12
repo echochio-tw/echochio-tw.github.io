@@ -1,6 +1,0 @@
-I"�<p>紀錄起來還常用到的</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -e "show processlist" | awk '{ $6 = $6 +1; if ($6 &gt;= 60 &amp;&amp; $5 == "Query") system("mysqladmin kill "$1); print strftime("%c") "] query Killed. [account: "$2"] [database: "$4"] [query runtime: "$6" seconds]"; }' &gt;&gt; /var/log/mysql_kills.log
-</code></pre></div></div>
-
-:ET
