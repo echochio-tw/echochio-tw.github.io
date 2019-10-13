@@ -14,11 +14,11 @@ tags: php Image Select
 
 ---
 
-<object data="p1.pdf" width="1000" height="1000" type='application/pdf'/>
+<object data="/images/posts/php_image/p1.pdf" width="1000" height="1000" type='application/pdf'/>
 
 ---
 
-<object data="p2.pdf" width="1000" height="1000" type='application/pdf'/>
+<object data="/images/posts/php_image/p2.pdf" width="1000" height="1000" type='application/pdf'/>
 
 ---
 
@@ -27,4 +27,4 @@ tags: php Image Select
 <img src="https://echochio-tw.github.io/images/posts/php_image/2.png">
 
 ---
-<object data="p3.pdf" width="1000" height="1000" type='application/pdf'/>
+<object data="/images/posts/php_image/p3.pdf" width="1000" height="1000" type='application/pdf'/>
