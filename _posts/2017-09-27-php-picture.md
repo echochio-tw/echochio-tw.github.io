@@ -13,9 +13,9 @@ tags: php Image Select
 這是參考 tryw3css_slideshow_imgdots 改的 sidebar.php
 
 ---
-
-<object data="https://www.echochio.nctu.me/images/posts/php_image/p1.pdf" width="1000" height="1000" type='application/pdf'/>
-
+```
+https://www.echochio.nctu.me/images/posts/php_image/p1.pdf
+```
 ---
 
 <object data="/images/posts/php_image/p2.pdf" width="1000" height="1000" type='application/pdf'/>
