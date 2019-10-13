@@ -14,7 +14,7 @@ tags: php Image Select
 
 ---
 
-<object data="/images/posts/php_image/p1.pdf" width="1000" height="1000" type='application/pdf'/>
+<object data="https://www.echochio.nctu.me/images/posts/php_image/p1.pdf" width="1000" height="1000" type='application/pdf'/>
 
 ---
 
