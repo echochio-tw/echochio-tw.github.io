@@ -228,7 +228,7 @@ admin/controller/sale/invoice.php
 ```
 
 
-rc="/images/posts/opencart/2.png">
+<img src="/images/posts/opencart/2.png">
 
 <img src="/images/posts/opencart/3.png">
 
@@ -242,6 +242,9 @@ rc="/images/posts/opencart/2.png">
 debug 改了些原始碼(我也忘了改了啥 ... 反正可工作) :
 
 admin/controller/sale/invoice.php
+
 admin/view/template/sale/order_info_invoice.twig
+
 admin/model/sale/invoice.php
+
 admin/model/sale/order.php
