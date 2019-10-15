@@ -17,3 +17,8 @@ tags: vi
 ```
 :set noautoindent
 ```
+
+進入paste模式以後，可以在插入模式下粘貼內容，不會有任何變形。
+```
+:set paste
+```
