@@ -1,0 +1,57 @@
+---
+layout: post
+title: 備份好軟體 duplicati linux安裝
+date: 2019-10-25
+tags: backup
+---
+
+OS CentOS7 ... install
+
+```
+yum install yum-utils
+
+rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+
+yum-config-manager --add-repo http://download.mono-project.com/repo/centos7/
+
+yum install mono-devel
+
+yum install epel-release
+
+yum install libappindicator
+
+yum install -y  https://github.com/duplicati/duplicati/releases/download/v2.0.4.31-2.0.4.31_canary_2019-10-19/duplicati-2.0.4.31-2.0.4.31_canary_20191019.noarch.rpm
+```
+
+set firewall
+```
+firewall-cmd --add-port=8200/tcp --permanent
+firewall-cmd --reload
+
+```
+vi startup config
+```
+/etc/systemd/system/duplicati.service
+```
+
+duplicati.service
+```
+[Unit]
+Description=Duplicati Backup software
+[Service]
+ExecStart=/usr/bin/mono /usr/lib/duplicati/Duplicati.Server.exe --webservice-interface=any
+Restart=on-failure
+RestartSec=30
+[Install]
+WantedBy=multi-user.target
+```
+
+startup service
+```
+systemctl enable duplicati
+systemctl start duplicati
+```
+manage backup
+```
+ http://ipaddress:8200/
+```
