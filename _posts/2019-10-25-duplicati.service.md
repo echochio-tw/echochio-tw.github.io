@@ -20,7 +20,7 @@ yum install epel-release
 
 yum install libappindicator
 
-yum install -y  https://github.com/duplicati/duplicati/releases/download/v2.0.4.31-2.0.4.31_canary_2019-10-19/duplicati-2.0.4.31-2.0.4.31_canary_20191019.noarch.rpm
+yum install -y https://github.com/duplicati/duplicati/releases/download/v2.0.4.30-2.0.4.30_canary_2019-09-20/duplicati-2.0.4.30-2.0.4.30_canary_20190920.noarch.rpm
 ```
 手動安裝也可
 ```
