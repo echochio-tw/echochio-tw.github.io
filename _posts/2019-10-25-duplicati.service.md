@@ -22,7 +22,18 @@ yum install libappindicator
 
 yum install -y  https://github.com/duplicati/duplicati/releases/download/v2.0.4.31-2.0.4.31_canary_2019-10-19/duplicati-2.0.4.31-2.0.4.31_canary_20191019.noarch.rpm
 ```
-
+手動安裝也可
+```
+libmono-llvm0-6.4.0.198-0.xamarin.3.epel7.x86_64.rpm
+mono-core-6.4.0.198-0.xamarin.3.epel7.x86_64.rpm
+mono-data-6.4.0.198-0.xamarin.3.epel7.x86_64.rpm
+mono-devel-6.4.0.198-0.xamarin.3.epel7.x86_64.rpm
+mono-llvm-tools-6.0+mono20190708165219-0.xamarin.1.epel7.x86_64.rpm
+mono-mvc-6.4.0.198-0.xamarin.3.epel7.x86_64.rpm
+mono-wcf-6.4.0.198-0.xamarin.3.epel7.x86_64.rpm
+mono-web-6.4.0.198-0.xamarin.3.epel7.x86_64.rpm
+mono-winforms-6.4.0.198-0.xamarin.3.epel7.x86_64.rpm
+```
 set firewall
 ```
 firewall-cmd --add-port=8200/tcp --permanent
