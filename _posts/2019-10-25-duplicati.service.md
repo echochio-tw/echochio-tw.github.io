@@ -5,7 +5,7 @@ date: 2019-10-25
 tags: backup
 ---
 
-OS CentOS7 ... install
+OS CentOS7 ... install (2.0.4.32, 31 版本有問題 :(....)
 
 ```
 yum install yum-utils
