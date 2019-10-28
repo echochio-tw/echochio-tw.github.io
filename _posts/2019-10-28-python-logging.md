@@ -5,8 +5,7 @@ date: 2019-10-28
 tags: python
 ---
 
-寫了一大堆 python 常用 log + wintail 看資訊 紀錄一下
-
+寫了一大堆 python 常用 log + wintail 去看執行的資訊 紀錄一下
 
 ```
 import logging
