@@ -20,8 +20,8 @@ yum install duplicity lftp
 #!/bin/bash
 FTP_PASSWORD=*JWK9\$aasdff
 export FTP_PASSWORD
-duplicity --progress --no-encryption /backup/zabbix_cfg_db-mysql.sql.gz ftp://admin@192.168.0.111/FTP/zabbix-db/
-duplicity --progress --no-encryption /backup/domain_list.sql ftp://admin@192.168.0.111/FTP/zabbix-db/list/
+duplicity --progress --no-encryption /backup/zabbix_cfg_db-mysql.sql.gz ftp://admin@192.168.0.111/zabbix-db/
+duplicity --progress --no-encryption /backup/domain_list.sql ftp://admin@192.168.0.111/list/
 ```
 
 其他還可 ssh 的 sftp ... 下面是網路找的
