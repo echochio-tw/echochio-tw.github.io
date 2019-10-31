@@ -1,0 +1,42 @@
+---
+layout: post
+title: CentOS7 duplicity backup
+date: 2019-10-31
+tags: linux backup
+---
+
+duplicati 在 linux 備份到 FTP 有問題這 ... 
+
+只好找其他軟體 ... duplicity
+
+```
+yum install duplicity lftp
+```
+
+這樣就裝起來了 ...
+寫個 shell
+
+```
+#!/bin/bash
+FTP_PASSWORD=*JWK9\$aasdff
+export FTP_PASSWORD
+duplicity --progress --no-encryption /backup/zabbix_cfg_db-mysql.sql.gz ftp://admin@192.168.0.111/FTP/zabbix-db/
+duplicity --progress --no-encryption /backup/domain_list.sql ftp://admin@192.168.0.111/FTP/zabbix-db/list/
+```
+
+其他還可 ssh 的 sftp ... 下面是網路找的
+```
+#!/bin/bash
+# set up the GPG private key password
+#這裏設置的PASSPHRASE就是你的GPG密鑰的密碼
+#PASSPHRASE=xxxxxx
+#export PASSPHRASE
+#set the ssh key password
+#FTP_PASSWORD是你的ssh密鑰的密碼,導入到環境中就不用手動輸入了
+FTP_PASSWORD=mypassword
+export FTP_PASSWORD
+#upload server root ,exclude /proc /sys /tmp to sftp server,and no encryption
+#下面是備份根目錄,--exclude表示將 /proc /sys /tmp 除外 ,這裏需要註意的是,duplicity文檔中特別註明了如果你要備份根,那麽必須要把 /proc除外
+#下面的 --dry-run表示並沒有實際運行,只是測試,而 --ssh-options後面的是ssh的一些設置,端口號為8888,ssh密鑰的位置.
+duplicity -v5 --dry-run --progress   --no-encryption --ssh-options="-oPort=8888 -oIdentityFile=/home/xx/private/id_rsa" --exclude /proc --exclude /sys --exclude /tmp / sftp://mysftp@youserver.locastion/upload/#unset varunset FTP_PASSWORD
+```
