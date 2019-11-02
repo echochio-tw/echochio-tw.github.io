@@ -34,7 +34,7 @@ duplicity full --progress --no-encryption /backup/data ftp://admin@192.168.0.111
 ```
 duplicity -v9 --no-encryption restore --no-encryption ftp://admin@210.209.15.114/FTP/zabbix-db/ /tmp/backup/
 ```
-還原整個目錄內單一檔案...
+還原整個目錄內單一檔案... 當然要知道還原的檔名才能還原
 ```
 duplicity -v9 --no-encryption --file-to-restore zabbix_cfg_db-mysql.sql.gz ftp://admin@210.209.15.114/FTP/zabbix-db/ /tmp/zabbix_cfg_db-mysql.sql.gz
 ```
