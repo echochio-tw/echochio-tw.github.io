@@ -20,8 +20,22 @@ yum install duplicity lftp
 #!/bin/bash
 FTP_PASSWORD=*JWK9\$aasdff
 export FTP_PASSWORD
-duplicity --progress --no-encryption /backup/zabbix_cfg_db-mysql.sql.gz ftp://admin@192.168.0.111/zabbix-db/
-duplicity --progress --no-encryption /backup/domain_list.sql ftp://admin@192.168.0.111/list/
+duplicity full --progress --no-encryption /backup/zabbix_cfg_db-mysql.sql.gz ftp://admin@192.168.0.111/zabbix-db/
+duplicity full --progress --no-encryption /backup/domain_list.sql ftp://admin@192.168.0.111/list/
+```
+刪除三天前資料
+```
+duplicity remove-older-than 3D ftp://admin@192.168.0.111/zabbix-db/
+duplicity remove-older-than 3D ftp://admin@192.168.0.111/list/
+```
+列出備份的狀態,有多少個完整備份及增量備份,備份的時間等等.
+```
+ duplicity collection-status ftp://admin@192.168.0.111/zabbix-db/
+```
+
+恢復文件 感覺有很久 ... 還要再試試
+```
+duplicity -v9 restore --no-encryption ftp://admin@192.168.0.111/zabbix-db/ /tmp/zabbix_cfg_db-mysql.sql.gz
 ```
 
 其他還可 ssh 的 sftp ... 下面是網路找的
