@@ -23,6 +23,21 @@ export FTP_PASSWORD
 duplicity full --progress --no-encryption /backup/zabbix_cfg_db-mysql.sql.gz ftp://admin@192.168.0.111/zabbix-db/
 duplicity full --progress --no-encryption /backup/domain_list.sql ftp://admin@192.168.0.111/list/
 ```
+發現備份目錄比較好 ...還原時不必記檔名,檔名不正確無法還原 ... 最後是這方式上線
+```
+#!/bin/bash
+FTP_PASSWORD=*JWK9\$aasdff
+export FTP_PASSWORD
+duplicity full --progress --no-encryption /backup/data ftp://admin@192.168.0.111/zabbix-db/
+```
+備份目錄後還原整個目錄 ... 這比較方便 ... 不必記檔案名
+```
+duplicity -v9 --no-encryption restore --no-encryption ftp://admin@210.209.15.114/FTP/zabbix-db/ /tmp/backup/
+```
+還原整個目錄內單一檔案...
+```
+duplicity -v9 --no-encryption --file-to-restore zabbix_cfg_db-mysql.sql.gz ftp://admin@210.209.15.114/FTP/zabbix-db/ /tmp/zabbix_cfg_db-mysql.sql.gz
+```
 刪除三天前資料
 ```
 duplicity remove-older-than 3D ftp://admin@192.168.0.111/zabbix-db/
@@ -32,8 +47,7 @@ duplicity remove-older-than 3D ftp://admin@192.168.0.111/list/
 ```
  duplicity collection-status ftp://admin@192.168.0.111/zabbix-db/
 ```
-
-恢復文件 感覺有很久 ... 還要再試試
+恢復文件(備份檔名還原的方法)
 ```
 duplicity -v9 restore --no-encryption ftp://admin@192.168.0.111/zabbix-db/ /tmp/zabbix_cfg_db-mysql.sql.gz
 ```
