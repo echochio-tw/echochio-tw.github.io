@@ -14,7 +14,7 @@ yum install duplicity lftp
 ```
 
 這樣就裝起來了 ...
-寫個 shell
+寫個 shell (下面這個不是上線的 shell 下面那個才是)
 
 ```
 #!/bin/bash
@@ -47,7 +47,7 @@ duplicity remove-older-than 3D ftp://admin@192.168.0.111/list/
 ```
  duplicity collection-status ftp://admin@192.168.0.111/zabbix-db/
 ```
-恢復文件(備份檔名還原的方法)
+恢復文件(備份檔名還原的方法.. 不是備份目錄的)
 ```
 duplicity -v9 restore --no-encryption ftp://admin@192.168.0.111/zabbix-db/ /tmp/zabbix_cfg_db-mysql.sql.gz
 ```
