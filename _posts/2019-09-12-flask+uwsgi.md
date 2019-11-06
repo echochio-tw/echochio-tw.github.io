@@ -129,6 +129,28 @@ systemctl enable httpd
 systemctl start httpd
 ```
 
+if nginx ....
+```
+server {
+    listen 12349;
+    location / {
+        include     /etc/nginx/uwsgi_params;
+        uwsgi_pass         127.0.0.1:8099;
+
+        proxy_redirect     off;
+        proxy_set_header   Host $host;
+        proxy_set_header   X-Real-IP $remote_addr;
+        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Host $server_name;
+    }
+}
+
+```
+check nginx config
+```
+nginx -t 
+```
+
 When you reconfig app.py need
 ```
 systemctl restart flaskapp.service
