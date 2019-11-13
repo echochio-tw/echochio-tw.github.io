@@ -6,21 +6,33 @@ tags: python google api sheets
 ---
 
 打開 https://console.developers.google.com/apis/library/drive.googleapis.com?q=drive
+
 要 啟用 Google drive API
 
 打開 https://console.developers.google.com/apis/library/sheets.googleapis.com?q=Sheets
+
 要 啟用 Google Sheets API
 
 管理 API
+
 選 憑證
+
 API 和服務中的憑證頁面
+
 建立 憑證
+
 建立服務帳戶金鑰
+
 服務帳戶名稱 => 給一個如 default
+
 Project -> 擁有者
+
 金鑰類型 -> json
+
 建立 
+
 之後就有下載檔案了
+
 json 檔案放到 C:\python\google_api.json
 
 找到檔案內的
@@ -29,7 +41,9 @@ json 檔案放到 C:\python\google_api.json
 ```
 
 在 google sheets 開UploadByPython 檔案
+
 要加共用 給 default@quickstart-1565583639630.iam.gserviceaccount.com
+
 給讀寫
 
 然後程式可以寫了
@@ -56,6 +70,7 @@ for domain in listdomains:
 ```
 
 其 他找 gspread github 有說明
+
 比較重要的 位置資訊
 ```
 A2 -> (2,1)
