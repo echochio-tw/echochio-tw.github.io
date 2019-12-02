@@ -15,4 +15,4 @@ Helper VM 要記得設定 IP 資訊就成功了
 
 過了 3% 就是 Helper VM 可連目的 IP 了 開始複製了
 
-<img src="/images/posts/esxi/p2.png">
+<img src="/images/posts/esxi/p3.png">
