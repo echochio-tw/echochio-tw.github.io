@@ -9,6 +9,10 @@ tags: esxi linux
 
 <img src="/images/posts/esxi/p1.png">
 
-VM Helper 要記得設定 IP 資訊就成功了
+Helper VM 要記得設定 IP 資訊就成功了
+
+<img src="/images/posts/esxi/p2.png">
+
+過了 3% 就是 Helper VM 可連目的 IP 了 開始複製了
 
 <img src="/images/posts/esxi/p2.png">
