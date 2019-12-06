@@ -37,4 +37,8 @@ zabbix  ALL=(ALL)       NOPASSWD: /opt/ManageEngine/OpManager/jre/bin/jstat
 ```
 UserParameter=jstat.gc,cd /opt/ManageEngine/OpManager/jre/bin;sudo ./jstat -gcutil `ps -ef | grep java |grep -v grep |awk '{print $2}'` |awk '{print $4}'|grep -E '^[0-9]'
 ```
+這邊只用第四個
+O   — Heap上的 Old space 區已使用的百分比
+
+這是一個大學問還沒研究 .....
 
