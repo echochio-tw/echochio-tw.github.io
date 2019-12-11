@@ -90,6 +90,11 @@ bce-python-sdk-0.8.3/baidubce/services/cdn/cdn_client.py
             config=config)    
 ```
 
+要先編譯一下
+```
+python setup.py install
+```
+
 壓起來
 ```
 zip -r bce-python-sdk-0.8.33.zip bce-python-sdk-0.8.33
