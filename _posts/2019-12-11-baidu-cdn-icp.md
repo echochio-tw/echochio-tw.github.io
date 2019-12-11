@@ -32,6 +32,64 @@ bce-python-sdk-0.8.3/baidubce/services/cdn/cdn_client.py
             config=config)
 ```
 
+
+這邊還可加入一些功能 .... 
+```
+    def config_get_domain(self, domain, config=None):
+        """
+        GET	/v2/domain/{domain}/config	获取指定加速域名配置的基本信息
+        query a domain config
+
+        :param domain: the domain name
+        :type domain: string
+        :param config: None
+        :type config: baidubce.BceClientConfiguration
+
+        :return:
+        :rtype: baidubce.bce_response.BceResponse
+        """
+        return self._send_request(
+            http_methods.GET,
+            '/domain/' + domain + '/config',
+            config=config)
+
+    def certificates_get_domain(self, domain, config=None):
+        """
+        GET	/v2/{domain}/certificates	查询domain绑定的certificate
+        query a domain icp
+
+        :param domain: the domain name
+        :type domain: string
+        :param config: None
+        :type config: baidubce.BceClientConfiguration
+
+        :return:
+        :rtype: baidubce.bce_response.BceResponse
+        """
+        return self._send_request(
+            http_methods.GET,
+            domain + '/certificates',
+            config=config)
+            
+    def certificates_del_domain(self, domain, config=None):
+        """
+        DELETE	/v2/{domain}/certificates	删除domain绑定的certificate
+        delete domain certificates
+
+        :param domain: the domain name
+        :type domain: string
+        :param config: None
+        :type config: baidubce.BceClientConfiguration
+
+        :return:
+        :rtype: baidubce.bce_response.BceResponse
+        """
+        return self._send_request(
+            http_methods.DELETE,
+            domain + '/certificates',
+            config=config)    
+```
+
 壓起來
 ```
 zip -r bce-python-sdk-0.8.33.zip bce-python-sdk-0.8.33
