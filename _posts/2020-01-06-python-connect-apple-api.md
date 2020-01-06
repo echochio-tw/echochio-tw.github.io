@@ -20,3 +20,11 @@ apps = api.list_devices()
 for app in apps:
     print(app)
 ```
+
+```
+from appstoreconnect import Api
+api = Api("X2SWxxxass", "/root/ios/AuthKey_X2SWCDZH8T.p8", "c307d2f0-dab0-4339-8f27-77ef29cfffff")
+apps = api.list_devices()
+for app in apps:
+    print (vars(app)['_data']['attributes']['udid'])
+```
