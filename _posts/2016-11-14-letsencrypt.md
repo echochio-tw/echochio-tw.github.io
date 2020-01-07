@@ -82,7 +82,7 @@ tags: letsencrypt ssl
 3. 
    systemctl restart nginx (重啟)
 4. 
-   cd /opt/letsencrypt ;  cp examples/cli.ini /usr/local/etc/le-renew-webroot.ini
+   cd /opt/letsencrypt ;  cp ./certbot/examples/cli.ini /usr/local/etc/le-renew-webroot.ini
 5. 
    vi /usr/local/etc/le-renew-webroot.ini
 
