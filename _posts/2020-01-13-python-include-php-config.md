@@ -1,6 +1,6 @@
 ---
 layout: post
-title: python call php include config
+title: python include php config file
 date: 2020-01-13
 tags: python php
 ---
