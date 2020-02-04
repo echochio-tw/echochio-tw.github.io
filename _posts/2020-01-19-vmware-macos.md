@@ -10,7 +10,7 @@ https://www.geekrar.com/download-macos-mojave-iso-for-vmware-virtualbox/
 
 我選 one full driver
 ```
-https://doc-04-2g-docs.googleusercontent.com/docs/securesc/i8jrutb4haplvd7qfslprirhbaqfi1jj/uuqp92inq87uqc7av3dhkgmre87oqbm0/1579399200000/14867827677362860767/01318618463998046073/13cTebDdCwh7qxZHorMJ4XpQsfw1ZSkKX?e=download&h=11394444338656052193&authuser=2&nonce=l8hf4gbpehap6&user=01318618463998046073&hash=nc5u8362tdahoso4qct3e2en0m94f9vv
+https://drive.google.com/drive/folders/1NncaD1qpJYmMSvTz8vn5oze6Yt7KgkKE
 ```
 
 解壓密碼網站有寫是 Geekrar.com
