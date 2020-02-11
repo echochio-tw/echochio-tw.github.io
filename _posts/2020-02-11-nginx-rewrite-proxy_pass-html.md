@@ -30,7 +30,18 @@ http://haha.vip
 
 轉到
 ```
-http://g.gang.com//zzz/tgt.html
+http://haha.vip/zzz/tgt.html
 ```
+
+加上
+```
+proxy_pass http://g.gang.com:80;
+```
+
+所以是
+```
+http://g.gang.com/zzz/tgt.html
+```
+的畫面
 
 但是 404 還沒有試出來
