@@ -26,5 +26,7 @@ hello word
 pyinstaller helloword.py --upx-dir=c:\python -y --onefile
 
 pyinstaller helloword.py --upx-dir=/usr/bin -y --onefile
+```
 
+Windows 添加--noconsole 會沒有 dos 窗口輸出
 ```
