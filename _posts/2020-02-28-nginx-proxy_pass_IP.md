@@ -63,7 +63,7 @@ server {
     send_timeout                600;
     root  /www/wwwroot/ios.zxreport.net/public;
     index  index.php index.html;
-    set_real_ip_from 183.60.110.183/32;
+    set_real_ip_from 183.60.110.100/32;
     real_ip_header X-Forwarded-For;
     location / {
             client_max_body_size 1000M;
