@@ -32,15 +32,15 @@ git clone https://github.com/del-xiong/screw-plus.git
 ```
 編譯前先 phpize
 ```
+cd screw-plus
 /usr/bin/phpize
 ```
-加密 CAKEY 在 screw-plus/php_screw_plus.h 可去修改
+加密 CAKEY 在 php_screw_plus.h 可去修改
 ```
 #define CAKEY  "FwWpZKxH7twCAG4JQMO"
 ```
 開始編譯 screw-plus
 ```
-cd screw-plus
 ./configure --with-php-config=/usr/bin/php-config
 make && make install
 cd tools
