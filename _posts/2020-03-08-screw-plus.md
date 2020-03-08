@@ -65,3 +65,11 @@ find ./ -name "*.php" -print | xargs -n1 /usr/bin/screw-plus
 ```
 /usr/bin/screw-plus -d /www/webroot/
 ```
+
+同樣在php_screw_plus.h裡修改，把STRICT_MODE後面的值改為1，然後make clean && make重新編譯並重啟php
+
+然後開啟之前加過密的網站，執行正常，但是我們隨意上傳個明文的php檔案，結果是一片空白。
+
+原因是未加密的php檔案頭部不包含識別key，擴充套件會返回空內容，就算黑客獲取了key並加入也沒用，內容會被解密成亂碼仍然無法執行。
+
+經過screw plus的保護，即使網站整站被下載或被上傳了惡意程式碼，也無法對網站造成損失。
