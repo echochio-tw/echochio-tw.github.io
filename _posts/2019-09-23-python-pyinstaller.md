@@ -1,6 +1,6 @@
 ---
 layout: post
-title: python 變執行檔
+title: python 變執行檔 exe ..
 date: 2019-09-23
 tags: linux windows python
 ---
@@ -32,4 +32,11 @@ Windows 添加  --noconsole 會沒有 dos 窗口輸出
 
 ```
 pyinstaller -F helloword.py --noconsole
+```
+
+有 python 在客戶端可用 pyc 就好(例如 linux) 這樣很難反解譯
+```
+python -m compileall .
+
+python helloword.pyc
 ```
