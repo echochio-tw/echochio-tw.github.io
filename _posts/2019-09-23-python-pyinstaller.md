@@ -40,3 +40,11 @@ python -m compileall .
 
 python helloword.pyc
 ```
+發現有個好用的工具 auto-py-to-exe
+```
+pip install auto-py-to-exe
+```
+然後在桌面設定捷徑 auto-py-to-exe 
+(我的在 C:\Python\Scripts\auto-py-to-exe.exe)
+點選就可執行
+選一選就可生成檔案
