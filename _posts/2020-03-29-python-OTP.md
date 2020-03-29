@@ -31,6 +31,8 @@ hello.py(這個太簡單了沒放)
 
 認證碼 正確執行 hello.exe (這個包在 otp.exe 內的...python 呼叫外部程式 .....)
 
+ otp.exe (是有包含 hello.exe 的 , 就是包個 輸入認證碼與檢查認證的外殼)
+
 打包otp.py 的方式(把 hello.exe 放到 C:\Python\hello.exe)
 
 ```
