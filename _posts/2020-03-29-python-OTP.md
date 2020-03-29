@@ -27,9 +27,9 @@ hello.py(這個太簡單了沒放)
 
 執行 otp.exe 要求輸入認證碼
 
-執行 otp.exe 取得  去 otp.exe 那邊輸入
+執行 otp_out.exe 取得認證碼  去 otp.exe 那邊輸入
 
-認證碼 正確執行 hello.exe (這個包在 otp.exe 內的外部程式 .....)
+認證碼 正確執行 hello.exe (這個包在 otp.exe 內的...python 呼叫外部程式 .....)
 
 打包otp.py 的方式(把 hello.exe 放到 C:\Python\hello.exe)
 
