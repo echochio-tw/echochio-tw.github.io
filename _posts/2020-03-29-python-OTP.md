@@ -1,6 +1,6 @@
 ---
 layout: post
-title: python 實現OPT 認證執行外部 exe
+title: python 實現 OTP 認證執行外部 exe
 date: 2020-03-29
 tags: python opt google authenticator
 ---
