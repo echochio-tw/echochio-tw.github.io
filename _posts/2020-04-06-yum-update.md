@@ -27,10 +27,8 @@ ssh -D 1080 root@212.219.12.5
 press enter and type your password.
 ```
 
-到 proxy 那边 sshd 找 Forwarding
+到 proxy 那边 sshd 找/etc/ssh/sshd_config 去找 Forwarding
 ```
-vi /etc/ssh/sshd_config
-
 AllowAgentForwarding yes
 AllowTcpForwarding yes
 X11Forwarding yes
@@ -89,10 +87,8 @@ rm -rf /etc/yum.repos.d/
 vim /etc/yum.repos.d/CentOS-Base.repo
 ```
 
-设定 repo
+设定 /etc/yum.repos.d/CentOS-Base.repo)
 ```
-vi /etc/yum.repos.d/CentOS-Base.repo
-
 # CentOS-Base.repo
 #
 # The mirror system uses the connecting IP address of the client and the
