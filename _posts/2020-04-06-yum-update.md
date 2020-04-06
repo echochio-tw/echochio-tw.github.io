@@ -87,7 +87,7 @@ rm -rf /etc/yum.repos.d/
 vim /etc/yum.repos.d/CentOS-Base.repo
 ```
 
-设定 /etc/yum.repos.d/CentOS-Base.repo)
+设定 /etc/yum.repos.d/CentOS-Base.repo
 ```
 # CentOS-Base.repo
 #
