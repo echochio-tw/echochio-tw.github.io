@@ -10,22 +10,22 @@ tags: yum proxy ssh vpn
 nameserver 1.1.1.1
 ```
 
-
-先测 VPN 
+先测 VPN 在 /etc/yum.conf 加入
+```
+proxy=socks5h://localhost:1080
 ```
 
-in yum.conf set the proxy as follows
-
-proxy=socks5h://localhost:1080 
-
-from a terminal type
-
+在 terminal 打
+```
 ssh -D 1080 YOUR_USER@YOUR_SERVER_WITH_FULL_WEB_ACCESS 
-
-ssh -D 1080 root@212.219.12.5
-
-press enter and type your password.
 ```
+
+就是 .....
+```
+ssh -D 1080 root@212.219.12.5
+```
+
+輸入 password ....
 
 到 proxy 那边 sshd 找/etc/ssh/sshd_config 去找 Forwarding
 ```
