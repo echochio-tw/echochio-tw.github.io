@@ -48,3 +48,40 @@ pip install auto-py-to-exe
 (我的在 C:\Python\Scripts\auto-py-to-exe.exe)
 點選就可執行
 選一選就可生成檔案
+
+
+使用nuitka打包python程序 ...
+```
+這個一要配合 mingw-w64
+然後在 先執行 mingw-w64.bat 下面
+
+C:\>MinGW64\mingw-w64.bat
+
+C:\>echo off
+Microsoft Windows [版本 10.0.18363.752]
+(c) 2019 Microsoft Corporation. 著作權所有，並保留一切權利。
+
+C:\>cd Python
+
+C:\test> nuitka --windows-disable-console --recurse-all UBgram-OSS.py
+Nuitka:WARNING:Use '--plugin-enable=tk-inter' for: Tkinter needs TCL included.
+Nuitka:WARNING:Unresolved '__import__' call at 'C:\Python\lib\site-packages\cffi\verifier.py:151' may require use of '--include-plugin-directory' or '--include-plugin-files'.
+Nuitka:WARNING:Unresolved '__import__' call at 'C:\Python\lib\site-packages\requests\packages.py:7' may require use of '--include-plugin-directory' or '--include-plugin-files'.
+Nuitka will make use of Dependency Walker (http://dependencywalker.com) tool
+to analyze the dependencies of Python extension modules. Is it OK to download
+and put it in "C:\Users\chio\AppData\Local\Nuitka\Nuitka".
+No installer needed, cached, one time question.
+
+Proceed and download? [Yes]/No
+Yes
+Nuitka:INFO:Downloading 'http://dependencywalker.com/depends22_x86.zip'
+Nuitka:INFO:Extracting to 'C:\Users\echochio\AppData\Local\Nuitka\Nuitka\x86\depends.exe'
+
+```
+
+Shed Skin - A (restricted) Python-to-C++ Compiler 這個很久沒更新了支援 2.X 的 python
+```
+http://shed-skin.blogspot.com/
+```
+
+
