@@ -29,4 +29,4 @@ window.close()
 ```
 <img src="/images/posts/PySimpleGUI/p1.png">
 
-<img src="/images/posts/PySimpleGUI/p1.png">
+<img src="/images/posts/PySimpleGUI/p2.png">
