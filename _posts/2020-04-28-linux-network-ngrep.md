@@ -11,7 +11,7 @@ tags: linux network ngrep
 
 yum 裝 epel 後可裝 
 ```
-yum  install  ngrep 
+yum install ngrep 
 ```
 
 裝 nginx 與設定反向代理
