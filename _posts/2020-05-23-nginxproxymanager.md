@@ -7,7 +7,7 @@ tags: nginx proxy
 
 https://nginxproxymanager.com/guide/#project-goal
 
-<img src="/images/nginxproxymanager/a.png">
+<img src="/images/posts/nginxproxymanager/a.png">
 
 
 配合資料庫 與docker 
