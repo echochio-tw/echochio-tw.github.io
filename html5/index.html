@@ -3,11 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Final Project</title>
-    <style>
+<style>
+progress {
+    color: lightblue;
+    width: 150pt;
+    height: 10px;
+}
+progress::-moz-progress-bar {
+    background: lightblue;
+    width: 150pt;
+    height: 10px;
+}
+progress::-webkit-progress-value {
+    background: lightblue;
+    width: 150pt;
+    height: 10px;
+}
+progress[aria-valuenow]:before {
+    background: lightblue;
+    width: 150pt;
+    height: 10px;
+}
 
-   progress {
-      height: 10px;
-     }
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+}
     </style>
 </head>
 <body>
