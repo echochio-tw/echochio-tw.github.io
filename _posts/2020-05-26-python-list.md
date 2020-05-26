@@ -40,3 +40,9 @@ def count_vowels(s): return len([char for char in s if char in 'aeiouAEIOU'])
 print (count_vowels('test'))
 1
 ```
+
+
+這個寫法直接看 True, False ... 然後 SUM 加起來 ... 這也行簡單 ....
+```
+def count_vowels(s): return sum([char in 'aeiouAEIOU' for char in s])
+```
