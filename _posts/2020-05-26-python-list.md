@@ -46,3 +46,13 @@ print (count_vowels('test'))
 ```
 def count_vowels(s): return sum([char in 'aeiouAEIOU' for char in s])
 ```
+
+老外老師 教我用  lambda function 這樣更簡單
+```
+count_vowels = lambda s : len([char for char in s if char in 'aeiouAEIOU'])
+```
+
+```
+count_vowels = lambda s : sum([char in 'aeiouAEIOU' for char in s])
+```
+
