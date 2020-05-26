@@ -56,3 +56,24 @@ count_vowels = lambda s : len([char for char in s if char in 'aeiouAEIOU'])
 count_vowels = lambda s : sum([char in 'aeiouAEIOU' for char in s])
 ```
 
+下面這個 if 的演化應該看的懂 lambda 運用超多的
+```
+def max(m, n):
+    if m > n:
+        return m
+    else 
+        return n
+```
+
+```
+def max(m, n):
+    return m if m > n else n
+```
+
+```
+def max(m, n): return m if m > n else n
+```
+
+```
+max = lambda m, n: m if m > n else n
+```
