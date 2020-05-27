@@ -47,8 +47,26 @@ count_vowels = lambda s : sum([char in 'aeiouAEIOU' for char in s])
 配合 for loop with if 例如
 
 ```
-d = lambda klist : [i for i in klist if i.is_displayed() else 'X']
-print (d['111','2222','3333'])
+d = lambda klist : ['x' for i in klist if i == 1]
+print (d([1,2,1,4]))
+--> ['x', 'x']
 ```
-lambda 很容易配合 if 或是 for loop 完成工作
+
+那 else 要如何處理 ? 只能用 map
+```
+d = lambda klist : list(map(lambda i : 'x' if i == 1 else 'X', klist))
+print (d([1,2,1,4]))
+--> ['x', 'X', 'x', 'X']
+```
+看前面 lambda function 用 klist 當 lambda 輸入 
+
+return 是 list -->  list(map(function ,data))
+
+map 的 function 是 lambda i : 'x' if i == 1 else 'X' --> 輸出 'x' 或 'X'
+
+map 的 data 是 klist , 這樣會將 list 內的一個一個丟到前面 function 處理
+
+處理後 map 變 list 就會當成前面 lambda 的 return 
+
+data 這是輸入 -> klist
 
