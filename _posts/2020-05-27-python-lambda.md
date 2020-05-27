@@ -52,7 +52,7 @@ print (d([1,2,1,4]))
 --> ['x', 'x']
 ```
 
-那 else 要如何處理 ? 只能用 map
+那 else 要如何處理 ? ... 用 map
 ```
 d = lambda klist : list(map(lambda i : 'x' if i == 1 else 'X', klist))
 print (d([1,2,1,4]))
