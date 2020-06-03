@@ -2,7 +2,7 @@
 layout: post
 title: python open file
 date: 2020-06-24
-tags: 圖
+tags: python openfile strip split
 ---
 可能我英文比較爛吧 ... 
 
