@@ -5,7 +5,7 @@ date: 2020-06-11
 tags: python dict sort
 ---
 
-在密大的作業 ... 有點深度留起來(都要用一行解決)
+我在密大的作業 ... 有點深度留起來(都要用一行解決)
 
 Write code to switch the order of the winners list so that it is now Z to A, by first name. Assign this list to the variable z_winners.
 ```
