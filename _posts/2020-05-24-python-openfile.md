@@ -1,10 +1,10 @@
 ---
 layout: post
 title: python open file
-date: 2020-06-24
+date: 2020-05-24
 tags: python openfile strip split
 ---
-可能我英文比較爛吧 ... 
+我在密大作業可能我英文比較爛吧 ... 
 
 下面這題花了些時間記錄一下: ... 
 ```
