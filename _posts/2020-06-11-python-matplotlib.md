@@ -116,3 +116,4 @@ plot.grid(b=True, which='major', color='#666666', linestyle='-')
 plot.show()
 ```
 
+<img src="/images/posts/matplotlib/2020-06-11_104120.png">
