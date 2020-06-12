@@ -5,7 +5,7 @@ date: 2020-06-11
 tags: python dict list
 ---
 
-Below, we have provided a nested list called big_list. Use nested iteration to create a dictionary, word_counts, that contains all the words in big_list as keys, and the number of times they occur as values.
+下面，我們提供了一個名為big_list的嵌套列表。 使用嵌套迭代創建一個字典word_counts，該字典包含big_list中的所有單詞作為鍵，並包含它們作為值出現的次數。
 
 ```
 big_list = [[['one', 'two'], ['seven', 'eight']], [['nine', 'four'], ['three', 'one']], [['two', 'eight'], ['seven', 'four']], [['five', 'one'], ['four', 'two']], [['six', 'eight'], ['two', 'seven']], [['three', 'five'], ['one', 'six']], [['nine', 'eight'], ['five', 'four']], [['six', 'three'], ['four', 'seven']]]
@@ -27,7 +27,7 @@ for i in get_list:
     word_counts[i] = word_counts[i] + 1
 ```
 
-Provided is a dictionary that contains pokemon go player data, where each player reveals the amount of candy each of their pokemon have. If you pooled all the data together, which pokemon has the highest number of candy? Assign that pokemon to the variable most_common_pokemon.
+提供的詞典包含口袋妖怪圍棋玩家數據，每個玩家在其中揭示每個口袋妖怪所擁有的糖果量。 如果將所有數據匯總在一起，哪個口袋妖怪的糖果數量最多？ 將該寵物小精靈分配給變量most_common_pokemon.
 
 ```
 pokemon_go_data = {'bentspoon':
