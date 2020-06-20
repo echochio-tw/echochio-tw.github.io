@@ -23,3 +23,5 @@ $ Matches the end of the line 匹配行尾
 ( Indicates where string extraction is to start 指示從何處開始提取字符串
 ) Indicates where string extraction is to end 指示字符串提取將在何處結束
 ```
+
+https://docs.python.org/3/howto/regex.html
