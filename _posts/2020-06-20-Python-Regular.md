@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rython Regular	Expression	Quick	Guide
+title: Python Regular	Expression	Quick	Guide
 date: 2020-06-20
 tags: Python Regular
 ---
