@@ -18,13 +18,12 @@ import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
 import ssl
 def f(url,i):
-    i = i - 1
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
     html = urllib.request.urlopen(url, context=ctx).read()
     soup = BeautifulSoup(html,'html.parser')
-    return [a['href'] for a in soup.find_all('a')][i]
+    return [a['href'] for a in soup.find_all('a')][i-1]
 
 url = input('Enter URL : ')
 n = int(input('Enter count : '))
@@ -41,10 +40,9 @@ for x in range(0,n):
 import requests
 from bs4 import BeautifulSoup
 def f(url,i):
-    i = i - 1
     r = requests.get(url)
     html = BeautifulSoup(r.text,'html.parser')
-    return [a['href'] for a in html.find_all('a')][i]
+    return [a['href'] for a in html.find_all('a')][i-1]
 
 url = input('Enter URL : ')
 n = int(input('Enter count : '))
