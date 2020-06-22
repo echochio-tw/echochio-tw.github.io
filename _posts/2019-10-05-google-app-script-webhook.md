@@ -59,3 +59,11 @@ curl "https://api.telegram.org/bot917681111:AAFpNGEoiebe1yXbkHDVbS38aaAjzDSJLjs/
 ```
 https://www.echochio.nctu.me/2019/09/flask+uwsgi/
 ```
+
+要讓 bot 可以在 group 裡面可以回應
+```
+私訊 @BotFather
+輸入 /setprivacy 指令
+選擇 Bot
+點擊 Disable
+```
