@@ -11,8 +11,12 @@ tags: telegram group bot webhoos
 https://www.echochio.nctu.me/2019/10/telegram-group-python-webhoos/
 ```
 
-發布 -> 部署為網路應用程式
-
+發布 -> 部署為網路應用程式 
+```
+Deploy as web app 
+Execute the app as :  Me
+Who has access tothe app: Anyone,even anonymous
+```
 其中 
 ```
 chat_id = -341335111
