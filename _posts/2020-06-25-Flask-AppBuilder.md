@@ -99,20 +99,7 @@ class indexView(BaseView):
 appbuilder.add_view_no_menu(indexView())
 ```
 
-只讓登入的看要加 @has_access
-```
-from flask_appbuilder import ModelView,AppBuilder,expose,BaseView,has_access
-class indexView(BaseView):
-    route_base = '/index'
-    @expose('/hello')
-    def hello(self):
-        return 'Hello World'
-    @expose('/message/<string:msg>')
-    @has_access
-    def message(self,msg):
-        return msg
-appbuilder.add_view_no_menu(indexView())
-```
+只讓登入的看要加 @has_access ...... 這邊不紀錄了
 
 app/templates/index.html
 ```
