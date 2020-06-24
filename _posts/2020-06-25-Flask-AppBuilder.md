@@ -87,48 +87,7 @@ from app.index import MyIndexView
 appbuilder = AppBuilder(app, db.session, indexview=MyIndexView)
 ```
 
-加 Helloword ... app/views.py
-```
-from flask_appbuilder import AppBuilder,expose,BaseView
-class indexView(BaseView):
-    # 相对路径的url
-    route_base = '/index'
-    @expose('/hello')
-    def hello(self):
-        return 'Hello World'
-appbuilder.add_view_no_menu(indexView())
-```
-
-只讓登入的看要加 @has_access ...... 這邊不紀錄了
-
-app/templates/index.html
-```
-{% extends "appbuilder/base.html" %}
-{% block content %}
-    <h1>Welcome</h1>
-    <h2>Hello World</h2>
-    <h3>{{ msg }}</h3>
-{% endblock %}
-```
-
-编辑/app/views.py,改成 .. 就可套用 templates/index.html
-```
-class indexView(BaseView):
-    route_base = '/index'
-    default_view = 'hello'
-    @expose('/hello')
-    def hello(self):
-        return 'Hello World'
-    @expose('/message/<string:msg>')
-    @has_access
-    def message(self,msg):
-        msg = 'Hello ' + msg
-        return self.render_template('index.html',msg=msg)
-# 在菜单中生成访问的链接
-appbuilder.add_view(indexView,'Hello',category='My View')
-appbuilder.add_link('message',href='/index/message/user',category='My View')
-appbuilder.add_link('welcome',href='/index/hello',category='My View')
-```
+加 Helloword ... app/views.py 不寫了 ... google 都有
 
 好了這邊紀錄一下 API 部分  app/views.py (這個與 flask 相近只比他寫在一個 class 就可)
 
