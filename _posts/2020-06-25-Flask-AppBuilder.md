@@ -5,7 +5,7 @@ date: 2020-06-25
 tags: Python Flask
 ---
 
-Flask-AppBuilder
+Flask-AppBuilder .. MVC ... 還不錯以後來用
 
 與安裝 Flask 一樣參考
 
@@ -119,6 +119,15 @@ class ApiView(BaseView):
     def method(self):
         dic = request.args
         return jsonify(dic)
+        
+    @expose('/dns/<function>', methods = ['POST'])
+    def dns(self,function):
+        if (request.is_json):
+            content = request.get_json()
+        else:
+            content = ''
+        print (function)
+        return content
 
 appbuilder.add_api(ApiView)
 ```
@@ -138,6 +147,9 @@ curl 'http://192.168.8.121:5000/api/do/hello'
 
 curl 'http://192.168.8.121:5000/api/method?data=user'
 {"data":"user"}
+
+curl 'http://192.168.8.121:5000/api/dns/set' -X POST -H "Content-Type:application/json" -d '{"domain" : "test.com"}'
+{"domain":"test.com"}
 
 ```
 
