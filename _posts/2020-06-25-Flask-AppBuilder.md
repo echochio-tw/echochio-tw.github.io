@@ -159,7 +159,7 @@ from .models import Member,Message_list
 
 from flask_appbuilder.api import BaseApi, expose
 from flask import jsonify
-
+from flask import request
 
 class ApiView(BaseView):
     route_base = "/api"
@@ -170,6 +170,11 @@ class ApiView(BaseView):
     @expose("/do/<p>", methods=['GET'])
     def alist(self,p):
         return jsonify({p:'OK'})
+        
+    @expose('/method', methods=['GET'])
+    def method(self):
+        dic = request.args
+        return jsonify(dic)
 
 appbuilder.add_api(ApiView)
 ```
@@ -186,6 +191,10 @@ curl 'http://192.168.8.121:5000/api/list'
 
 curl 'http://192.168.8.121:5000/api/do/hello'
 {"hello":"OK"}
+
+curl 'http://192.168.8.121:5000/api/method?data=user'
+{"data":"user"}
+
 ```
 
 
