@@ -110,7 +110,6 @@ class indexView(BaseView):
     @expose('/message/<string:msg>')
     @has_access
     def message(self,msg):
-        msg = 'Hello' + msg
         return msg
 appbuilder.add_view_no_menu(indexView())
 ```
