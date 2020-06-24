@@ -72,7 +72,6 @@ python3 run.py
 ```
 APP_NAME = "短信APP"
 ```
-
 修改首页 /app/index.py
 ```
 from flask_appbuilder import IndexView
