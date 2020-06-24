@@ -140,16 +140,16 @@ http://{domain}/api/{resource}/{params}
 測試結果看一下
 ```
 curl 'http://192.168.8.121:5000/api/list'
-{"apis":["/apiv1/devices","/apiv1/accesses","/apiv1/accounts"],"res":"OK"}
+輸出 : {"apis":["/apiv1/devices","/apiv1/accesses","/apiv1/accounts"],"res":"OK"}
 
 curl 'http://192.168.8.121:5000/api/do/hello'
-{"hello":"OK"}
+輸出 : {"hello":"OK"}
 
 curl 'http://192.168.8.121:5000/api/method?data=user'
-{"data":"user"}
+輸出 : {"data":"user"}
 
 curl 'http://192.168.8.121:5000/api/dns/set' -X POST -H "Content-Type:application/json" -d '{"domain" : "test.com"}'
-{"domain":"test.com"}
+輸出 : {"domain":"test.com"}
 
 ```
 
