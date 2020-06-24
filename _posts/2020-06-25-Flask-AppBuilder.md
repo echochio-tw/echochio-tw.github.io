@@ -179,6 +179,16 @@ appbuilder.add_api(ApiView)
 http://{domain}/api/{resource}/{params}
 ```
 
+測試結果看一下
+```
+curl 'http://192.168.8.121:5000/api/list'
+{"apis":["/apiv1/devices","/apiv1/accesses","/apiv1/accounts"],"res":"OK"}
+
+curl 'http://192.168.8.121:5000/api/do/hello'
+{"hello":"OK"}
+```
+
+
 資料庫的部分 拿我亂寫的
 
 app/models.py
