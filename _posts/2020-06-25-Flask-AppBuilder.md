@@ -153,6 +153,19 @@ class ApiView(BaseView):
             else:
                 d = [{'user':a.user,'nickname':a.nickname,'user_password':a.user_password,'signature':a.signature,'point':a.point,'account':a.account,'password':a.password,'extno':a.extno}]
         return jsonify(d)
+        
+    @expose("/wri/<p>/<s>", methods=['GET'])
+    def alist(self,p,s):
+        a = db.session.query(Member).filter_by(user = p,signature = s).first()
+        if(a is None):
+            d = []
+        else:
+            d = [{'user':a.user,'nickname':a.nickname,'user_password':a.user_password,'signature':a.signature,'point':a.point,'account':a.account,'password':a.password,'extno':a.extno}]
+            dt=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            todo = Message_list(message='test '+user,send_request = dt, returnlog = 'test '+signature, point = 10)
+            db.session.add(todo)
+            db.session.commit()
+        return jsonify(d)   
 
 appbuilder.add_api(ApiView)
 ```
