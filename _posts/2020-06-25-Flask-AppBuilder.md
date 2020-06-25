@@ -129,6 +129,31 @@ class ApiView(BaseView):
         print (function)
         return content
 
+
+    @expose("/id/<p>/<s>", methods=['GET'])
+    def alist(self,p,s):
+        a = db.session.query(Member).filter_by(user = p,signature = s).first()
+        if(a is None):
+            d = []
+        else:
+            d = [{'user':a.user,'nickname':a.nickname,'user_password':a.user_password,'signature':a.signature,'point':a.point,'account':a.account,'password':a.password,'extno':a.extno}]
+        return jsonify(d)
+
+    @expose('/get', methods=['GET'])
+    def method(self):
+        dic = request.args
+        if ('user' not in dic) and ('signature' not in dic):
+            d =[]
+        else:
+            p = dic['user']
+            s = dic['signature']
+            a = db.session.query(Member).filter_by(user = p,signature = s).first()
+            if(a is None):
+                d = []
+            else:
+                d = [{'user':a.user,'nickname':a.nickname,'user_password':a.user_password,'signature':a.signature,'point':a.point,'account':a.account,'password':a.password,'extno':a.extno}]
+            return jsonify(d)
+
 appbuilder.add_api(ApiView)
 ```
 
@@ -232,3 +257,14 @@ appbuilder.add_view(MemberModelView,'會員列表',icon = 'fa-address-card-o',ca
 appbuilder.add_view(MessagelistModelView,'紀錄列表',icon = 'fa-address-card-o',category = '紀錄')
 ```
 
+這個還沒試應該是OK的
+```
+#todo = Todo(content='hacking')
+#db.session.add(todo)
+#db.session.commit()
+#todo = Todo.query.filter_by(contant='hacking').update({'content': 'reading'})
+#db.session.commit()
+# todo = Todo.query.filter_by(content='reading').first()
+# db.session.delete(todo)
+#db.session.commit()
+```
