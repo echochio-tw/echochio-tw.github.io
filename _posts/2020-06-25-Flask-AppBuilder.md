@@ -152,7 +152,7 @@ class ApiView(BaseView):
                 d = []
             else:
                 d = [{'user':a.user,'nickname':a.nickname,'user_password':a.user_password,'signature':a.signature,'point':a.point,'account':a.account,'password':a.password,'extno':a.extno}]
-            return jsonify(d)
+        return jsonify(d)
 
 appbuilder.add_api(ApiView)
 ```
