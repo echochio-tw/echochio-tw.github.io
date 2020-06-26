@@ -154,14 +154,18 @@ class ApiView(BaseView):
                 d = [{'user':a.user,'nickname':a.nickname,'user_password':a.user_password,'signature':a.signature,'point':a.point,'account':a.account,'password':a.password,'extno':a.extno}]
         return jsonify(d)
         
-    @expose("/wri/<p>/<s>", methods=['GET'])
-    def alist(self,p,s):
-        a = db.session.query(Member).filter_by(user = p,signature = s).first()
+    @expose("/wri/<u>/<s>/<p>", methods=['GET'])
+    def alist(self,u,s,p):
+        a = db.session.query(Member).filter_by(user = u,signature = s).first()
         if(a is None):
             d = []
         else:
+            # update point new value
+            a.point = p 
+            db.session.commit()
             d = [{'user':a.user,'nickname':a.nickname,'user_password':a.user_password,'signature':a.signature,'point':a.point,'account':a.account,'password':a.password,'extno':a.extno}]
             dt=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            #wirte to other table (add new one)
             todo = Message_list(message='test '+user,send_request = dt, returnlog = 'test '+signature, point = 10)
             db.session.add(todo)
             db.session.commit()
