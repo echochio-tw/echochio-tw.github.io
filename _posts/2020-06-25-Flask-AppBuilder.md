@@ -259,6 +259,8 @@ class MessagelistModelView(ModelView):
     datamodel = SQLAInterface(Message_list)
     #只能列表
     base_permissions = ['can_list','can_show']
+    #一頁五筆
+    page_size=5
     #修改列名称
     label_columns = {'message':'傳送資訊','send_request':'傳送時間','returnlog':'回應資訊','point':'剩餘點數'}
     #定义列显示名称
