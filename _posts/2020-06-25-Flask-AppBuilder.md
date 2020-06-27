@@ -287,3 +287,5 @@ appbuilder.add_view(MessagelistModelView,'紀錄列表',icon = 'fa-address-card-
 # db.session.delete(todo)
 #db.session.commit()
 ```
+詳細在這裡 : 全會還真難
+https://flask-appbuilder.readthedocs.io/en/latest/
