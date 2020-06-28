@@ -6,7 +6,5 @@ tags: PIL numpy
 ---
 
 
-
-```{r showChoro1}
-htmltools::includeHTML("/images/pil_assignment_1.html")
-```
+<object data="/images/pil_assignment_1.pdf" type="application/pdf" width="100%"> 
+</object>
