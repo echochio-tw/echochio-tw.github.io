@@ -5,11 +5,7 @@ date: 2020-06-28
 tags: PIL numpy 
 ---
 
-
-<object data="/images/pil_assignment_1.pdf" type="application/pdf" width="100%" height="100%"> 
-</object>
-
-上面是作業  ...
+作業 ....
 ```
 import PIL
 from PIL import Image
@@ -60,3 +56,12 @@ for img in images:
 contact_sheet = contact_sheet.resize((int(contact_sheet.width/2),int(contact_sheet.height/2) ))
 display(contact_sheet)
 ```
+
+https://www.echochio.nctu.me/images/pil_assignment_1.html
+
+輸出是 ...
+
+<object data="/images/pil_assignment_1.pdf" type="application/pdf" width="100%" height="100%"> 
+</object>
+
+上面是作業  ...
