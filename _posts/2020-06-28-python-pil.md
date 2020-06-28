@@ -56,8 +56,7 @@ for img in images:
 contact_sheet = contact_sheet.resize((int(contact_sheet.width/2),int(contact_sheet.height/2) ))
 display(contact_sheet)
 ```
-
-https://www.echochio.nctu.me/images/pil_assignment_1.html
+<iframe src="https://www.echochio.nctu.me/images/pil_assignment_1.html" width= 100% height="700px" frameborder="0" scrolling="no"> </iframe>
 
 輸出是 ...
 
