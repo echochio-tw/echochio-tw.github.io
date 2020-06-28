@@ -56,11 +56,11 @@ for img in images:
 contact_sheet = contact_sheet.resize((int(contact_sheet.width/2),int(contact_sheet.height/2) ))
 display(contact_sheet)
 ```
-<iframe src="https://www.echochio.nctu.me/images/pil_assignment_1.html" width= 100% height="700px" frameborder="0" scrolling="no"> </iframe>
+<iframe src="https://www.echochio.nctu.me/images/pil_assignment_1.html" width="100%" height="700px" frameborder="0" scrolling="no"> </iframe>
 
 輸出是 ...
 
-<object data="/images/pil_assignment_1.pdf" type="application/pdf" width="100%" height="100%"> 
+<object data="/images/pil_assignment_1.pdf" type="application/pdf" width="100%" height="700px"> 
 </object>
 
 上面是作業  ...
