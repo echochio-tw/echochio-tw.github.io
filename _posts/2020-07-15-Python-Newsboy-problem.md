@@ -109,7 +109,7 @@ for i in range(0,x+1):
     if i == x: #用於最後那個機率
         p2 = (i*r-c*q)* (1-d) # (pn-cq)*(1 - sum(list[0..n-1]))
         print ("最後的個 {} 購買機率利潤: {}".format(i,p2))
-        profit = profit + p2 #累加利潤
+        profit = profit + p2 #累加最後那個利潤
     else:
         p2 = (i*r-c*q)* num_list[i] #(p[0..n-1]-c*q)*list[0...n-1])
         print ("第 {} 個購買機率利潤 : {}".format(i,p2)) 
@@ -146,6 +146,7 @@ print("預期的期望利潤為： ",profit)
 那一個當最佳訂貨量 ?
 ```
 
+用上面程式加一個 loop (把 print 都去掉 , 簡化程式)
 ```
 # (q = 1 .... 8)
 (c, r, N ) = (1,
@@ -168,18 +169,11 @@ for q in range(0,N+1):
     for i in range(0,x+1):
         #print ("第 {} 個購買 ".format(i)) 
         if i == x:
-            p2 = (i*r-c*q)* (1-d)
-            #print ("最後的個 {} 購買機率利潤: {}".format(i,p2))
-            profit = profit + p2 #累加利潤
+            profit = profit + (i*r-c*q)* (1-d) #累加最後的一個利潤
         else:
-            p2 = (i*r-c*q)* num_list[i]
-            #print ("第 {} 個購買機率利潤 : {}".format(i,p2)) 
-            profit = profit + p2 #累加利潤
+            profit = profit + (i*r-c*q)* num_list[i] #累加利潤
             d = d + num_list[i] #累加機率
-            #print ("第 {} 個購買累加機率 : {}".format(i,d)) 
-            #print ("第 {} 個購買累加利潤 : {}".format(i,profit)) 
-	
-    #print("預期的期望利潤為： ",profit)
+	    
     print("訂貨數量 {} 時 ,預期的期望利潤為 {}".format(q,int(profit)))
 ```
 
