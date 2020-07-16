@@ -105,8 +105,19 @@ from flask_appbuilder.api import BaseApi, expose
 from flask import jsonify
 from flask import request
 
+def telegram_send(bot_message,bot_chatID = '-341334440',bot_token = '917680011:AAFpNGEoiebe1yXbkHDVbS11uKA12DSJLjs'):
+    send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
+    response = requests.get(send_text)
+    return response.json()
+
 class ApiView(BaseView):
     route_base = "/api"
+    
+    @expose("/telegram/<message>", methods=['GET'])
+    def telegramdo(self,message):
+        j = telegram_send(message) # 這邊呼叫 def 要放 class 外面,.. 這邊是 telegram 簡易跳轉程式
+        return j
+      
     @expose("/list", methods=['GET'])
     def list(self):
         return jsonify({'res':'OK','apis':['/apiv1/devices','/apiv1/accesses','/apiv1/accounts']})
