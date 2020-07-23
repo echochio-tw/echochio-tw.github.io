@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rython class
+title: Python class
 date: 2020-06-20
 tags: Python class
 ---
