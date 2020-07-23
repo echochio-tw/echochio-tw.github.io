@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rython xml
+title: Python xml
 date: 2020-06-20
 tags: Python xml
 ---
