@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rython urllib
+title: Python urllib
 date: 2020-06-20
 tags: Python urllib
 ---
