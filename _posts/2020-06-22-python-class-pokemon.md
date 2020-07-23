@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rython class(Pokemon_test)
+title: Python class(Pokemon_test)
 date: 2020-06-22
 tags: Python class
 ---
