@@ -8,7 +8,7 @@ tags: python dic list str
 
 ```
 def squares(start, end):
-	return [i* i for i in range(start, end+1)]
+    return [i* i for i in range(start, end+1)]
 
 print(squares(2, 3)) # Should be [4, 9]
 print(squares(1, 5)) # Should be [1, 4, 9, 16, 25]
@@ -17,17 +17,17 @@ print(squares(0, 10)) # Should be [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 ```
 def groups_per_user(group_dictionary):
-	user_groups = {}
-	# Go through group_dictionary
-	for group,users in group_dictionary.items():
-		# Now go through the users in the group
-		for user in users:
-			# Now add the group to the the list of
-			user_groups[user] = user_groups.get(user,[]) + [group]
+    user_groups = {}
+    # Go through group_dictionary
+    for group,users in group_dictionary.items():
+        # Now go through the users in the group
+        for user in users:
+            # Now add the group to the the list of
+            user_groups[user] = user_groups.get(user,[]) + [group]
 # groups for this user, creating the entry
 # in the dictionary if necessary
 
-	return(user_groups)
+    return(user_groups)
 
 print(groups_per_user({"local": ["admin", "userA"],
 		"public":  ["admin", "userB"],
@@ -103,7 +103,7 @@ print(combine_lists(Jamies_list, Drews_list))
 
 ```
 def squares(start, end):
-	return [i* i for i in range(start, end+1)]
+    return [i* i for i in range(start, end+1)]
 
 print(squares(2, 3)) # Should be [4, 9]
 print(squares(1, 5)) # Should be [1, 4, 9, 16, 25]
