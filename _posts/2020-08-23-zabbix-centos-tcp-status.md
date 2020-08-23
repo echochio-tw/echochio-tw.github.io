@@ -5,7 +5,9 @@ date: 2020-08-23
 tags: zabbix centos
 ---
 
-Nginx 被打了監控一下 ... 要開 linux max 65535 及 nginx 開最大效能及 一些 DDOS 防護
+Nginx 被打了監控一下 ...  還好打到 5000 多 沒死
+
+要開 linux max 65535 及 nginx 開最大效能及 一些 DDOS 防護
 
 要去做 linux init
 ```
