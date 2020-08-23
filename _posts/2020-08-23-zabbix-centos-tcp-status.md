@@ -101,7 +101,7 @@ UserParameter=tcp.status[*], /usr/sbin/ss -ant|grep -c $1
 UnsafeUserParameters=1
 ```
 
-zbx_tcp_Status.xml
+zabbix Server 端 zbx_tcp_Status.xml
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
