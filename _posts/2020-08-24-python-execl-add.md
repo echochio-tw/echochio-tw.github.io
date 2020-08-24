@@ -44,5 +44,5 @@ if __name__ == "__main__":
     path = r'D:/file' #这里无论什么平台都按照unix风格来输入文件路径
     filenames = get_filename(path)
     merge_xlsx(path,filenames,0,"sheet1") #合并文件中第一个表的数据，输出到 output/sheet1.xlsx中
-	merge_xlsx(path,filenames,0,"sheet2") #合并文件中第一个表的数据，输出到 output/sheet2.xlsx中
+    merge_xlsx(path,filenames,0,"sheet2") #合并文件中第一个表的数据，输出到 output/sheet2.xlsx中
 ```
