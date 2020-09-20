@@ -118,3 +118,8 @@ general: Disconnected:
 [offline]:
 
 ```
+
+再來將 他連到 telegram 請參考
+```
+https://ibcomputing.com/setting-up-whatsapp-telegram-bridge-using-matterbridge-2020/
+```
