@@ -12,7 +12,7 @@ tags: 百度云盤 backup
 不可能猜的到加密的密碼啦 ......除非太簡單 
 請參考 
 
-https://www.echochio.nctu.me/2017/05/Mega_backup/
+https://echochio-tw.github.io/2017/05/Mega_backup/
 
 百度雲盤有些限制 ...單一檔案不能超過 2G
 

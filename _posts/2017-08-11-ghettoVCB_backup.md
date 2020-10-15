@@ -6,7 +6,7 @@ tags:  ESXi ghettoVCB backup
 ---
 
 ESXi 定時備份到 網路上的 NFS , 
-例如 NAS https://www.echochio.nctu.me/2017/%E7%BE%A4%E8%BC%9D_NAS_FOR_ESXi.html
+例如 NAS https://echochio-tw.github.io/2017/%E7%BE%A4%E8%BC%9D_NAS_FOR_ESXi.html
 
 先打開 ESXI 伺服器的 SSH Service
 

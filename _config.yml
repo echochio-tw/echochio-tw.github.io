@@ -4,16 +4,16 @@ subtitle:
 description: 歡迎來到我的部落格
 avatarTitle: echochio
 avatarDesc: 紀錄一些雜七雜八的技術
-url: "https://www.echochio.nctu.me"
+url: "https://echochio-tw.github.io"
 comment:
     uyan:2128926
 
 # Social
 social:
-    # weibo: www.echochio.nctu.me
+    # weibo: echochio-tw.github.io
     github: echochio-tw
     # twitter: 
-    mail: echochio@echochio.nctu.me
+    mail: echochio@echochio-tw.github.io
     
 ga:
     id: UA-108823459-2   

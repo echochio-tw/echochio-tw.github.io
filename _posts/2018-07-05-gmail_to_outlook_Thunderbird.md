@@ -23,6 +23,6 @@ tags: gmail outlook Thunderbird
 
 備份下來的資料會以.mbox的格式儲存
 
-可利用 https://www.echochio.nctu.me/2018/03/mail-trans/
+可利用 https://echochio-tw.github.io/2018/03/mail-trans/
 
 將其放入 outlook , 或 Thunderbird , 或是其他 gmail 帳號

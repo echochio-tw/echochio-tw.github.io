@@ -8,7 +8,7 @@ tags: telegram group bot webhoos
 用 google app script (配合 telegram group)
 
 ```
-https://www.echochio.nctu.me/2019/10/telegram-group-python-webhoos/
+https://echochio-tw.github.io/2019/10/telegram-group-python-webhoos/
 ```
 
 發布 -> 部署為網路應用程式 
@@ -61,7 +61,7 @@ curl "https://api.telegram.org/bot917681111:AAFpNGEoiebe1yXbkHDVbS38aaAjzDSJLjs/
 
 接下來試試 google app script 呼叫這個 ....串起來
 ```
-https://www.echochio.nctu.me/2019/09/flask+uwsgi/
+https://echochio-tw.github.io/2019/09/flask+uwsgi/
 ```
 
 要讓 bot 可以在 group 裡面可以回應

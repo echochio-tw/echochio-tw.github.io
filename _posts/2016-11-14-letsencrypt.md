@@ -118,8 +118,8 @@ from email.header import Header
 smtpserver='192.168.0.100'
 user='echohio'
 password='echochio123'
-sender='chio@echochio.nctu.me'
-receiver='chio@echochio.nctu.me'
+sender='chio@echochio-tw.github.io'
+receiver='chio@echochio-tw.github.io'
 subject='Python email le-renewal.log'
 msg=MIMEText(data,'html','utf-8')
 msg['Subject']=Header(subject,'utf-8')

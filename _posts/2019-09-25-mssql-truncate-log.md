@@ -62,7 +62,7 @@ EXEC master..xp_CMDShell 'c:\script\telegram-bot-db.exe'
 
 那個 telegram-bot-db.exe 是 python 用 ... pyinstall 編譯過的 參考
 ```
-https://www.echochio.nctu.me/2019/09/python-pyinstaller/
+https://echochio-tw.github.io/2019/09/python-pyinstaller/
 ```
 
 附上 telegram-bot-db python
@@ -79,5 +79,5 @@ telegram_send("Truncate DBXXXXX 結束")
 當然如果在大陸地區發 telegram 要過跳板 
 在外地可通的地方開 nginx 反向代理 參考
 ```
-https://www.echochio.nctu.me/2019/02/phpservermonotor_telegram/
+https://echochio-tw.github.io/2019/02/phpservermonotor_telegram/
 ```

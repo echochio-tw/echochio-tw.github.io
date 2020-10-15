@@ -13,10 +13,10 @@ tags: php Image Select
 這是參考 tryw3css_slideshow_imgdots 改的 sidebar.php
 
 ---
-[link code(pdf)](https://www.echochio.nctu.me/images/posts/php_image/p1.pdf)
+[link code(pdf)](https://echochio-tw.github.io/images/posts/php_image/p1.pdf)
 
 ---
-[link code(pdf)](https://www.echochio.nctu.me/images/posts/php_image/p2.pdf)
+[link code(pdf)](https://echochio-tw.github.io/images/posts/php_image/p2.pdf)
 
 ---
 
@@ -25,4 +25,4 @@ tags: php Image Select
 <img src="https://echochio-tw.github.io/images/posts/php_image/2.png">
 
 ---
-[link code(pdf)](https://www.echochio.nctu.me/images/posts/php_image/p3.pdf)
+[link code(pdf)](https://echochio-tw.github.io/images/posts/php_image/p3.pdf)

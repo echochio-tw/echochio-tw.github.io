@@ -9,7 +9,7 @@ Flask-AppBuilder .. MVC ... 還不錯以後來用
 
 與安裝 Flask 一樣參考
 
-https://www.echochio.nctu.me/2019/09/flask+uwsgi/
+https://echochio-tw.github.io/2019/09/flask+uwsgi/
 
 在 source env/bin/activate 後安裝相關套件
 ```

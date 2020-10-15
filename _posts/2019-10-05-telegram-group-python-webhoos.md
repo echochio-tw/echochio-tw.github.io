@@ -18,7 +18,7 @@ tags: telegram group bot webhoos
 
 這邊用 ubuntu +  ngrok 
 
-事實我用 win10的 WSL 請參考 https://www.echochio.nctu.me/2019/05/win10-WSL-ubuntu/
+事實我用 win10的 WSL 請參考 https://echochio-tw.github.io/2019/05/win10-WSL-ubuntu/
 
 ngrok 安裝 清參考官網
 ```

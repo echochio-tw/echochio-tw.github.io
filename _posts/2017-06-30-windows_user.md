@@ -34,7 +34,7 @@ UniversalTermsrvPatch-x86.exe (若作業系統為 64 位元版本則執行 x64.e
 
 win7 SP2 後來的請用 
 
-https://www.echochio.nctu.me/2018/06/win7-RDP/
+https://echochio-tw.github.io/2018/06/win7-RDP/
 
 那時用 AT .....現在要用 SCHTASKS
 

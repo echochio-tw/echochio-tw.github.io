@@ -45,8 +45,8 @@ from email.header import Header
 smtpserver='192.168.0.X'
 user='echochio'
 password='echochio'
-sender='echochio@echochio.nctu.me'
-receiver='echochio@echochio.nctu.me'
+sender='echochio@echochio-tw.github.io'
+receiver='echochio@echochio-tw.github.io'
 #count Onln string
 info=data.count("Onln")
 # change info to integer for check is 4 ?

@@ -55,6 +55,6 @@ if (Meteor.isServer){
 
 配合
 
-https://www.echochio.nctu.me/2017/04/meteor_docker/
+https://echochio-tw.github.io/2017/04/meteor_docker/
 
 放到 Android 上 .... XD
