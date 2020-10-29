@@ -44,3 +44,58 @@ elif check_localhost() and check_connectivity():
 else:
     print("Network ERROR!")
 ```
+
+employees.csv
+```
+Full Name, Username, Department
+Audrey Miller, audrey, Development
+Arden Garcia, ardeng, Sales
+Bailey Thomas, baileyt, Human Resources
+Blake Sousa, sousa, IT infrastructure
+Cameron Nguyen, nguyen, Marketing
+Charlie Grey, greyc, Development
+Chris Black, chrisb, User Experience Research
+Courtney Silva, silva, IT infrastructure
+Darcy Johnsonn, darcy, IT infrastructure
+Elliot Lamb, elliotl, Development
+Emery Halls, halls, Sales
+Flynn McMillan, flynn, Marketing
+Harley Klose, harley, Human Resources
+Jean May Coy, jeanm, Vendor operations
+Kay Stevens, kstev, Sales
+Lio Nelson, lion, User Experience Research
+Logan Tillas, tillas, Vendor operations
+Micah Lopes, micah, Development
+Sol Mansi, solm, IT infrastructure
+```
+
+generate_report.py
+```
+#!/usr/bin/env python3
+import csv
+def read_employees(csv_file_location):
+    csv.register_dialect('empDialect', skipinitialspace=True, strict=True)
+    employee_file = csv.DictReader(open(csv_file_location), dialect = 'empDialect')
+    employee_list = []
+    for data in employee_file:
+        employee_list.append(data)
+    return employee_list
+def process_data(employee_list):
+    department_list = []
+    for employee_data in employee_list:
+        department_list.append(employee_data['Department'])
+    department_data = {}
+    for department_name in set(department_list):
+        department_data[department_name] = department_list.count(department_name)
+    return department_data
+def write_report(dictionary, report_file):
+  with open(report_file, "w+") as f:
+    for k in sorted(dictionary):
+      f.write(str(k)+':'+str(dictionary[k])+'\n')
+    f.close()
+employee_list = read_employees('/home/student-03-fea6647d12a9/data/employees.csv')
+print(employee_list)
+dictionary = process_data(employee_list)
+print(dictionary)
+write_report(dictionary, '/home/student-03-fea6647d12a9/test_report.txt')
+```
