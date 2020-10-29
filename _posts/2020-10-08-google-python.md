@@ -45,7 +45,7 @@ else:
     print("Network ERROR!")
 ```
 
-employees.csv
+employees.csv (下面那個 python 有用到)
 ```
 Full Name, Username, Department
 Audrey Miller, audrey, Development
