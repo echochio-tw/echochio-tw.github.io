@@ -39,17 +39,77 @@ Insert column names as ("Error", "Count") at the zero index position of the sort
 
 After sorting these dictionaries, store them in two different files: error_message.csv and user_statistics.csv.
 ```
+<img src="/images/posts/csv_to_html/1.png">
  
- 題目
- <img src="/images/posts/csv_to_html/1.png">
+<img src="/images/posts/csv_to_html/2.png">
+
+程式
+```
+#!/usr/bin/env python3
+import sys
+import os
+import re
+import operator
+def error_search(log_file,er):
+  returned_errors = []
+  error_patterns = [er]
+  with open(log_file, mode='r',encoding='UTF-8') as file:
+    for log in file.readlines():
+      if all(re.search(error_pattern, log) for error_pattern in error_patterns):
+        returned_errors.append(log)
+    file.close()
+  return returned_errors
+if __name__ == "__main__":
+  ErrorCount = {}
+  data_error = {}
+  data_info = {}
+  data = {}
+  log_file = 'syslog.log'
+
+  returned_errors = error_search(log_file, 'ERROR')
+  for line in returned_errors:
+    a = re.findall(r"ticky: ERROR ([\w ]*) ", line)
+    if a[0] in ErrorCount:
+      ErrorCount[a[0]] += 1
+    else:
+      ErrorCount[a[0]] = 1
+    a = re.findall(r"\((\D+)\)$", line)
+    if a[0] in data_error:
+      data_error[a[0]] += 1
+    else:
+      data_error[a[0]] = 1
+
+  returned_errors = error_search(log_file, 'INFO')
+  for line in returned_errors:
+    a = re.findall(r"\((\D+)\)$", line)
+    if a[0] in data_info:
+      data_info[a[0]] += 1
+    else:
+      data_info[a[0]] = 1
+
+  new_ErrorCount = sorted(ErrorCount.items(), key = operator.itemgetter(1), reverse=True)
+
+  for key_info in data_info:
+    data[key_info] = [data_info[key_info],0]
+  for key_error in data_error:
+    if key_error in data:
+      data[key_error][1] += data_error[key_error]
+    else:
+      data[key_error] = [0,data_error[key_error]]
+  new_data = sorted(data.items())
+
+  with open('error_message.csv', 'w') as f:
+    f.write("Error,Count\n")
+    for ErrorCount in new_ErrorCount:
+      f.write("{},{}\n".format(ErrorCount[0],ErrorCount[1]))
+  with open('user_statistics.csv', 'w') as f:
+    f.write("Username,INFO,ERROR\n")
+    for data in new_data:
+      f.write("{},{},{}\n".format(data[0],data[1][0],data[1][1]))
+  sys.exit(0)
+```
+
+<img src="/images/posts/csv_to_html/3.png">
  
- 
- 轉 html
- <img src="/images/posts/csv_to_html/2.png">
- 
- 
-抓 有幾個狀抗 Error 幾次 
- <img src="/images/posts/csv_to_html/3.png">
- 
- Usernamen 算 INFO 與 ERROR 幾次
 <img src="/images/posts/csv_to_html/4.png">
+
