@@ -41,7 +41,7 @@ After sorting these dictionaries, store them in two different files: error_messa
 ```
  
  題目
- <img src="/images/posts/csv_to_html/1.jpg">
+ <img src="/images/posts/csv_to_html/1.png">
  
  
  轉 html
@@ -52,3 +52,4 @@ After sorting these dictionaries, store them in two different files: error_messa
  <img src="/images/posts/csv_to_html/3.png">
  
  Usernamen 算 INFO 與 ERROR 幾次
+<img src="/images/posts/csv_to_html/4.png">
