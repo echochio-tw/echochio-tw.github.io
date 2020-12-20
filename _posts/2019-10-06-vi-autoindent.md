@@ -30,3 +30,8 @@ Copy lines in visual mode in vim
 echo 'set mouse-=a' > ~/.vimrc
 ```
 
+or
+```
+:set mouse=
+```
+
