@@ -17,57 +17,60 @@ Cloud Computing Concepts 筆記
 ### http://www.evanlin.com/moocs-coursera-cloud-computing/
 
 
-- Data Center PUE (Power usage effectiveness )
-    o 通常這個數字一定會大於 1 (業界大概是 1.4~1.5)
-- 分散系統中有談到 Map Reduce 要如何運作:
-    o YARN 是透過 RM (Resource Manager ) 來控制全部的系統工作分配．
-    o MapReduce
-       ▪ Map 分配工作
-       ▪ Reduce 根據 key 將重複的結果合併起來．
+- Data Center  [PUE (Power usage effectiveness )](https://en.wikipedia.org/wiki/Power_usage_effectiveness) 
+	- 通常這個數字一定會大於 1 (業界大概是 1.4~1.5)
 
-#### Multiple-Cast:
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/4f093f062a77469ff8658225df1e3a9581a38b64)
+
+- 分散系統中有談到 Map Reduce 要如何運作:
+	- YARN 是透過 RM (Resource Manager ) 來控制全部的系統工作分配．
+	- MapReduce 
+		- Map 分配工作
+		- Reduce 根據 key 將重複的結果合併起來．
+．
+
+### Multiple-Cast:
 
 - 單節點向所有節點廣播
 - 透過 ACK (Acknowlegement) 與 NACK (negative acknowledgements) 來表示有收到或是沒有收到．
-- 時間複雜度: O(n)O(n)
+- 時間複雜度: $$O(n)$$
 
-#### Gossip
+### Gossip
 
 - Gossip broacast (UDP)
 - There are two mode about broadcast:
-    o Push
-       ▪ 時間複雜度 O(logn)O(logn)
-    o Pull
-       ▪ 時間複雜度 O(log(logn))O(log(logn))
+	- Push
+		- 時間複雜度 $$ O(log_n) $$
+	- Pull
+		- 時間複雜度 $$ O( log(log_n) ) $$
+
 - Fault Torrent:
-    o Packet Lost: 50% 封包遺失，依舊可以正常運作．
-    o Node Failure: 可以有一半左右的節點失效，還是可以正常運作．
-- Gossip-Style Failure Detection (Heartbit)
+	- Packet Lost: 50% 封包遺失，依舊可以正常運作． 
+	- Node Failure: 可以有一半左右的節點失效，還是可以正常運作．
 
-
-```
-o 每個節點會針對 member list (各自維護一份） 來做定期的 heartbit． （該時間
-為 TgossipTgossip )
-o 每次收到之後，local member list 會更新並且把最新收到的時間更新進去．
-o 只要時間超過了 TfailTfail 之後，就會被當成是無效節點．並且在 TcleanupTcleanup 之後來清理
-掉．
-▪ 為何需要兩個時間？ 有一種可能是，節點被認為失效了．但是過了 TfailTfail 忽然又活起
-來的話，就可以被加入回去．
-o 結論: 如果 TfailTfail 與 TcleanupTcleanup 越大，越容易 false positive ．但是可以節省流量．
+- Gossip-Style Failure Detection	(Heartbit)
+	- 每個節點會針對 member list (各自維護一份） 來做定期的 heartbit． （該時間為 $$ T_gossip $$ )
+	- 每次收到之後，local member list 會更新並且把最新收到的時間更新進去．
+	- 只要時間超過了 $$ T_fail $$ 之後，就會被當成是無效節點．並且在 $$ T_cleanup $$ 之後來清理掉．
+		- 為何需要兩個時間？ 有一種可能是，節點被認為失效了．但是過了 $$ T_fail $$ 忽然又活起來的話，就可以被加入回去．
+	- 結論: 如果 $$ T_fail $$ 與 $$ T_cleanup $$ 越大，越容易 false positive ．但是可以節省流量．
 ```
 ###### Probabilistic Faulure Detection (SWIM Gossip)
 
-當 MiMi 與 MjMj 無法直接連接的時候，節點 MiMi 會隨機發送到第 k 個節點 ( MkMk ) 來做另一個方面的確認．
-如此一來，如果 MkMk 會嘗試去 ping MjMj ，如果取得正常的反應．就代表節點 MjMj 依舊是活著，可能只是
-toponology Mi−>MjMi−>Mj 有問題發生．
-當有 n 個節點，要能夠透過傳遞來知道一個節點壞掉需要透過 O(log(N))O(log(N)) 的時間．
+![](./images/swim.png)
 
-###### Dissemination and suspicion
+當 $$ M_i $$ 與 $$ M_j $$ 無法直接連接的時候，節點 $$ M_i $$ 會隨機發送到第 `k` 個節點 ( $$ M_k $$ ) 來做另一個方面的確認．  
+
+如此一來，如果 $$ M_k $$ 會嘗試去 ping $$ M_j $$ ，如果取得正常的反應．就代表節點 $$ M_j $$ 依舊是活著，可能只是 toponology $$ M_i -> M_j $$ 有問題發生．
+
+當有 `n` 個節點，要能夠透過傳遞來知道一個節點壞掉需要透過 $$ O(log(N)) $$ 的時間．
+
+#### Dissemination and suspicion 
 
 - 傳播(Dissemination) Member List 的途徑:
-    o Multicast (Machine-IP) 比較不可靠
-    o TCP/UDP 比較可靠 (不過 UDP 也沒有 handshake)
-    o 也可以透過 Piggybacked 就是 ping 夾帶 member list 方式來傳遞 member list
+	- Multicast (Machine-IP) 比較不可靠
+	- TCP/UDP 比較可靠 (不過 UDP 也沒有 handshake)
+	- 也可以透過 Piggybacked  就是 ping 夾帶 member list 方式來傳遞 member list
 
 #### Napster
 
