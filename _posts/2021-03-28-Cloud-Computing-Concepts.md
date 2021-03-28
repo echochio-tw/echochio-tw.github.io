@@ -7,7 +7,7 @@ tags: Cloud Computing Concepts
 
 Cloud Computing Concepts 筆記
 
-<object data="/images/Cloud%20Computing%20Concepts.pdf" type="application/pdf" width="100%" height="800px"> 
+<object data="/images/Cloud%20Computing%20Concepts.pdf" type="application/pdf" width="100%" height="900px"> 
 </object>
 
 
