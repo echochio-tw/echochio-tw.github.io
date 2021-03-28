@@ -33,7 +33,7 @@ Cloud Computing Concepts 筆記
 
 - 單節點向所有節點廣播
 - 透過 ACK (Acknowlegement) 與 NACK (negative acknowledgements) 來表示有收到或是沒有收到．
-- 時間複雜度: $$O(n)$$
+- 時間複雜度: O(n)O(n)
 
 ### Gossip
 
