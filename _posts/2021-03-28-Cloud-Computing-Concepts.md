@@ -57,7 +57,7 @@ Cloud Computing Concepts 筆記
 ```
 ###### Probabilistic Faulure Detection (SWIM Gossip)
 
-![](/images/swim.png)
+<img src="/images/posts/Cloud-Computing-Concepts/swim.png">
 
 當 $$ M_i $$ 與 $$ M_j $$ 無法直接連接的時候，節點 $$ M_i $$ 會隨機發送到第 `k` 個節點 ( $$ M_k $$ ) 來做另一個方面的確認．  
 
