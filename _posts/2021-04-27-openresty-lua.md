@@ -52,6 +52,9 @@ https://github.com/echochio-tw/openresty-lua
         accesskey_hashmethod md5;
         accesskey_arg "key";
         accesskey_signature "mypass1234$remote_addr";
+	body_filter_by_lua_block{
+                        local chunk, eof = ngx.arg[1], ngx.arg[2]
+			.........
 
 ```
 
