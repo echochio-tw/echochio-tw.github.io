@@ -64,6 +64,15 @@ for j in range(1,7):
 
 ```
 
+亂搞
+```
+import numpy, random
+r = numpy.random.randint(1,7,100, numpy.int)
+for j in range(1,7):
+    print(f"出現 {j} 的 {int((sum([x for x in r if x == j]))/j)} 次")
+```
+
+
 用 collections的Counter
 
 ```
