@@ -34,7 +34,7 @@ IQR(interquartile range)
 ```
 
 ```
-		     median
+             median
     min    Q1   Q3                 max
             +-|-+
     |-------| | |-------------------|
