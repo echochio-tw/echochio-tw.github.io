@@ -48,7 +48,7 @@ IQR(interquartile range)
 standard score is: (Observation - Mean) / Standard Deviation
 ```
 
-搞不清楚地名詞
+搞不清楚名詞
 ```
 μ︰population mean
 
