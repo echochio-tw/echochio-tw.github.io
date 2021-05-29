@@ -18,6 +18,13 @@ print (f"max : {np.max(da.BPXSY2)}")
 print (f"IQR : {np.subtract(*np.nanpercentile(da.BPXSY2, [75, 25]))}")
 ```
 
+```
+median : 122.0
+mean : 124.78301716350497
+Standard-Deviation : 18.527011720294997
+max : 238.0
+IQR : 22.0
+```
 
 1,3,4,4,3,9 的 Standard Deviation(標準差)
 
