@@ -19,3 +19,4 @@ ON DELETE NO ACTION ON UPDATE NO ACTION)
 SET FOREIGN_KEY_CHECKS=0; -- to disable them
 DELETE FROM customer WHERE customer_account = "test_user";
 SET FOREIGN_KEY_CHECKS=1; -- to re-enable them
+```
